@@ -485,6 +485,12 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 :root[data-theme="dark"] .cbox.on::after{border-color:#0F1512}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cbox.on::after{border-color:#0F1512}}
 .checkrow u{text-decoration:underline;text-underline-offset:2px}
+
+.schoolpick{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line-2);
+  border-radius:10px;background:var(--surface)}
+.schoolpick .lbl{font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.schoolpick .val{font-size:13.5px;font-weight:600;margin-top:1px}
+.schoolpick .arw{margin-left:auto;color:var(--muted);font-size:15px}
 </style>
 
 <div class="wrap">
@@ -607,7 +613,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 <section class="screen" id="s16" hidden>
   <div class="screen-head">
     <h2>Tus datos, una sola pantalla</h2>
-    <p>Todo lo que se pregunta aquí tiene que justificarse, porque cada campo pierde papás. Van cuatro cosas: el nombre real, el teléfono con su razón a la vista, la confirmación de escuela y el consentimiento de privacidad — que no es opcional, porque el sistema guarda datos de menores.</p>
+    <p>Todo lo que se pregunta aquí tiene que justificarse, porque cada campo pierde papás. Quedan tres cosas: el nombre real, el teléfono con su razón a la vista, y el consentimiento de privacidad — que no es opcional, porque el sistema guarda datos de menores.</p>
   </div>
   <div class="frame-phone">
     <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx/bienvenida</span></div>
@@ -626,25 +632,16 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
         <input id="o-tel" type="tel" placeholder="55 0000 0000" autocomplete="tel">
         <span class="help">Para avisarte por WhatsApp si hay algo con el servicio de tu hijo. Si lo dejas en blanco, te escribimos por correo.</span>
       </div>
-      <div class="field">
-        <label for="o-escuela">Escuela</label>
-        <select id="o-escuela">
-          <option selected>Colegio Monteverde</option>
-          <option>Instituto Bilingüe Los Fresnos</option>
-          <option>Colegio Nueva Castilla</option>
-        </select>
-        <span class="help">La tomamos del enlace que te mandó tu escuela. Cámbiala si no es la correcta.</span>
-      </div>
       <div class="checkrow">
         <span class="cbox on"></span>
         <span>He leído y acepto el <u>aviso de privacidad</u> y los <u>términos del servicio</u>. Entiendo que Healthy Tummies tratará los datos de mis hijos para darles el servicio de alimentos.</span>
       </div>
       <button class="cta">Crear mi cuenta</button>
-      <p class="legal">Tus datos de facturación te los pedimos más adelante, <b>justo antes de tu primer pago</b>.</p>
+      <p class="legal">La escuela la eliges al agregar a cada hijo — <b>pueden estar en escuelas distintas</b>. Tus datos de facturación te los pedimos justo antes de tu primer pago.</p>
     </div>
   </div>
   <p class="caption">Vista del papá · teléfono</p>
-  <div class="note"><span><b>Lo que no se pregunta aquí es la decisión importante.</b> Los datos fiscales —RFC, régimen, uso de CFDI, código postal— son el conjunto de campos con más fricción del producto, y pedirlos antes de que el papá haya visto un menú es la forma más rápida de perderlo. Se piden antes del primer pago, donde ya hay motivación. El consentimiento de privacidad, en cambio, no se puede diferir: sin él no se pueden guardar datos de un menor.</span></div>
+  <div class="note"><span><b>La escuela no se pregunta aquí, y es a propósito:</b> la escuela es del hijo, no del papá. Un papá puede tener un hijo en Monteverde y otro en Los Fresnos, así que guardarla en el tutor modelaría mal el dato — y además "Agregar hijo" ya la pide treinta segundos después. Los datos fiscales —RFC, régimen, uso de CFDI, código postal— son el conjunto de campos con más fricción del producto, y pedirlos antes de que el papá haya visto un menú es la forma más rápida de perderlo. Se piden antes del primer pago, donde ya hay motivación. El consentimiento de privacidad, en cambio, no se puede diferir: sin él no se pueden guardar datos de un menor.</span></div>
 </section>
 
 <!-- ======================= 0 · INICIO ======================= -->
@@ -656,7 +653,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   <div class="frame-phone">
     <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx</span></div>
     <div class="app-top">
-      <div><div class="t">Healthy Tummies</div><div class="s">Colegio Monteverde</div></div>
+      <div><div class="t">Healthy Tummies</div><div class="s">Octubre 2026</div></div>
     </div>
     <div class="app-body stack">
       <div class="greet">
@@ -704,7 +701,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
         <div class="bcard">
           <div class="hd">
             <span class="avatar">AH</span>
-            <span class="grow"><span class="nm">Ana Sofía Hernández Mendoza</span><span class="ds">Preescolar · Matrícula MV-2022-0913</span></span>
+            <span class="grow"><span class="nm">Ana Sofía Hernández Mendoza</span><span class="ds">Colegio Monteverde · Preescolar</span></span>
             <span class="pill ok">Al corriente</span>
           </div>
           <div class="rows">
@@ -792,7 +789,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 <section class="screen" id="s1" hidden>
   <div class="screen-head">
     <h2>El menú del mes, por grado y por servicio</h2>
-    <p>Healthy Tummies publica el menú como imagen o PDF — un calendario del mes con lo que se da día por día. La pantalla no pelea con ese formato: lo trata como lo que es, un adjunto que se abre en grande, y alrededor pone lo único que el papá necesita leer en chico.</p>
+    <p>Arriba, el selector de escuela: un papá con hijos en dos colegios necesita poder ver los dos menús. Healthy Tummies publica cada uno como imagen o PDF — un calendario del mes con lo que se da día por día. La pantalla no pelea con ese formato: lo trata como lo que es, un adjunto que se abre en grande, y alrededor pone lo único que el papá necesita leer en chico.</p>
   </div>
   <div class="frame-phone">
     <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx/menu</span></div>
@@ -801,6 +798,10 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
       <div class="s">2 oct</div>
     </div>
     <div class="app-body stack">
+      <div class="schoolpick">
+        <span><span class="lbl">Escuela</span><span class="val">Colegio Monteverde</span></span>
+        <span class="arw">›</span>
+      </div>
       <div class="seg">
         <button>Kinder</button>
         <button class="on">Primaria</button>

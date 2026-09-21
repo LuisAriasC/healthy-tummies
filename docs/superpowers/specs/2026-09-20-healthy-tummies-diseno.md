@@ -210,8 +210,13 @@ tratos.
   ya tiene esa cuenta. Un papá que entra una vez al mes olvida cualquier contraseña, y
   cada olvido es soporte que alguien de Healthy Tummies tiene que atender
 - **Onboarding de una sola pantalla:** nombre completo, teléfono opcional con su razón a
-  la vista, confirmación de escuela y **aceptación del aviso de privacidad**. Los datos
-  fiscales no se piden aquí — se piden antes del primer pago, donde ya hay motivación
+  la vista y **aceptación del aviso de privacidad**. Los datos fiscales no se piden aquí
+  — se piden antes del primer pago, donde ya hay motivación
+- **La escuela no se pregunta en el onboarding.** La escuela es un atributo del hijo, no
+  del tutor: un papá puede tener un hijo en un colegio y otro en otro, y el sistema debe
+  soportarlo con una sola cuenta y un solo pago mensual. Se captura al agregar cada hijo.
+  Como consecuencia, la pantalla de menú lleva **selector de escuela**, porque ese papá
+  necesita ver los dos menús
 - Alta de sus hijos: nombre, **matrícula**, escuela, **grado** y
   alergias o restricciones alimentarias
 - **Grado significa preescolar o primaria, y nada más.** El año escolar y el grupo son
@@ -267,10 +272,12 @@ Todo el sistema gira alrededor de **una sola unidad: la inscripción de un niño
 servicio en un mes.** De ahí se derivan las tres salidas que hoy se hacen a mano.
 
 ```
+Tutor ─── una cuenta, un pago al mes, hijos en una o varias escuelas
+
 Escuela ──┬── nivel(es): preescolar / primaria
           └── modo de cobro: directo   (concentrado reservado, sin usar)
 
-Tutor ──── Niño ── escuela, grado, grupo
+      └── Niño ── nombre, matrícula, grado (preescolar | primaria), alergias
 
 Catálogo de servicios ── tipo, nivel, precio
 
