@@ -129,7 +129,10 @@ La mayoría se resolvieron. Quedan estas para la junta:
 5. **¿Las escuelas están dispuestas a entregar su padrón de alumnos con matrículas?**
    ¿En qué formato lo tienen y cada cuánto cambia? De esto depende la verificación del
    alta (ver sección 11).
-6. **¿La cafetería puede localizar a los niños solo por nombre?** Las listas van
+6. **Conseguir el PDF real de un menú cualquiera, antes de la junta.** Es gratis,
+   decide solo si el constructor de menús vale la pena, y sin verlo cualquier diseño de
+   captura es adivinanza.
+7. **¿La cafetería puede localizar a los niños solo por nombre?** Las listas van
    ordenadas por apellido y muestran únicamente preescolar o primaria, porque el año y el
    grupo no se capturan. Conviene confirmarlo con quien entrega hoy en la escuela antes
    de darlo por bueno.
@@ -224,7 +227,10 @@ tratos.
 ### De cara a Healthy Tummies
 
 - Panel de administración: escuelas, precios, niños, inscripciones y estado de pago
-- Carga del menú del mes, **con su penalización asociada** (porcentaje o monto fijo)
+- Carga del menú del mes **como imagen o PDF**, con su penalización asociada (porcentaje
+  o monto fijo). El menú es un calendario mensual que Healthy Tummies ya produce hoy; la
+  plataforma lo almacena y lo publica segmentado por grado y por servicio, sin
+  interpretarlo
 - Generación automática de la **lista de cafetería**, por escuela y día, con nombres
 - Generación automática de los **conteos de cocina**, por escuela, servicio y día —
   respetando los días elegidos individualmente en el servicio de taller
@@ -236,7 +242,10 @@ tratos.
 Debe decirse explícitamente en la propuesta, para que nadie lo dé por hecho:
 
 - Portales con acceso propio para escuela y cocina
-- Constructor de menús (en Fase 1 el menú se carga como archivo)
+- Constructor de menús, y con él **el menú del día en la app del papá** ("hoy comen").
+  Requiere capturar el menú como datos; mientras sea una imagen el sistema no puede
+  saber qué se sirve cada día. En Fase 1 el inicio muestra el board de hijos y el aviso
+  de corte, no el platillo del día
 - **Facturación / CFDI automatizada.** El cliente factura a papás y a escuelas; en Fase 1
   eso sigue haciéndose fuera del sistema. Automatizarlo es Fase 3
 - **Modo de cobro concentrado** (que la escuela cobre y entregue un consolidado). Hoy
@@ -293,12 +302,19 @@ conteos muy distintos entre lunes y viernes.
 
 ## 10. Fases siguientes
 
-**Fase 2 — Portales.** Acceso propio para la escuela (ve su lista, marca entregas) y
-para la cocina (ve sus conteos, confirma producción). Sustituye los exportables por
-pantallas en vivo.
+**Fase 2 — Portales y menús.** Acceso propio para la escuela (ve su lista, marca
+entregas) y para la cocina (ve sus conteos, confirma producción); sustituye los
+exportables por pantallas en vivo. Y el **constructor de menús**, que habilita el "hoy
+comen" en la app del papá.
 
-**Fase 3 — Madurez.** Constructor de menús con ciclos y repetición, reportes de consumo
-y merma, facturación CFDI, y conciliación automática con el banco.
+Sobre el constructor conviene un argumento que se le puede dar al cliente: **no es
+trabajo nuevo para Healthy Tummies.** Ya escriben el menú en alguna herramienta para
+producir la imagen que mandan a las escuelas. Si lo escriben en la plataforma, la
+plataforma genera ese archivo. El trabajo neto no sube, y a cambio el papá recibe el
+menú del día.
+
+**Fase 3 — Madurez.** Reportes de consumo y merma, facturación CFDI automatizada, y
+conciliación automática con el banco.
 
 ---
 

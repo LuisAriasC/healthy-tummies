@@ -416,6 +416,13 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 .mactions button{flex:1;padding:9px;border-radius:9px;font-size:13px;font-weight:600}
 .mactions .go{background:var(--accent);color:#fff}
 .mactions .sec{border:1px solid var(--line-2);color:var(--ink-2)}
+
+.eyerow{display:flex;align-items:center;gap:9px}
+.eyerow .eyebrow{flex:1}
+.phase{font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;
+  padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);
+  border:1px solid var(--accent);white-space:nowrap}
+.dimmed{opacity:.72}
 </style>
 
 <div class="wrap">
@@ -489,7 +496,10 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
         <span class="dt">Mar 6 oct</span>
       </div>
 
-      <div class="eyebrow">Hoy comen</div>
+      <div class="eyerow">
+        <span class="eyebrow">Hoy comen</span>
+        <span class="phase">Fase 2</span>
+      </div>
       <div class="today">
         <header><span class="who">Mateo</span><span class="gr">Primaria</span></header>
         <div class="plate">
@@ -549,7 +559,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   </div>
   </div>
   <p class="caption">Vista del papá · teléfono</p>
-  <div class="note"><span><b>Por qué "hoy comen" va arriba del board:</b> el estado de pago se consulta una vez al mes; el menú del día, todos los días. Una app que el papá abre seguido es una app donde el aviso del día 5 sí le llega — eso es ingreso para Healthy Tummies, no solo comodidad. Cuando el corte está cerca, este mismo espacio se vuelve la alerta naranja que ves en la pantalla del menú.</span></div>
+  <div class="note"><span><b>"Hoy comen" es Fase 2, y está marcado como tal.</b> Requiere que el menú se capture como datos; mientras sea una imagen, el sistema no sabe qué platillo toca hoy. En Fase 1 el Inicio arranca con el board de hijos y el aviso de corte. Vale la pena enseñarlo igual porque explica hacia dónde va el producto: el estado de pago se consulta una vez al mes, el menú del día todos los días, y una app que el papá abre seguido es donde el aviso del día 5 sí aterriza.</span></div>
 </section>
 
 <!-- ======================= 12 · INICIO VACÍO ======================= -->
