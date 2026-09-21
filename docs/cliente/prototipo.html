@@ -534,18 +534,23 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
     </div>
   </div>
   <div class="navgroup">
-    <span>Destinos de la barra</span>
-    <div class="navrow" role="tablist" aria-label="Destinos">
-      <button class="tab" role="tab" aria-selected="true" data-s="s0">Inicio</button>
-      <button class="tab" role="tab" aria-selected="false" data-s="s1">Menú del mes</button>
-      <button class="tab" role="tab" aria-selected="false" data-s="s11">Cuenta</button>
+    <span>Inicio</span>
+    <div class="navrow" role="tablist" aria-label="Inicio">
+      <button class="tab" role="tab" aria-selected="false" data-s="s12">Vacío</button>
+      <button class="tab" role="tab" aria-selected="true" data-s="s0">Con datos</button>
     </div>
   </div>
   <div class="navgroup">
-    <span>Estados vacíos</span>
-    <div class="navrow" role="tablist" aria-label="Estados vacíos">
-      <button class="tab" role="tab" aria-selected="false" data-s="s12">Inicio</button>
-      <button class="tab" role="tab" aria-selected="false" data-s="s14">Cuenta</button>
+    <span>Menú</span>
+    <div class="navrow" role="tablist" aria-label="Menú">
+      <button class="tab" role="tab" aria-selected="false" data-s="s1">Menú del mes</button>
+    </div>
+  </div>
+  <div class="navgroup">
+    <span>Cuenta</span>
+    <div class="navrow" role="tablist" aria-label="Cuenta">
+      <button class="tab" role="tab" aria-selected="false" data-s="s14">Vacía</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s11">Con datos</button>
     </div>
   </div>
   <div class="navgroup">
@@ -1588,6 +1593,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   var navs  = Array.prototype.slice.call(document.querySelectorAll("nav.screens"));
   var tabs  = Array.prototype.slice.call(document.querySelectorAll(".tab"));
   var ids   = tabs.map(function(t){ return t.dataset.s; });
+  var ultima = { papa: "s0", ht: "s6" };
 
   function verPantalla(id){
     tabs.forEach(function(t){ t.setAttribute("aria-selected", t.dataset.s === id ? "true" : "false"); });
@@ -1604,14 +1610,24 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
     });
     navs.forEach(function(n){ n.hidden = n.dataset.app !== app; });
     var activo = navs.filter(function(n){ return n.dataset.app === app; })[0];
-    var primera = activo && activo.querySelector(".tab");
-    if (primera) verPantalla(primera.dataset.s);
+    if (!activo) return;
+    var guardada = ultima[app];
+    var destino  = guardada && activo.querySelector('.tab[data-s="' + guardada + '"]');
+    if (!destino) destino = activo.querySelector(".tab");
+    if (destino) verPantalla(destino.dataset.s);
   }
   function arriba(){
     var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     window.scrollTo({ top: 0, behavior: calm ? "auto" : "smooth" });
   }
   apps.forEach(function(a){ a.addEventListener("click", function(){ verApp(a.dataset.app); arriba(); }); });
-  tabs.forEach(function(t){ t.addEventListener("click", function(){ verPantalla(t.dataset.s); arriba(); }); });
+  tabs.forEach(function(t){
+    t.addEventListener("click", function(){
+      var nav = t.closest("nav.screens");
+      if (nav) ultima[nav.dataset.app] = t.dataset.s;
+      verPantalla(t.dataset.s);
+      arriba();
+    });
+  });
 })();
 </script>
