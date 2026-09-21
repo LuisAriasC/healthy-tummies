@@ -279,6 +279,66 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   .side .lbl{display:none}
   .main{padding:15px}
 }
+
+/* ---------- home del papá ---------- */
+.greet{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.greet h3{font-family:var(--display);font-size:20px;font-weight:600}
+.greet .dt{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.today{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.today > header{display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--brand);color:var(--ground)}
+:root[data-theme="dark"] .today > header{color:#0F1512}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .today > header{color:#0F1512}}
+.today > header .who{font-family:var(--display);font-weight:600;font-size:14px}
+.today > header .gr{font-size:11.5px;opacity:.72;margin-left:auto;font-family:var(--mono)}
+.plate{padding:12px 13px;border-bottom:1px solid var(--line)}
+.plate:last-child{border-bottom:none}
+.plate .sv{font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.plate .dish{font-size:13.5px;color:var(--ink-2);margin-top:4px;line-height:1.45}
+.plate .tag{display:inline-block;margin-top:6px;font-size:11px;font-family:var(--mono);color:var(--muted);
+  background:var(--surface-2);border:1px solid var(--line);border-radius:5px;padding:1px 7px}
+
+.board{display:flex;flex-direction:column;gap:11px}
+.bcard{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:13px}
+.bcard .hd{display:flex;align-items:center;gap:11px}
+.bcard .grow{flex:1;min-width:0}
+.bcard .nm{font-weight:600;font-size:14px}
+.bcard .ds{font-size:12px;color:var(--muted);margin-top:1px}
+.bcard .rows{margin-top:11px;padding-top:10px;border-top:1px solid var(--line);
+  display:flex;flex-direction:column;gap:6px}
+.brow{display:flex;justify-content:space-between;gap:10px;font-size:13px;align-items:center}
+.brow .l{color:var(--ink-2)}
+.brow .l small{color:var(--muted);font-size:11.5px}
+.brow .r{font-family:var(--mono);font-size:12.5px;color:var(--muted);white-space:nowrap}
+.next{display:flex;gap:11px;align-items:flex-start;padding:12px 13px;border-radius:11px;
+  background:var(--surface-2);border:1px solid var(--line)}
+.next .cal{width:38px;height:40px;border-radius:8px;background:var(--surface);border:1px solid var(--line-2);
+  flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.next .cal b{font-family:var(--display);font-size:16px;font-weight:700}
+.next .cal span{font-family:var(--mono);font-size:8.5px;letter-spacing:.09em;color:var(--muted);margin-top:2px}
+.next p{font-size:12.5px;color:var(--ink-2);line-height:1.4}
+
+/* ---------- formularios ---------- */
+.field{display:flex;flex-direction:column;gap:5px}
+.field > label{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.field input,.field select,.field textarea{width:100%;font:inherit;font-size:14px;color:var(--ink);
+  background:var(--surface);border:1px solid var(--line-2);border-radius:9px;padding:10px 12px}
+.field input::placeholder,.field textarea::placeholder{color:var(--muted)}
+.field textarea{resize:vertical;min-height:62px;line-height:1.45}
+.field .help{font-size:11.5px;color:var(--muted);line-height:1.4}
+.field.mono input{font-family:var(--mono);letter-spacing:.04em}
+.pair{display:flex;gap:10px}
+.pair > *{flex:1;min-width:0}
+.verify{display:flex;gap:8px;align-items:flex-start;padding:9px 11px;border-radius:8px;
+  background:var(--ok-soft);border:1px solid var(--ok);font-size:12.5px;color:var(--ink-2)}
+.verify b{color:var(--ok);font-weight:600}
+.locked{display:flex;gap:9px;align-items:flex-start;padding:11px 12px;border-radius:9px;
+  background:var(--surface-2);border:1px solid var(--line-2);font-size:12.5px;color:var(--ink-2);line-height:1.45}
+.locked b{font-weight:600;color:var(--ink)}
+.danger{margin-top:4px;padding:12px 13px;border-radius:10px;border:1px solid var(--alert);background:var(--alert-soft)}
+.danger .t{font-weight:600;font-size:13.5px;color:var(--alert)}
+.danger p{font-size:12.5px;color:var(--ink-2);margin-top:4px;line-height:1.45}
+.danger button{margin-top:10px;width:100%;padding:10px;border-radius:9px;border:1px solid var(--alert);
+  color:var(--alert);font-size:13.5px;font-weight:600;background:var(--surface)}
 </style>
 
 <div class="wrap">
@@ -301,13 +361,26 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 
 <nav class="screens">
   <div class="navgroup">
-    <span>Lo que ve el papá</span>
-    <div class="navrow" role="tablist" aria-label="Pantallas del papá">
-      <button class="tab" role="tab" aria-selected="true" data-s="s1"><span class="n">1</span>Menú del mes</button>
+    <span>Papá · día a día</span>
+    <div class="navrow" role="tablist" aria-label="Pantallas de uso diario">
+      <button class="tab" role="tab" aria-selected="true" data-s="s0">Inicio</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s1">Menú del mes</button>
+    </div>
+  </div>
+  <div class="navgroup">
+    <span>Papá · inscripción</span>
+    <div class="navrow" role="tablist" aria-label="Pantallas de inscripción">
+      <button class="tab" role="tab" aria-selected="false" data-s="s9"><span class="n">1</span>Agregar hijo</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s2"><span class="n">2</span>Mis hijos</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s3"><span class="n">3</span>Servicios</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s4"><span class="n">4</span>Pago</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s5"><span class="n">5</span>Listo</button>
+    </div>
+  </div>
+  <div class="navgroup">
+    <span>Papá · cuenta</span>
+    <div class="navrow" role="tablist" aria-label="Pantallas de cuenta">
+      <button class="tab" role="tab" aria-selected="false" data-s="s10">Editar hijo</button>
     </div>
   </div>
   <div class="navgroup">
@@ -320,8 +393,82 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   </div>
 </nav>
 
+<!-- ======================= 0 · INICIO ======================= -->
+<section class="screen" id="s0">
+  <div class="screen-head">
+    <h2>Lo primero que ve el papá al abrir</h2>
+    <p>El menú y la inscripción ya están en el sistema, así que cruzarlos es gratis: la app puede decirle a cada papá qué come su hijo hoy. Es la razón por la que abre la app entre semana y no una sola vez al mes.</p>
+  </div>
+  <div class="frame-phone">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx</span></div>
+    <div class="app-top">
+      <div><div class="t">Healthy Tummies</div><div class="s">Colegio Monteverde</div></div>
+    </div>
+    <div class="app-body stack">
+      <div class="greet">
+        <h3>Hola, Laura</h3>
+        <span class="dt">Mar 6 oct</span>
+      </div>
+
+      <div class="eyebrow">Hoy comen</div>
+      <div class="today">
+        <header><span class="who">Mateo</span><span class="gr">2°A</span></header>
+        <div class="plate">
+          <div class="sv">Lunch</div>
+          <div class="dish">Quesadillas de flor de calabaza · Frijoles de olla · Jícama con chile · Agua de limón</div>
+        </div>
+        <div class="plate">
+          <div class="sv">Comida por taller</div>
+          <div class="dish">Sopa de lentejas · Albóndigas al chipotle con arroz · Ensalada de nopales · Agua de tamarindo</div>
+          <span class="tag">Hoy tiene robótica</span>
+        </div>
+      </div>
+      <div class="today">
+        <header><span class="who">Ana Sofía</span><span class="gr">K2</span></header>
+        <div class="plate">
+          <div class="sv">Comida</div>
+          <div class="dish">Sopa de lentejas · Albóndigas al chipotle con arroz · Ensalada de nopales · Agua de tamarindo</div>
+        </div>
+      </div>
+
+      <div class="eyebrow">Octubre 2026</div>
+      <div class="board">
+        <div class="bcard">
+          <div class="hd">
+            <span class="avatar">MH</span>
+            <span class="grow"><span class="nm">Mateo Hernández Mendoza</span><span class="ds">Primaria 2°A · Matrícula MV-2019-0447</span></span>
+            <span class="pill ok">Al corriente</span>
+          </div>
+          <div class="rows">
+            <div class="brow"><span class="l">Lunch</span><span class="r">20 días · $1,200</span></div>
+            <div class="brow"><span class="l">Comida por taller<small> · martes y jueves</small></span><span class="r">8 días · $600</span></div>
+          </div>
+        </div>
+        <div class="bcard">
+          <div class="hd">
+            <span class="avatar">AH</span>
+            <span class="grow"><span class="nm">Ana Sofía Hernández Mendoza</span><span class="ds">Preescolar K2 · Matrícula MV-2022-0913</span></span>
+            <span class="pill ok">Al corriente</span>
+          </div>
+          <div class="rows">
+            <div class="brow"><span class="l">Comida</span><span class="r">20 días · $1,250</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="next">
+        <span class="cal"><b>25</b><span>OCT</span></span>
+        <p>Se publica el menú de noviembre. Tendrás hasta el <b>5 de noviembre</b> para inscribir sin recargo — te avisamos ese día.</p>
+      </div>
+      <button class="ghost">Ver el menú completo de octubre</button>
+    </div>
+  </div>
+  <p class="caption">Vista del papá · teléfono</p>
+  <div class="note"><span><b>Por qué "hoy comen" va arriba del board:</b> el estado de pago se consulta una vez al mes; el menú del día, todos los días. Una app que el papá abre seguido es una app donde el aviso del día 5 sí le llega — eso es ingreso para Healthy Tummies, no solo comodidad. Cuando el corte está cerca, este mismo espacio se vuelve la alerta naranja que ves en la pantalla del menú.</span></div>
+</section>
+
 <!-- ======================= 1 · MENÚ ======================= -->
-<section class="screen" id="s1">
+<section class="screen" id="s1" hidden>
   <div class="screen-head">
     <h2>El menú de octubre, en el teléfono del papá</h2>
     <p>Hoy la escuela circula el menú en papel o por WhatsApp. Aquí vive en una página que el papá abre desde el mismo mensaje, con el contador de la fecha de corte a la vista.</p>
@@ -518,6 +665,117 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   <div class="note"><span><b>Aquí muere el cuello de botella.</b> Entre que el papá paga y que el niño aparece en la lista de la cafetería no queda ninguna persona en medio.</span></div>
 </section>
 
+<!-- ======================= 9 · AGREGAR HIJO ======================= -->
+<section class="screen" id="s9" hidden>
+  <div class="screen-head">
+    <h2>Agregar un hijo</h2>
+    <p>Lo captura el papá una sola vez, no alguien transcribiendo desde un comprobante. La matrícula es la pieza que amarra al niño con la lista oficial de la escuela.</p>
+  </div>
+  <div class="frame-phone">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx/hijos/nuevo</span></div>
+    <div class="app-top">
+      <div><div class="t">Agregar hijo</div><div class="s">Paso 1 de 2</div></div>
+    </div>
+    <div class="app-body stack">
+      <div class="field">
+        <label for="f-nombre">Nombre completo</label>
+        <input id="f-nombre" type="text" value="Mateo Hernández Mendoza" autocomplete="off">
+        <span class="help">Como aparece en la lista de la escuela. Así lo verá la persona de la cafetería.</span>
+      </div>
+      <div class="field mono">
+        <label for="f-matricula">Matrícula</label>
+        <input id="f-matricula" type="text" value="MV-2019-0447" autocomplete="off">
+        <span class="help">La encuentras en la credencial o en el recibo de colegiatura.</span>
+      </div>
+      <div class="verify"><span><b>Matrícula verificada.</b> Coincide con Mateo Hernández Mendoza, 2°A, en la lista del Colegio Monteverde.</span></div>
+      <div class="field">
+        <label for="f-escuela">Escuela</label>
+        <select id="f-escuela">
+          <option selected>Colegio Monteverde</option>
+          <option>Instituto Bilingüe Los Fresnos</option>
+          <option>Colegio Nueva Castilla</option>
+        </select>
+      </div>
+      <div class="pair">
+        <div class="field">
+          <label for="f-nivel">Nivel</label>
+          <select id="f-nivel"><option>Preescolar</option><option selected>Primaria</option></select>
+        </div>
+        <div class="field">
+          <label for="f-grado">Grado y grupo</label>
+          <select id="f-grado">
+            <option>1°A</option><option>1°B</option><option selected>2°A</option>
+            <option>2°B</option><option>3°A</option><option>3°B</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-notas">Alergias o restricciones</label>
+        <textarea id="f-notas" placeholder="Por ejemplo: sin lácteos, alérgico a la nuez, no come cerdo."></textarea>
+        <span class="help">Aparece en la lista de la cafetería, junto al nombre de tu hijo.</span>
+      </div>
+      <button class="cta">Guardar y elegir servicios</button>
+    </div>
+  </div>
+  <p class="caption">Vista del papá · teléfono</p>
+  <div class="note"><span><b>La matrícula no es un campo de adorno.</b> Sin ella, dos niños con el mismo nombre en distintos grupos son indistinguibles, y no hay forma de cruzar la lista de Healthy Tummies contra la lista oficial de la escuela. Con ella, el sistema puede verificar el alta en el momento — y ese cruce es lo que hoy nadie hace.</span></div>
+</section>
+
+<!-- ======================= 10 · EDITAR HIJO ======================= -->
+<section class="screen" id="s10" hidden>
+  <div class="screen-head">
+    <h2>Editar los datos de un hijo</h2>
+    <p>Aquí es donde las reglas del negocio se vuelven visibles. Los datos del niño se corrigen cuando sea; los servicios del mes en curso ya están pagados y no se tocan.</p>
+  </div>
+  <div class="frame-phone">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx/hijos/mateo</span></div>
+    <div class="app-top">
+      <div><div class="t">Mateo Hernández</div><div class="s">Primaria 2°A · Monteverde</div></div>
+    </div>
+    <div class="app-body stack">
+      <div class="field">
+        <label for="e-nombre">Nombre completo</label>
+        <input id="e-nombre" type="text" value="Mateo Hernández Mendoza" autocomplete="off">
+      </div>
+      <div class="field mono">
+        <label for="e-matricula">Matrícula</label>
+        <input id="e-matricula" type="text" value="MV-2019-0447" autocomplete="off">
+      </div>
+      <div class="pair">
+        <div class="field">
+          <label for="e-nivel">Nivel</label>
+          <select id="e-nivel"><option>Preescolar</option><option selected>Primaria</option></select>
+        </div>
+        <div class="field">
+          <label for="e-grado">Grado y grupo</label>
+          <select id="e-grado"><option selected>2°A</option><option>2°B</option><option>3°A</option></select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="e-notas">Alergias o restricciones</label>
+        <textarea id="e-notas">Sin lácteos</textarea>
+      </div>
+      <button class="cta">Guardar cambios</button>
+
+      <hr>
+      <div class="eyebrow">Servicios de octubre</div>
+      <div class="brow"><span class="l">Lunch</span><span class="r">$1,200 · pagado</span></div>
+      <div class="brow"><span class="l">Comida por taller<small> · martes y jueves</small></span><span class="r">$600 · pagado</span></div>
+      <div class="locked">
+        <span><b>Octubre ya está pagado y no se puede modificar.</b> Los cambios de servicio o de días de taller aplican a partir de noviembre, y se hacen al inscribir el mes nuevo.</span>
+      </div>
+
+      <div class="danger">
+        <div class="t">Dar de baja a Mateo</div>
+        <p>Deja de aparecer en la lista de la cafetería a partir de noviembre. Octubre ya está pagado y, conforme a los términos del servicio, no se reembolsa.</p>
+        <button>Dar de baja</button>
+      </div>
+    </div>
+  </div>
+  <p class="caption">Vista del papá · teléfono</p>
+  <div class="note"><span><b>Esta pantalla es un seguro contra reclamos.</b> Las reglas que definió el cliente —sin prorrateo, sin devoluciones, sin reposición por ausencia— tienen que ser visibles justo donde el papá intenta cambiar algo. Si solo viven en los términos y condiciones, el reclamo llega igual y lo atiende una persona.</span></div>
+</section>
+
 <!-- ======================= 6 · PANEL ======================= -->
 <section class="screen" id="s6" hidden>
   <div class="screen-head">
@@ -646,11 +904,11 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
           <tbody>
             <tr><td><span class="tick"></span></td><td>Castillo Ordaz, Regina</td><td class="grp">K3</td><td>Lunch · Comida</td><td class="grp">—</td></tr>
             <tr><td><span class="tick"></span></td><td>Hernández Mendoza, Ana Sofía</td><td class="grp">K2</td><td>Comida</td><td class="grp">—</td></tr>
-            <tr><td><span class="tick"></span></td><td>Hernández Mendoza, Mateo</td><td class="grp">2°A</td><td>Lunch · Taller</td><td class="grp">Robótica</td></tr>
+            <tr><td><span class="tick"></span></td><td>Hernández Mendoza, Mateo</td><td class="grp">2°A</td><td>Lunch · Taller</td><td class="grp">Robótica · <b class="varies">sin lácteos</b></td></tr>
             <tr><td><span class="tick"></span></td><td>Márquez Delgado, Santiago</td><td class="grp">4°A</td><td>Lunch</td><td class="grp">—</td></tr>
             <tr><td><span class="tick"></span></td><td>Ortiz Lara, Camila Fernanda</td><td class="grp">1°B</td><td>Lunch</td><td class="grp">—</td></tr>
             <tr><td><span class="tick"></span></td><td>Peña Ruiz, Diego Alejandro</td><td class="grp">3°A</td><td>Lunch</td><td class="grp">—</td></tr>
-            <tr><td><span class="tick"></span></td><td>Ramírez Olvera, Ana Paula</td><td class="grp">2°A</td><td>Lunch</td><td class="grp">Sin lácteos</td></tr>
+            <tr><td><span class="tick"></span></td><td>Ramírez Olvera, Ana Paula</td><td class="grp">2°A</td><td>Lunch</td><td class="grp"><b class="varies">Alergia a la nuez</b></td></tr>
             <tr><td><span class="tick"></span></td><td>Solís Barrera, Ximena</td><td class="grp">5°B</td><td>Almuerzo</td><td class="grp">—</td></tr>
             <tr><td><span class="tick"></span></td><td>Torres Ibarra, Valentina</td><td class="grp">4°B</td><td>Almuerzo · Taller</td><td class="grp">Ballet</td></tr>
             <tr><td><span class="tick"></span></td><td>Vargas Solís, Emiliano</td><td class="grp">5°A</td><td>—</td><td class="grp"><b class="varies">No entregar · sin pago</b></td></tr>
@@ -731,12 +989,10 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 <script>
 (function(){
   var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
+  var ids = tabs.map(function(t){ return t.dataset.s; });
   function show(id){
-    tabs.forEach(function(t){
-      var on = t.dataset.s === id;
-      t.setAttribute("aria-selected", on ? "true" : "false");
-    });
-    ["s1","s2","s3","s4","s5","s6","s7","s8"].forEach(function(s){
+    tabs.forEach(function(t){ t.setAttribute("aria-selected", t.dataset.s === id ? "true" : "false"); });
+    ids.forEach(function(s){
       var el = document.getElementById(s);
       if (el) el.hidden = (s !== id);
     });
@@ -744,7 +1000,8 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   tabs.forEach(function(t){
     t.addEventListener("click", function(){
       show(t.dataset.s);
-      window.scrollTo({top:0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+      var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: calm ? "auto" : "smooth" });
     });
   });
 })();
