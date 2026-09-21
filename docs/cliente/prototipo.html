@@ -486,6 +486,14 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cbox.on::after{border-color:#0F1512}}
 .checkrow u{text-decoration:underline;text-underline-offset:2px}
 
+
+.bactions{display:flex;margin-top:11px;padding-top:9px;border-top:1px solid var(--line)}
+.bactions button{flex:1;padding:6px 4px;font-size:12.5px;font-weight:600;color:var(--brand)}
+.bactions button + button{border-left:1px solid var(--line)}
+.addkid{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;
+  border:1px dashed var(--line-2);border-radius:12px;background:var(--surface);
+  font-size:13.5px;font-weight:600;color:var(--ink-2)}
+.addkid b{font-size:17px;line-height:1;color:var(--muted);font-weight:400}
 </style>
 
 <div class="wrap">
@@ -509,7 +517,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 <div class="apps" role="tablist" aria-label="Aplicaciones">
   <button class="app on" role="tab" aria-selected="true" data-app="papa">
     <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.6"/><path d="M10.6 5.4h2.8"/></svg></span>
-    <span><span class="an">App de papás</span><span class="ac">14 pantallas · teléfono</span></span>
+    <span><span class="an">App de papás</span><span class="ac">12 pantallas · teléfono</span></span>
   </button>
   <button class="app" role="tab" aria-selected="false" data-app="ht">
     <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M9 20.5h6"/><path d="M12 16.5v4"/></svg></span>
@@ -530,7 +538,6 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
     <div class="navrow" role="tablist" aria-label="Destinos">
       <button class="tab" role="tab" aria-selected="true" data-s="s0">Inicio</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s1">Menú del mes</button>
-      <button class="tab" role="tab" aria-selected="false" data-s="s2">Mis hijos</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s11">Cuenta</button>
     </div>
   </div>
@@ -538,7 +545,6 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
     <span>Estados vacíos</span>
     <div class="navrow" role="tablist" aria-label="Estados vacíos">
       <button class="tab" role="tab" aria-selected="false" data-s="s12">Inicio</button>
-      <button class="tab" role="tab" aria-selected="false" data-s="s13">Mis hijos</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s14">Cuenta</button>
     </div>
   </div>
@@ -643,7 +649,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 <section class="screen" id="s0">
   <div class="screen-head">
     <h2>Lo primero que ve el papá al abrir</h2>
-    <p>El menú y la inscripción ya están en el sistema, así que cruzarlos es gratis: la app puede decirle a cada papá qué come su hijo hoy. Es la razón por la que abre la app entre semana y no una sola vez al mes.</p>
+    <p>Una sola pantalla para todo lo que el papá administra. Un papá tiene uno, dos o tres hijos — eso no es una colección que merezca pantalla aparte, así que el board es la lista: se ve el estado, se edita, se agregan y se llega a los servicios desde aquí.</p>
   </div>
   <div class="frame-phone">
     <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx</span></div>
@@ -692,6 +698,10 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
             <div class="brow"><span class="l">Lunch</span><span class="r">22 días · $1,200</span></div>
             <div class="brow"><span class="l">Comida por taller<small> · martes y jueves</small></span><span class="r">9 días · $600</span></div>
           </div>
+          <div class="bactions">
+            <button>Editar datos</button>
+            <button>Servicios</button>
+          </div>
         </div>
         <div class="bcard">
           <div class="hd">
@@ -702,7 +712,12 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
           <div class="rows">
             <div class="brow"><span class="l">Comida</span><span class="r">22 días · $1,250</span></div>
           </div>
+          <div class="bactions">
+            <button>Editar datos</button>
+            <button>Servicios</button>
+          </div>
         </div>
+        <button class="addkid"><b>+</b> Agregar otro hijo</button>
       </div>
 
       <div class="next">
@@ -714,12 +729,11 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   <div class="tabbar">
     <a href="#" class="on" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.6 12 3.4l9 7.2"/><path d="M5.4 9.6V20h13.2V9.6"/><path d="M9.7 20v-5.6h4.6V20"/></svg>Inicio</a>
     <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v4.8a2 2 0 0 0 4 0V3"/><path d="M9 9.6V21"/><path d="M17.2 3c1.6 2.4 1.6 6.4 0 8.8V21"/></svg>Menú</a>
-    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.2" cy="8" r="3.1"/><path d="M3.4 19.8c0-3.1 2.6-4.9 5.8-4.9s5.8 1.8 5.8 4.9"/><circle cx="17.6" cy="9.6" r="2.3"/><path d="M17.6 14.4c1.6 0 3 .9 3 2.6"/></svg>Hijos</a>
     <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.2" r="3.4"/><path d="M5 20.2c0-3.6 3.1-5.6 7-5.6s7 2 7 5.6"/></svg>Cuenta</a>
   </div>
   </div>
   <p class="caption">Vista del papá · teléfono</p>
-  <div class="note"><span><b>"Hoy comen" es Fase 2, y está marcado como tal.</b> Requiere que el menú se capture como datos; mientras sea una imagen, el sistema no sabe qué platillo toca hoy. En Fase 1 el Inicio arranca con el board de hijos y el aviso de corte. Vale la pena enseñarlo igual porque explica hacia dónde va el producto: el estado de pago se consulta una vez al mes, el menú del día todos los días, y una app que el papá abre seguido es donde el aviso del día 5 sí aterriza.</span></div>
+  <div class="note"><span><b>Aquí murió la pantalla de "Hijos".</b> Duplicaba este board sin agregar nada: la misma lista, los mismos datos, un toque más lejos. La barra bajó de cuatro destinos a tres, y agregar, editar y ver servicios viven donde el papá ya está mirando a sus hijos. <b>"Hoy comen" es Fase 2, y está marcado como tal.</b> Requiere que el menú se capture como datos; mientras sea una imagen, el sistema no sabe qué platillo toca hoy. En Fase 1 el Inicio arranca con el board de hijos y el aviso de corte. Vale la pena enseñarlo igual porque explica hacia dónde va el producto: el estado de pago se consulta una vez al mes, el menú del día todos los días, y una app que el papá abre seguido es donde el aviso del día 5 sí aterriza.</span></div>
 </section>
 
 <!-- ======================= 12 · INICIO VACÍO ======================= -->
@@ -766,18 +780,21 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
         </div>
       </div>
 
+      <div class="locked">
+        <span>Solo necesitas <b>su nombre y su matrícula</b>. Si tienes varios hijos puedes tenerlos a todos aquí, aunque vayan a escuelas distintas, con un solo pago al mes.</span>
+      </div>
+
       <button class="cta">Agregar a mi primer hijo</button>
       <button class="ghost">Ver el menú de octubre sin registrarme</button>
     </div>
   <div class="tabbar">
     <a href="#" class="on" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.6 12 3.4l9 7.2"/><path d="M5.4 9.6V20h13.2V9.6"/><path d="M9.7 20v-5.6h4.6V20"/></svg>Inicio</a>
     <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v4.8a2 2 0 0 0 4 0V3"/><path d="M9 9.6V21"/><path d="M17.2 3c1.6 2.4 1.6 6.4 0 8.8V21"/></svg>Menú</a>
-    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.2" cy="8" r="3.1"/><path d="M3.4 19.8c0-3.1 2.6-4.9 5.8-4.9s5.8 1.8 5.8 4.9"/><circle cx="17.6" cy="9.6" r="2.3"/><path d="M17.6 14.4c1.6 0 3 .9 3 2.6"/></svg>Hijos</a>
     <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.2" r="3.4"/><path d="M5 20.2c0-3.6 3.1-5.6 7-5.6s7 2 7 5.6"/></svg>Cuenta</a>
   </div>
   </div>
   <p class="caption">Vista del papá · teléfono · primera vez</p>
-  <div class="note"><span><b>Los tres pasos van numerados porque sí son una secuencia.</b> Y el botón secundario deja ver el menú sin registrarse: el menú es público, es lo único que el papá vino a ver, y pedirle datos antes de enseñárselo es la forma más rápida de perderlo. La fecha de corte aparece desde aquí, no después de que se registre.</span></div>
+  <div class="note"><span><b>Este estado vacío absorbió al de la pantalla de Hijos</b>, que desapareció: de ahí viene la línea de que solo se piden dos datos y de que los hijos pueden estar en escuelas distintas. <b>Los tres pasos van numerados porque sí son una secuencia.</b> Y el botón secundario deja ver el menú sin registrarse: el menú es público, es lo único que el papá vino a ver, y pedirle datos antes de enseñárselo es la forma más rápida de perderlo. La fecha de corte aparece desde aquí, no después de que se registre.</span></div>
 </section>
 
 <!-- ======================= 1 · MENÚ ======================= -->
@@ -990,93 +1007,11 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   <div class="tabbar">
     <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.6 12 3.4l9 7.2"/><path d="M5.4 9.6V20h13.2V9.6"/><path d="M9.7 20v-5.6h4.6V20"/></svg>Inicio</a>
     <a href="#" class="on" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v4.8a2 2 0 0 0 4 0V3"/><path d="M9 9.6V21"/><path d="M17.2 3c1.6 2.4 1.6 6.4 0 8.8V21"/></svg>Menú</a>
-    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.2" cy="8" r="3.1"/><path d="M3.4 19.8c0-3.1 2.6-4.9 5.8-4.9s5.8 1.8 5.8 4.9"/><circle cx="17.6" cy="9.6" r="2.3"/><path d="M17.6 14.4c1.6 0 3 .9 3 2.6"/></svg>Hijos</a>
     <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.2" r="3.4"/><path d="M5 20.2c0-3.6 3.1-5.6 7-5.6s7 2 7 5.6"/></svg>Cuenta</a>
   </div>
   </div>
   <p class="caption">Vista del papá · teléfono</p>
   <div class="note"><span><b>Siete menús al mes, no siete por escuela.</b> Tres de preescolar y cuatro de primaria, iguales para todos los colegios. Es carga de trabajo que no crece cuando Healthy Tummies suma escuelas — y conviene decirlo en la propuesta. <b>Lo que la imagen impide:</b> el sistema no puede leer un PDF, así que no sabe qué platillo toca hoy. Mientras el menú sea una imagen, el "hoy comen" del Inicio no existe — y ese era el motivo por el que el papá abría la app entre semana. Es una decisión de alcance, no de diseño.</span></div>
-</section>
-
-<!-- ======================= 2 · HIJOS ======================= -->
-<section class="screen" id="s2" hidden>
-  <div class="screen-head">
-    <h2>Un papá, varios hijos, varias escuelas</h2>
-    <p>El tutor da de alta a sus hijos una sola vez. El grado determina qué catálogo de servicios y qué precios le corresponden a cada uno — preescolar y primaria no cuestan lo mismo.</p>
-  </div>
-  <div class="frame-phone">
-    <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx/mis-hijos</span></div>
-    <div class="app-top">
-      <div><div class="t">Mis hijos</div><div class="s">Laura Mendoza Vega</div></div>
-    </div>
-    <div class="app-body stack">
-      <div class="kid">
-        <span class="avatar">MH</span>
-        <div class="grow"><div class="nm">Mateo Hernández Mendoza</div><div class="ds">Colegio Monteverde · Primaria 2°</div></div>
-      </div>
-      <div class="kid">
-        <span class="avatar">AH</span>
-        <div class="grow"><div class="nm">Ana Sofía Hernández Mendoza</div><div class="ds">Colegio Monteverde · Preescolar</div></div>
-      </div>
-      <button class="ghost">+ Agregar otro hijo</button>
-      <hr>
-      <div class="eyebrow">Octubre 2026</div>
-      <div class="line-item"><span class="l">Mateo<small>Sin servicios seleccionados</small></span><span class="r">—</span></div>
-      <div class="line-item"><span class="l">Ana Sofía<small>Sin servicios seleccionados</small></span><span class="r">—</span></div>
-      <button class="cta">Elegir servicios</button>
-    </div>
-  <div class="tabbar">
-    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.6 12 3.4l9 7.2"/><path d="M5.4 9.6V20h13.2V9.6"/><path d="M9.7 20v-5.6h4.6V20"/></svg>Inicio</a>
-    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v4.8a2 2 0 0 0 4 0V3"/><path d="M9 9.6V21"/><path d="M17.2 3c1.6 2.4 1.6 6.4 0 8.8V21"/></svg>Menú</a>
-    <a href="#" class="on" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.2" cy="8" r="3.1"/><path d="M3.4 19.8c0-3.1 2.6-4.9 5.8-4.9s5.8 1.8 5.8 4.9"/><circle cx="17.6" cy="9.6" r="2.3"/><path d="M17.6 14.4c1.6 0 3 .9 3 2.6"/></svg>Hijos</a>
-    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.2" r="3.4"/><path d="M5 20.2c0-3.6 3.1-5.6 7-5.6s7 2 7 5.6"/></svg>Cuenta</a>
-  </div>
-  </div>
-  <p class="caption">Vista del papá · teléfono</p>
-  <div class="note"><span><b>El dato que desaparece del proceso manual:</b> nombre completo, escuela, grado y grupo capturados por el papá, no transcritos por alguien desde un comprobante.</span></div>
-</section>
-
-<!-- ======================= 13 · MIS HIJOS VACÍO ======================= -->
-<section class="screen" id="s13" hidden>
-  <div class="screen-head">
-    <h2>Mis hijos, todavía sin nadie</h2>
-    <p>El papá ya entró a la app y tocó Hijos en la barra. Repetirle aquí los tres pasos que acaba de leer en el inicio sería tratarlo como si no hubiera puesto atención. Este estado vacío hace algo distinto: baja la fricción diciéndole lo poco que se le va a pedir.</p>
-  </div>
-  <div class="frame-phone">
-    <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx/hijos</span></div>
-    <div class="app-top">
-      <div><div class="t">Mis hijos</div><div class="s">Laura Mendoza Vega</div></div>
-    </div>
-    <div class="app-body stack">
-      <div class="empty">
-        <svg viewBox="0 0 80 80" aria-hidden="true">
-          <rect x="15" y="17" width="50" height="46" rx="9" stroke-dasharray="5 5"/>
-          <circle cx="40" cy="36" r="7.5"/>
-          <path d="M27 55c0-7.2 5.8-11 13-11s13 3.8 13 11"/>
-        </svg>
-        <h3>Aquí van tus hijos</h3>
-        <p>Agrega a cada uno para inscribirlo y ver lo que le toca comer.</p>
-      </div>
-
-      <div class="locked">
-        <span>Solo necesitas <b>su nombre y su matrícula</b>. Los verificamos con la lista de la escuela y listo.</span>
-      </div>
-
-      <button class="cta">Agregar hijo</button>
-
-      <div class="locked">
-        <span><b>¿Tienes más de un hijo?</b> Puedes tenerlos a todos aquí, aunque vayan a escuelas distintas. Cada uno con sus propios servicios y un solo pago al mes.</span>
-      </div>
-    </div>
-  <div class="tabbar">
-    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.6 12 3.4l9 7.2"/><path d="M5.4 9.6V20h13.2V9.6"/><path d="M9.7 20v-5.6h4.6V20"/></svg>Inicio</a>
-    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v4.8a2 2 0 0 0 4 0V3"/><path d="M9 9.6V21"/><path d="M17.2 3c1.6 2.4 1.6 6.4 0 8.8V21"/></svg>Menú</a>
-    <a href="#" class="on" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.2" cy="8" r="3.1"/><path d="M3.4 19.8c0-3.1 2.6-4.9 5.8-4.9s5.8 1.8 5.8 4.9"/><circle cx="17.6" cy="9.6" r="2.3"/><path d="M17.6 14.4c1.6 0 3 .9 3 2.6"/></svg>Hijos</a>
-    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.2" r="3.4"/><path d="M5 20.2c0-3.6 3.1-5.6 7-5.6s7 2 7 5.6"/></svg>Cuenta</a>
-  </div>
-  </div>
-  <p class="caption">Vista del papá · teléfono · sin hijos registrados</p>
-  <div class="note"><span><b>Un estado vacío no debe repetir al anterior.</b> El del inicio explica qué es esto, porque el papá acaba de llegar de un link. Este ya no explica: quita fricción diciendo que solo se piden dos datos, y responde la duda del papá con varios hijos — que puede tenerlos juntos aunque estén en escuelas distintas, pagando una sola vez al mes.</span></div>
 </section>
 
 <!-- ======================= 3 · SERVICIOS ======================= -->
@@ -1261,7 +1196,6 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   <div class="tabbar">
     <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.6 12 3.4l9 7.2"/><path d="M5.4 9.6V20h13.2V9.6"/><path d="M9.7 20v-5.6h4.6V20"/></svg>Inicio</a>
     <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v4.8a2 2 0 0 0 4 0V3"/><path d="M9 9.6V21"/><path d="M17.2 3c1.6 2.4 1.6 6.4 0 8.8V21"/></svg>Menú</a>
-    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.2" cy="8" r="3.1"/><path d="M3.4 19.8c0-3.1 2.6-4.9 5.8-4.9s5.8 1.8 5.8 4.9"/><circle cx="17.6" cy="9.6" r="2.3"/><path d="M17.6 14.4c1.6 0 3 .9 3 2.6"/></svg>Hijos</a>
     <a href="#" class="on" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.2" r="3.4"/><path d="M5 20.2c0-3.6 3.1-5.6 7-5.6s7 2 7 5.6"/></svg>Cuenta</a>
   </div>
   </div>
@@ -1324,7 +1258,6 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   <div class="tabbar">
     <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.6 12 3.4l9 7.2"/><path d="M5.4 9.6V20h13.2V9.6"/><path d="M9.7 20v-5.6h4.6V20"/></svg>Inicio</a>
     <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v4.8a2 2 0 0 0 4 0V3"/><path d="M9 9.6V21"/><path d="M17.2 3c1.6 2.4 1.6 6.4 0 8.8V21"/></svg>Menú</a>
-    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.2" cy="8" r="3.1"/><path d="M3.4 19.8c0-3.1 2.6-4.9 5.8-4.9s5.8 1.8 5.8 4.9"/><circle cx="17.6" cy="9.6" r="2.3"/><path d="M17.6 14.4c1.6 0 3 .9 3 2.6"/></svg>Hijos</a>
     <a href="#" class="on" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.2" r="3.4"/><path d="M5 20.2c0-3.6 3.1-5.6 7-5.6s7 2 7 5.6"/></svg>Cuenta</a>
   </div>
   </div>

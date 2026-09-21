@@ -215,6 +215,11 @@ tratos.
 - **La escuela no se pregunta en el onboarding.** La escuela es un atributo del hijo, no
   del tutor: un papá puede tener un hijo en un colegio y otro en otro, y el sistema debe
   soportarlo con una sola cuenta y un solo pago mensual. Se captura al agregar cada hijo
+- **Una sola pantalla para lo que el papá administra.** Un tutor tiene uno, dos o tres
+  hijos: no es una colección que justifique pantalla propia. El inicio muestra una
+  tarjeta por hijo con sus servicios y su estado de pago, y desde ahí se agrega, se
+  edita y se llega a los servicios. La barra inferior tiene tres destinos —inicio, menú
+  y cuenta—, no cuatro
 - Alta de sus hijos: nombre, **matrícula**, escuela, **grado** y
   alergias o restricciones alimentarias
 - **Grado significa preescolar o primaria, y nada más.** El año escolar y el grupo son
