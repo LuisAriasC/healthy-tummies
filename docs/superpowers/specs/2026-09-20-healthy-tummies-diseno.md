@@ -249,6 +249,13 @@ tratos.
 ### De cara a Healthy Tummies
 
 - Panel de administración: escuelas, precios, niños, inscripciones y estado de pago
+- **Alta y edición de escuelas**, con enlace propio generado a partir del nombre —el que
+  la escuela circula entre sus papás—, contacto de cafetería para el envío de listas, y
+  carga del padrón de alumnos
+- **Una escuela se desactiva, nunca se elimina.** Hay pagos y facturas colgando de ella
+  que deben conservarse por obligación fiscal. Al desactivarla deja de aparecer para
+  papás nuevos, pero **las inscripciones del mes en curso siguen activas y se sirven
+  hasta fin de mes**, porque ya están cobradas: sus listas y conteos se siguen generando
 - Carga del menú del mes **como imagen o PDF**, con su penalización asociada (porcentaje
   o monto fijo). El menú es un calendario mensual que Healthy Tummies ya produce hoy; la
   plataforma lo almacena y lo publica segmentado por grado y por servicio, sin

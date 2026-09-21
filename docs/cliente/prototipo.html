@@ -575,6 +575,18 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   stroke-linecap:round;stroke-linejoin:round;margin-bottom:13px}
 .emptybox h4{font-size:16px;font-weight:600}
 .emptybox p{font-size:13px;color:var(--muted);margin-top:6px;max-width:44ch;line-height:1.5}
+
+.formcol{max-width:530px;display:flex;flex-direction:column;gap:15px}
+.dropzone{display:flex;flex-direction:column;align-items:center;gap:5px;padding:19px 16px;text-align:center;
+  border:1px dashed var(--line-2);border-radius:10px;background:var(--surface-2)}
+.dropzone .t{font-size:13px;font-weight:600}
+.dropzone .d{font-size:11.5px;color:var(--muted);line-height:1.45;max-width:42ch}
+.linkbox{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line-2);
+  border-radius:9px;background:var(--surface-2);font-family:var(--mono);font-size:12px;
+  color:var(--ink-2);overflow:hidden}
+.linkbox .u{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.linkbox .cp{margin-left:auto;font-family:var(--body);font-size:12px;font-weight:600;
+  color:var(--brand);white-space:nowrap}
 </style>
 
 <div class="wrap">
@@ -602,7 +614,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   </button>
   <button class="app" role="tab" aria-selected="false" data-app="ht">
     <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M9 20.5h6"/><path d="M12 16.5v4"/></svg></span>
-    <span><span class="an">Sistema de Healthy Tummies</span><span class="ac">8 pantallas · escritorio</span></span>
+    <span><span class="an">Sistema de Healthy Tummies</span><span class="ac">11 pantallas · escritorio</span></span>
   </button>
 </div>
 
@@ -678,9 +690,17 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
     </div>
   </div>
   <div class="navgroup">
+    <span>Escuelas</span>
+    <div class="navrow" role="tablist" aria-label="Escuelas">
+      <button class="tab" role="tab" aria-selected="false" data-s="s27">Vacío</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s23">Con escuelas</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s28">Agregar</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s29">Editar</button>
+    </div>
+  </div>
+  <div class="navgroup">
     <span>Catálogo</span>
     <div class="navrow" role="tablist" aria-label="Catálogo">
-      <button class="tab" role="tab" aria-selected="false" data-s="s23">Escuelas</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s24">Servicios y precios</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s25">Menús</button>
     </div>
@@ -2196,6 +2216,220 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   </div>
   <p class="caption">Vista de Healthy Tummies · escritorio · sin inscripciones</p>
   <div class="note"><span><b>Un estado vacío en el panel vale más que en la app del papá.</b> Aquí responde la pregunta que el cliente va a hacer en la junta —"¿y cómo arrancamos?"— y la responde con una lista que ya trae dos pendientes reales del prototipo: el padrón que Nueva Castilla no ha entregado y el recargo de noviembre sin definir. No es una pantalla de relleno: es el guion del primer día.</span></div>
+</section>
+
+<!-- ======================= s27 ======================= -->
+<section class="screen" id="s27" hidden>
+  <div class="screen-head">
+    <h2>Escuelas, antes de la primera</h2>
+    <p>El día uno del sistema. Todo cuelga de aquí, así que en vez de una lista vacía conviene decirle a Healthy Tummies qué necesita tener a la mano antes de empezar.</p>
+  </div>
+  <div class="frame-web">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">panel.healthytummies.mx/escuelas</span></div>
+    <div class="admin">
+      <div class="side">
+        <span class="lbl">Operación</span>
+        <a href="#">Inscripciones</a>
+        <a href="#">Lista de cafetería</a>
+        <a href="#">Conteos de cocina</a>
+        <a href="#">Pagos</a>
+        <span class="lbl">Catálogo</span>
+        <a href="#" class="on">Escuelas</a>
+        <a href="#">Servicios y precios</a>
+        <a href="#">Menús</a>
+      </div>
+      <div class="main">
+        <div class="main-head">
+          <div><h3>Escuelas</h3><div class="sub">Ninguna dada de alta</div></div>
+        </div>
+        <div class="emptybox">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M8 54h48"/><path d="M14 54V26l18-12 18 12v28" stroke-dasharray="5 5"/>
+            <rect x="26" y="38" width="12" height="16" rx="2"/>
+            <path d="M22 30h6M36 30h6"/>
+          </svg>
+          <h4>Todavía no hay escuelas</h4>
+          <p>Todo lo demás cuelga de aquí: las inscripciones, las listas de cafetería y las órdenes de cocina se organizan por escuela. Es lo primero que hay que dar de alta.</p>
+        </div>
+        <div class="eyebrow">Ten a la mano</div>
+        <div class="steps">
+          <div class="step">
+            <span class="chk wait">1</span>
+            <span><span class="nm">El nombre y los niveles que atiende</span><span class="ds">Preescolar, primaria, o los dos. De eso depende qué servicios y qué precios le tocan a cada niño.</span></span>
+          </div>
+          <div class="step">
+            <span class="chk wait">2</span>
+            <span><span class="nm">El padrón de alumnos</span><span class="ds">Matrícula y nombre completo, en Excel o CSV. Sirve para verificar que un papá dé de alta a un niño que sí estudia ahí.</span></span>
+          </div>
+          <div class="step">
+            <span class="chk wait">3</span>
+            <span><span class="nm">A quién se le manda la lista de cafetería</span><span class="ds">El correo de la persona que entrega en la escuela. Le llega cada mañana a las 06:10.</span></span>
+          </div>
+        </div>
+        <div class="toolbar">
+          <span class="spacer"></span>
+          <button class="tbtn pri">Agregar la primera escuela</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="caption">Vista de Healthy Tummies · escritorio</p>
+  <div class="note"><span><b>El paso 2 es el que cuesta trabajo conseguir, y por eso va aquí y no escondido.</b> El padrón de alumnos no lo genera monclair ni la plataforma: se lo tiene que pedir Healthy Tummies a cada escuela. Ponerlo en la pantalla del primer día es la forma de que esa conversación empiece a tiempo y no cuando ya haya papás intentando inscribirse.</span></div>
+</section>
+
+<!-- ======================= s28 ======================= -->
+<section class="screen" id="s28" hidden>
+  <div class="screen-head">
+    <h2>Agregar una escuela</h2>
+    <p>Siete campos y un archivo. Lo que define una escuela en este sistema es corto: cómo se llama, qué niveles atiende, quién recibe sus listas, y qué alumnos tiene.</p>
+  </div>
+  <div class="frame-web">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">panel.healthytummies.mx/escuelas/nueva</span></div>
+    <div class="admin">
+      <div class="side">
+        <span class="lbl">Operación</span>
+        <a href="#">Inscripciones</a>
+        <a href="#">Lista de cafetería</a>
+        <a href="#">Conteos de cocina</a>
+        <a href="#">Pagos</a>
+        <span class="lbl">Catálogo</span>
+        <a href="#" class="on">Escuelas</a>
+        <a href="#">Servicios y precios</a>
+        <a href="#">Menús</a>
+      </div>
+      <div class="main">
+        <div class="main-head">
+          <div><h3>Agregar escuela</h3><div class="sub">Nueva Castilla · preescolar</div></div>
+        </div>
+        <div class="formcol">
+          <div class="field">
+            <label for="ne-nombre">Nombre de la escuela</label>
+            <input id="ne-nombre" type="text" value="Colegio Nueva Castilla" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="ne-link">Enlace para los papás</label>
+            <div class="linkbox"><span class="u">healthytummies.mx/nueva-castilla</span><span class="cp">Copiar</span></div>
+            <span class="help">Se genera solo a partir del nombre. Es el enlace que la escuela circula entre sus papás.</span>
+          </div>
+          <div class="field">
+            <label>Niveles que atiende</label>
+            <div class="checkrow" style="margin-top:2px"><span class="cbox on"></span><span>Preescolar</span></div>
+            <div class="checkrow"><span class="cbox"></span><span>Primaria</span></div>
+            <span class="help">Determina qué catálogo de servicios y qué precios ve cada papá.</span>
+          </div>
+          <div class="field">
+            <label>Modo de cobro</label>
+            <div class="checkrow" style="margin-top:2px"><span class="cbox on"></span><span><b>Directo</b> — el papá paga en la plataforma</span></div>
+            <div class="eyerow" style="margin-top:6px">
+              <span class="eyebrow">Cobro concentrado por la escuela</span>
+              <span class="phase">Fase 2</span>
+            </div>
+            <span class="help">Que la escuela cobre y entregue un consolidado no está disponible todavía. Hoy las tres escuelas operan en directo.</span>
+          </div>
+          <div class="pair">
+            <div class="field">
+              <label for="ne-cont">Contacto en la escuela</label>
+              <input id="ne-cont" type="text" placeholder="Nombre de quien entrega" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="ne-mail">Correo para las listas</label>
+              <input id="ne-mail" type="email" placeholder="cafeteria@escuela.mx" autocomplete="email">
+            </div>
+          </div>
+          <div class="field">
+            <label>Padrón de alumnos</label>
+            <div class="dropzone">
+              <span class="t">Arrastra el archivo o búscalo</span>
+              <span class="d">Excel o CSV con dos columnas: matrícula y nombre completo. Puedes cargarlo después, pero hasta entonces las altas de esos papás no se verifican.</span>
+            </div>
+          </div>
+          <div class="toolbar">
+            <button class="tbtn">Cancelar</button>
+            <span class="spacer"></span>
+            <button class="tbtn pri">Guardar escuela</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="caption">Vista de Healthy Tummies · escritorio</p>
+  <div class="note"><span><b>El enlace se genera solo a partir del nombre</b>, y es la pieza que conecta las dos aplicaciones: la escuela lo circula entre sus papás y de ahí sale el login que ya viste en la app. El padrón se puede dejar para después —la pantalla lo dice— pero con la advertencia de que hasta entonces las altas no se verifican contra nada.</span></div>
+</section>
+
+<!-- ======================= s29 ======================= -->
+<section class="screen" id="s29" hidden>
+  <div class="screen-head">
+    <h2>Editar y desactivar</h2>
+    <p>Los mismos campos, más el estado del padrón y la zona de riesgo. Desactivar una escuela no es borrarla, y la diferencia importa más de lo que parece.</p>
+  </div>
+  <div class="frame-web">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">panel.healthytummies.mx/escuelas/monteverde</span></div>
+    <div class="admin">
+      <div class="side">
+        <span class="lbl">Operación</span>
+        <a href="#">Inscripciones</a>
+        <a href="#">Lista de cafetería</a>
+        <a href="#">Conteos de cocina</a>
+        <a href="#">Pagos</a>
+        <span class="lbl">Catálogo</span>
+        <a href="#" class="on">Escuelas</a>
+        <a href="#">Servicios y precios</a>
+        <a href="#">Menús</a>
+      </div>
+      <div class="main">
+        <div class="main-head">
+          <div><h3>Editar escuela</h3><div class="sub">Colegio Monteverde · 362 inscripciones en octubre</div></div>
+        </div>
+        <div class="formcol">
+          <div class="field">
+            <label for="ee-nombre">Nombre de la escuela</label>
+            <input id="ee-nombre" type="text" value="Colegio Monteverde" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="ee-link">Enlace para los papás</label>
+            <div class="linkbox"><span class="u">healthytummies.mx/monteverde</span><span class="cp">Copiar</span></div>
+          </div>
+          <div class="field">
+            <label>Niveles que atiende</label>
+            <div class="checkrow" style="margin-top:2px"><span class="cbox on"></span><span>Preescolar</span></div>
+            <div class="checkrow"><span class="cbox on"></span><span>Primaria</span></div>
+          </div>
+          <div class="pair">
+            <div class="field">
+              <label for="ee-cont">Contacto en la escuela</label>
+              <input id="ee-cont" type="text" value="Norma Aguilar" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="ee-mail">Correo para las listas</label>
+              <input id="ee-mail" type="email" value="cafeteria@monteverde.mx" autocomplete="email">
+            </div>
+          </div>
+          <div class="field">
+            <label>Padrón de alumnos</label>
+            <div class="verify"><span><b>412 alumnos</b> · cargado el 12 de agosto de 2026 · padron-monteverde-2627.xlsx</span></div>
+            <div class="toolbar" style="margin-top:2px">
+              <button class="tbtn">Descargar el actual</button>
+              <button class="tbtn">Reemplazar padrón</button>
+            </div>
+            <span class="help">Conviene reemplazarlo al inicio de cada ciclo escolar, cuando cambian las matrículas.</span>
+          </div>
+          <div class="toolbar">
+            <button class="tbtn">Cancelar</button>
+            <span class="spacer"></span>
+            <button class="tbtn pri">Guardar cambios</button>
+          </div>
+          <div class="danger">
+            <div class="t">Desactivar Colegio Monteverde</div>
+            <p>Deja de aparecer para papás nuevos y su enlace deja de funcionar. <b>Las 362 inscripciones de octubre siguen activas y se sirven hasta fin de mes</b>, y sus listas y conteos se siguen generando.</p>
+            <p style="margin-top:7px">No se puede eliminar: hay pagos y facturas asociados que deben conservarse. Se puede reactivar cuando quieras.</p>
+            <button>Desactivar escuela</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="caption">Vista de Healthy Tummies · escritorio</p>
+  <div class="note"><span><b>Una escuela no se elimina, se desactiva.</b> Hay pagos y facturas colgando de ella que deben conservarse por obligación fiscal. Y la zona roja dice exactamente qué pasa con lo que ya está en curso: las inscripciones de octubre ya se cobraron, así que se siguen sirviendo hasta fin de mes. Sin esa frase, alguien desactiva una escuela a media de mes y deja a 362 niños sin comer.</span></div>
 </section>
 
 <!-- ======================= 6 · PANEL ======================= -->
