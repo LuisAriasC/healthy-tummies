@@ -587,6 +587,16 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 .linkbox .u{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .linkbox .cp{margin-left:auto;font-family:var(--body);font-size:12px;font-weight:600;
   color:var(--brand);white-space:nowrap}
+
+.rbox{width:19px;height:19px;border-radius:50%;border:1.5px solid var(--line-2);flex:none;
+  margin-top:1px;background:var(--surface);display:grid;place-items:center}
+.rbox.on{border-color:var(--brand);border-width:2px}
+.rbox.on::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--brand)}
+.miniStat{display:flex;gap:18px;flex-wrap:wrap;padding:12px 13px;border:1px solid var(--line);
+  border-radius:10px;background:var(--surface-2)}
+.miniStat div{min-width:0}
+.miniStat .k{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.miniStat .v{font-family:var(--mono);font-size:16px;font-weight:600;margin-top:3px}
 </style>
 
 <div class="wrap">
@@ -614,7 +624,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   </button>
   <button class="app" role="tab" aria-selected="false" data-app="ht">
     <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M9 20.5h6"/><path d="M12 16.5v4"/></svg></span>
-    <span><span class="an">Sistema de Healthy Tummies</span><span class="ac">11 pantallas · escritorio</span></span>
+    <span><span class="an">Sistema de Healthy Tummies</span><span class="ac">14 pantallas · escritorio</span></span>
   </button>
 </div>
 
@@ -699,10 +709,18 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
     </div>
   </div>
   <div class="navgroup">
-    <span>Catálogo</span>
-    <div class="navrow" role="tablist" aria-label="Catálogo">
-      <button class="tab" role="tab" aria-selected="false" data-s="s24">Servicios y precios</button>
-      <button class="tab" role="tab" aria-selected="false" data-s="s25">Menús</button>
+    <span>Servicios y precios</span>
+    <div class="navrow" role="tablist" aria-label="Servicios y precios">
+      <button class="tab" role="tab" aria-selected="false" data-s="s30">Vacío</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s24">Con servicios</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s31">Agregar</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s32">Editar</button>
+    </div>
+  </div>
+  <div class="navgroup">
+    <span>Menús</span>
+    <div class="navrow" role="tablist" aria-label="Menús">
+      <button class="tab" role="tab" aria-selected="false" data-s="s25">Del mes</button>
     </div>
   </div>
 </nav>
@@ -2055,28 +2073,29 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
       </div>
       <div class="main">
         <div class="main-head">
-          <div><h3>Servicios y precios</h3><div class="sub">Vigentes desde agosto 2026</div></div>
+          <div><h3>Servicios y precios</h3><div class="sub">7 servicios vigentes desde agosto 2026</div></div>
+          <button class="tbtn pri">Agregar servicio</button>
         </div>
         <div class="eyebrow">Preescolar</div>
         <div class="tablewrap">
           <table>
-            <thead><tr><th>Servicio</th><th>Frecuencia</th><th class="num">Precio mensual</th></tr></thead>
+            <thead><tr><th>Servicio</th><th>Frecuencia</th><th class="num">Precio mensual</th><th></th></tr></thead>
             <tbody>
-              <tr><td class="who">Lunch</td><td>Todos los días</td><td class="num">$1,250</td></tr>
-              <tr><td class="who">Comida</td><td>Todos los días</td><td class="num">$1,250</td></tr>
-              <tr><td class="who">Comida por taller</td><td>Dos días que elige el papá</td><td class="num">$550</td></tr>
+              <tr><td class="who">Lunch</td><td>Todos los días</td><td class="num">$1,250</td><td style="text-align:right"><span class="cp" style="font-size:12px;font-weight:600;color:var(--brand)">Editar</span></td></tr>
+              <tr><td class="who">Comida</td><td>Todos los días</td><td class="num">$1,250</td><td style="text-align:right"><span class="cp" style="font-size:12px;font-weight:600;color:var(--brand)">Editar</span></td></tr>
+              <tr><td class="who">Comida por taller</td><td>Dos días que elige el papá</td><td class="num">$550</td><td style="text-align:right"><span class="cp" style="font-size:12px;font-weight:600;color:var(--brand)">Editar</span></td></tr>
             </tbody>
           </table>
         </div>
         <div class="eyebrow">Primaria</div>
         <div class="tablewrap">
           <table>
-            <thead><tr><th>Servicio</th><th>Frecuencia</th><th class="num">Precio mensual</th></tr></thead>
+            <thead><tr><th>Servicio</th><th>Frecuencia</th><th class="num">Precio mensual</th><th></th></tr></thead>
             <tbody>
-              <tr><td class="who">Lunch</td><td>Todos los días</td><td class="num">$1,200</td></tr>
-              <tr><td class="who">Comida</td><td>Todos los días</td><td class="num">$1,350</td></tr>
-              <tr><td class="who">Almuerzo</td><td>Todos los días</td><td class="num">$1,350</td></tr>
-              <tr><td class="who">Comida por taller</td><td>Dos días que elige el papá</td><td class="num">$600</td></tr>
+              <tr><td class="who">Lunch</td><td>Todos los días</td><td class="num">$1,200</td><td style="text-align:right"><span class="cp" style="font-size:12px;font-weight:600;color:var(--brand)">Editar</span></td></tr>
+              <tr><td class="who">Comida</td><td>Todos los días</td><td class="num">$1,350</td><td style="text-align:right"><span class="cp" style="font-size:12px;font-weight:600;color:var(--brand)">Editar</span></td></tr>
+              <tr><td class="who">Almuerzo</td><td>Todos los días</td><td class="num">$1,350</td><td style="text-align:right"><span class="cp" style="font-size:12px;font-weight:600;color:var(--brand)">Editar</span></td></tr>
+              <tr><td class="who">Comida por taller</td><td>Dos días que elige el papá</td><td class="num">$600</td><td style="text-align:right"><span class="cp" style="font-size:12px;font-weight:600;color:var(--brand)">Editar</span></td></tr>
             </tbody>
           </table>
         </div>
@@ -2430,6 +2449,202 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   </div>
   <p class="caption">Vista de Healthy Tummies · escritorio</p>
   <div class="note"><span><b>Una escuela no se elimina, se desactiva.</b> Hay pagos y facturas colgando de ella que deben conservarse por obligación fiscal. Y la zona roja dice exactamente qué pasa con lo que ya está en curso: las inscripciones de octubre ya se cobraron, así que se siguen sirviendo hasta fin de mes. Sin esa frase, alguien desactiva una escuela a media de mes y deja a 362 niños sin comer.</span></div>
+</section>
+
+<!-- ======================= s30 ======================= -->
+<section class="screen" id="s30" hidden>
+  <div class="screen-head">
+    <h2>Servicios, antes del primero</h2>
+    <p>Sin servicios no hay nada que vender ni nada que cocinar. El estado vacío aprovecha para explicar la decisión menos obvia del catálogo, que es la frecuencia.</p>
+  </div>
+  <div class="frame-web">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">panel.healthytummies.mx/precios</span></div>
+    <div class="admin">
+      <div class="side">
+        <span class="lbl">Operación</span>
+        <a href="#">Inscripciones</a>
+        <a href="#">Lista de cafetería</a>
+        <a href="#">Conteos de cocina</a>
+        <a href="#">Pagos</a>
+        <span class="lbl">Catálogo</span>
+        <a href="#">Escuelas</a>
+        <a href="#" class="on">Servicios y precios</a>
+        <a href="#">Menús</a>
+      </div>
+      <div class="main">
+        <div class="main-head">
+          <div><h3>Servicios y precios</h3><div class="sub">Ninguno creado</div></div>
+        </div>
+        <div class="emptybox">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="34" r="17" stroke-dasharray="5 5"/>
+            <path d="M20 22v-4a3 3 0 0 1 3-3h18a3 3 0 0 1 3 3v4"/>
+            <path d="M32 27v14M26 34h12"/>
+          </svg>
+          <h4>Todavía no hay servicios</h4>
+          <p>Un servicio es lo que el papá contrata para su hijo. Hasta que exista al menos uno, no hay nada que un papá pueda comprar ni nada que la cocina pueda producir.</p>
+        </div>
+        <div class="eyebrow">Lo que define un servicio</div>
+        <div class="steps">
+          <div class="step">
+            <span class="chk wait">1</span>
+            <span><span class="nm">Un grado</span><span class="ds">Preescolar o primaria. El mismo servicio puede existir en los dos con precios distintos — el Lunch de primaria cuesta menos que el de preescolar.</span></span>
+          </div>
+          <div class="step">
+            <span class="chk wait">2</span>
+            <span><span class="nm">Un precio mensual</span><span class="ds">Fijo, sin importar cuántos días tenga el mes. No se prorratea.</span></span>
+          </div>
+          <div class="step">
+            <span class="chk wait">3</span>
+            <span><span class="nm">Una frecuencia</span><span class="ds">Todos los días, o dos días a la semana que elige el papá. Esta es la decisión que más pesa: los servicios de dos días hacen que la cocina produzca cantidades distintas cada día.</span></span>
+          </div>
+        </div>
+        <div class="toolbar">
+          <span class="spacer"></span>
+          <button class="tbtn pri">Crear el primer servicio</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="caption">Vista de Healthy Tummies · escritorio</p>
+  <div class="note"><span><b>El punto 3 es el que más consecuencias tiene y el que nadie anticipa.</b> Un servicio de dos días a la semana, con los días a elección del papá, convierte el conteo de cocina en un cálculo por día en lugar de un número por mes. Explicarlo aquí, al crear el primer servicio, es más barato que descubrirlo cuando la cocina pregunte por qué el martes pidieron 484 y el viernes 461.</span></div>
+</section>
+
+<!-- ======================= s31 ======================= -->
+<section class="screen" id="s31" hidden>
+  <div class="screen-head">
+    <h2>Crear un servicio</h2>
+    <p>Cuatro campos definen un servicio: nombre, grado, precio y frecuencia. El último es el que cambia cómo se comporta todo lo demás.</p>
+  </div>
+  <div class="frame-web">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">panel.healthytummies.mx/precios/nuevo</span></div>
+    <div class="admin">
+      <div class="side">
+        <span class="lbl">Operación</span>
+        <a href="#">Inscripciones</a>
+        <a href="#">Lista de cafetería</a>
+        <a href="#">Conteos de cocina</a>
+        <a href="#">Pagos</a>
+        <span class="lbl">Catálogo</span>
+        <a href="#">Escuelas</a>
+        <a href="#" class="on">Servicios y precios</a>
+        <a href="#">Menús</a>
+      </div>
+      <div class="main">
+        <div class="main-head">
+          <div><h3>Nuevo servicio</h3><div class="sub">Comida por taller · primaria</div></div>
+        </div>
+        <div class="formcol">
+          <div class="field">
+            <label for="ns-nombre">Nombre del servicio</label>
+            <input id="ns-nombre" type="text" value="Comida por taller" autocomplete="off">
+            <span class="help">Es como lo va a ver el papá al elegir.</span>
+          </div>
+          <div class="field">
+            <label>Grado</label>
+            <div class="checkrow" style="margin-top:2px"><span class="rbox"></span><span>Preescolar</span></div>
+            <div class="checkrow"><span class="rbox on"></span><span>Primaria</span></div>
+          </div>
+          <div class="field">
+            <label for="ns-precio">Precio mensual</label>
+            <input id="ns-precio" type="text" value="$600.00" class="mono">
+            <span class="help">Fijo, sin prorrateo. El papá lo paga completo aunque se inscriba el día 20.</span>
+          </div>
+          <div class="field">
+            <label>Frecuencia</label>
+            <div class="checkrow" style="margin-top:2px"><span class="rbox"></span><span>Todos los días de clase</span></div>
+            <div class="checkrow"><span class="rbox on"></span><span>Dos días a la semana, <b>los que elija el papá</b></span></div>
+          </div>
+          <div class="verify"><span><b>Este servicio varía por día.</b> Cada papá elige sus dos días, así que la orden de cocina va a pedir cantidades distintas de lunes a viernes. Se calcula solo.</span></div>
+          <div class="field">
+            <label for="ns-desc">Descripción para el papá</label>
+            <input id="ns-desc" type="text" value="Dos días a la semana" autocomplete="off">
+          </div>
+          <div class="locked">
+            <span><b>Un servicio nuevo se ofrece a partir del mes siguiente.</b> Octubre ya está publicado y cobrado; este aparecerá cuando publiques el menú de noviembre.</span>
+          </div>
+          <div class="toolbar">
+            <button class="tbtn">Cancelar</button>
+            <span class="spacer"></span>
+            <button class="tbtn pri">Crear servicio</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="caption">Vista de Healthy Tummies · escritorio</p>
+  <div class="note"><span><b>El aviso verde aparece al elegir la frecuencia de dos días</b>, no escondido en documentación: dice que la cocina va a pedir cantidades distintas cada día y que el sistema lo calcula solo. Y abajo, la regla que evita el error clásico: un servicio nuevo no se puede vender en un mes que ya está publicado y cobrado.</span></div>
+</section>
+
+<!-- ======================= s32 ======================= -->
+<section class="screen" id="s32" hidden>
+  <div class="screen-head">
+    <h2>Editar y desactivar un servicio</h2>
+    <p>Con el servicio ya vendido, editarlo deja de ser inocuo. Arriba, a quién afecta; abajo, qué pasa si se desactiva.</p>
+  </div>
+  <div class="frame-web">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">panel.healthytummies.mx/precios/taller-primaria</span></div>
+    <div class="admin">
+      <div class="side">
+        <span class="lbl">Operación</span>
+        <a href="#">Inscripciones</a>
+        <a href="#">Lista de cafetería</a>
+        <a href="#">Conteos de cocina</a>
+        <a href="#">Pagos</a>
+        <span class="lbl">Catálogo</span>
+        <a href="#">Escuelas</a>
+        <a href="#" class="on">Servicios y precios</a>
+        <a href="#">Menús</a>
+      </div>
+      <div class="main">
+        <div class="main-head">
+          <div><h3>Editar servicio</h3><div class="sub">Comida por taller · primaria · $600</div></div>
+        </div>
+        <div class="formcol">
+          <div class="miniStat">
+            <div><div class="k">Contratado este mes</div><div class="v">74 niños</div></div>
+            <div><div class="k">En 2 escuelas</div><div class="v">Monteverde · Los Fresnos</div></div>
+            <div><div class="k">Ingreso del mes</div><div class="v">$44,400</div></div>
+          </div>
+          <div class="field">
+            <label for="es-nombre">Nombre del servicio</label>
+            <input id="es-nombre" type="text" value="Comida por taller" autocomplete="off">
+          </div>
+          <div class="field">
+            <label>Grado</label>
+            <div class="checkrow" style="margin-top:2px"><span class="rbox"></span><span>Preescolar</span></div>
+            <div class="checkrow"><span class="rbox on"></span><span>Primaria</span></div>
+          </div>
+          <div class="field">
+            <label for="es-precio">Precio mensual</label>
+            <input id="es-precio" type="text" value="$600.00" class="mono">
+          </div>
+          <div class="sync" style="background:var(--warn-soft);border-color:var(--warn)">
+            <span class="dot" style="background:var(--warn)"></span>
+            <span><b>Cambiar el precio no toca octubre.</b> Los 74 niños que ya pagaron conservan los $600 con los que se inscribieron; el precio nuevo aplica desde noviembre.</span>
+          </div>
+          <div class="field">
+            <label>Frecuencia</label>
+            <div class="checkrow" style="margin-top:2px"><span class="rbox"></span><span>Todos los días de clase</span></div>
+            <div class="checkrow"><span class="rbox on"></span><span>Dos días a la semana, los que elija el papá</span></div>
+          </div>
+          <div class="toolbar">
+            <button class="tbtn">Cancelar</button>
+            <span class="spacer"></span>
+            <button class="tbtn pri">Guardar cambios</button>
+          </div>
+          <div class="danger">
+            <div class="t">Desactivar este servicio</div>
+            <p>Deja de aparecer al inscribir el mes siguiente. <b>Los 74 niños que ya lo pagaron en octubre lo siguen recibiendo hasta fin de mes</b>, y la cocina lo sigue produciendo.</p>
+            <p style="margin-top:7px">No se puede eliminar: hay inscripciones y pagos históricos que lo referencian.</p>
+            <button>Desactivar servicio</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="caption">Vista de Healthy Tummies · escritorio</p>
+  <div class="note"><span><b>Las tres cifras de arriba son las que hacen que alguien lo piense dos veces:</b> 74 niños, dos escuelas, $44,400 al mes. Un catálogo que solo muestra campos invita a cambiarlos; uno que muestra a quién afecta, no. Y el precio nuevo nunca recalcula el mes en curso, porque quien ya pagó conserva el suyo.</span></div>
 </section>
 
 <!-- ======================= 6 · PANEL ======================= -->
