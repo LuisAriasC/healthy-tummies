@@ -1970,12 +1970,12 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
       </div>
       <div class="main">
         <div class="main-head">
-          <div><h3>Escuelas</h3><div class="sub">3 activas · 539 inscripciones en octubre</div></div>
+          <div><h3>Escuelas</h3><div class="sub">3 activas · 554 inscripciones en octubre</div></div>
         </div>
         <div class="catrow">
           <span class="grow"><span class="nm">Colegio Monteverde</span><span class="ds">Preescolar y primaria · cobro directo</span>
             <span class="pill ok" style="margin-top:7px;display:inline-block">Padrón: 412 alumnos, cargado el 12 de agosto</span></span>
-          <span class="num">347<small>inscripciones</small></span>
+          <span class="num">362<small>inscripciones</small></span>
         </div>
         <div class="catrow">
           <span class="grow"><span class="nm">Instituto Bilingüe Los Fresnos</span><span class="ds">Primaria · cobro directo</span>
@@ -2143,7 +2143,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
         </div>
         <div class="sync"><span class="dot"></span><span><b>Conciliado hace 4 minutos.</b> 312 pagos SPEI identificados automáticamente este mes. Ningún comprobante revisado a mano.</span></div>
         <div class="stats">
-          <div class="stat"><div class="k">Inscripciones</div><div class="v">347</div><div class="d">en 7 servicios</div></div>
+          <div class="stat"><div class="k">Inscripciones</div><div class="v">362</div><div class="d">en 7 servicios</div></div>
           <div class="stat"><div class="k">Cobrado</div><div class="v">$389,400</div><div class="d">de $402,150 emitidos</div></div>
           <div class="stat flag"><div class="k">Pendientes</div><div class="v">9</div><div class="d">$12,750 sin confirmar</div></div>
           <div class="stat"><div class="k">Recargos</div><div class="v">$4,110</div><div class="d">14 altas después del día 5</div></div>
@@ -2298,7 +2298,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 <section class="screen" id="s8" hidden>
   <div class="screen-head">
     <h2>Los conteos que recibe la cocina central</h2>
-    <p>La cocina nunca ve nombres — solo cuántas órdenes produce, por escuela y por servicio. Lo que cambia respecto a hoy es la columna por día: los servicios diarios son planos toda la semana, los talleres no.</p>
+    <p>La cocina central cuece una vez para todas las escuelas, así que su hoja no va por escuela como la de cafetería: va por día, con las tres escuelas juntas. Nunca ve nombres — solo cuántas órdenes produce de cada servicio.</p>
   </div>
   <div class="frame-web">
     <div class="chrome"><i></i><i></i><i></i><span class="url">panel.healthytummies.mx/cocina</span></div>
@@ -2316,56 +2316,68 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
       </div>
       <div class="main">
         <div class="main-head">
-          <div><h3>Conteos de cocina</h3><div class="sub">Orden de producción semanal, emitida tras el corte</div></div>
+          <div><h3>Conteos de cocina</h3><div class="sub">Orden de producción del día, emitida la noche anterior</div></div>
         </div>
         <div class="toolbar">
-          <button class="chip on">Semana 5 al 9 de octubre</button>
-          <button class="chip">Semana 12 al 16</button>
+          <button class="chip">Lun 5</button>
+          <button class="chip on">Mar 6</button>
+          <button class="chip">Mié 7</button>
+          <button class="chip">Jue 8</button>
+          <button class="chip">Vie 9</button>
           <span class="spacer"></span>
           <button class="tbtn">Descargar hoja</button>
           <button class="tbtn pri">Enviar a cocina</button>
         </div>
         <div class="sheetwrap">
-        <div class="sheet">
-          <div class="sheet-head">
-            <div>
-              <div class="org">Healthy Tummies · Cocina central</div>
-              <h4>Orden de producción — Semana 5 al 9 de octubre</h4>
+          <div class="sheet">
+            <div class="sheet-head">
+              <div>
+                <div class="org">Healthy Tummies · Cocina central</div>
+                <h4>Orden de producción del día</h4>
+              </div>
+              <div class="meta">
+                MARTES 6 DE OCTUBRE 2026<br>
+                EMITIDA 05 OCT · 19:00 H<br>
+                3 ESCUELAS · DEFINITIVA
+              </div>
             </div>
-            <div class="meta">
-              COLEGIO MONTEVERDE<br>
-              EMITIDA 02 OCT 2026 · 19:00 H<br>
-              CORTE APLICADO · DEFINITIVA
+            <div class="sheet-body">
+              <div class="tablewrap">
+                <table>
+                  <thead><tr><th style="width:26px"></th><th>Nivel</th><th>Servicio</th><th class="num">Órdenes</th></tr></thead>
+                  <tbody>
+                  <tr><td colspan="4" style="background:var(--paper-band);font-weight:700;border-top:1px solid var(--paper-ink)">Colegio Monteverde</td></tr>
+                  <tr><td class="grp"></td><td>Preescolar</td><td>Lunch</td><td class="num">64</td></tr>
+                  <tr><td class="grp"></td><td>Preescolar</td><td>Comida</td><td class="num">41</td></tr>
+                  <tr><td class="grp"></td><td>Preescolar</td><td>Comida por taller <span class="varies">◆</span></td><td class="num">19</td></tr>
+                  <tr><td class="grp"></td><td>Primaria</td><td>Lunch</td><td class="num">88</td></tr>
+                  <tr><td class="grp"></td><td>Primaria</td><td>Comida</td><td class="num">52</td></tr>
+                  <tr><td class="grp"></td><td>Primaria</td><td>Almuerzo</td><td class="num">33</td></tr>
+                  <tr><td class="grp"></td><td>Primaria</td><td>Comida por taller <span class="varies">◆</span></td><td class="num">15</td></tr>
+                  <tr><td colspan="3" style="text-align:right;font-weight:600">Subtotal Monteverde</td><td class="num" style="font-weight:700">312</td></tr>
+                  <tr><td colspan="4" style="background:var(--paper-band);font-weight:700;border-top:1px solid var(--paper-ink)">Instituto Bilingüe Los Fresnos</td></tr>
+                  <tr><td class="grp"></td><td>Primaria</td><td>Lunch</td><td class="num">48</td></tr>
+                  <tr><td class="grp"></td><td>Primaria</td><td>Comida</td><td class="num">31</td></tr>
+                  <tr><td class="grp"></td><td>Primaria</td><td>Almuerzo</td><td class="num">22</td></tr>
+                  <tr><td class="grp"></td><td>Primaria</td><td>Comida por taller <span class="varies">◆</span></td><td class="num">13</td></tr>
+                  <tr><td colspan="3" style="text-align:right;font-weight:600">Subtotal Fresnos</td><td class="num" style="font-weight:700">114</td></tr>
+                  <tr><td colspan="4" style="background:var(--paper-band);font-weight:700;border-top:1px solid var(--paper-ink)">Colegio Nueva Castilla</td></tr>
+                  <tr><td class="grp"></td><td>Preescolar</td><td>Lunch</td><td class="num">29</td></tr>
+                  <tr><td class="grp"></td><td>Preescolar</td><td>Comida</td><td class="num">22</td></tr>
+                  <tr><td class="grp"></td><td>Preescolar</td><td>Comida por taller <span class="varies">◆</span></td><td class="num">7</td></tr>
+                  <tr><td colspan="3" style="text-align:right;font-weight:600">Subtotal Castilla</td><td class="num" style="font-weight:700">58</td></tr>
+                  <tr class="tot"><td colspan="3">Total de órdenes del día</td><td class="num">484</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="sheet-foot">
+              <div class="sign"><div class="rule"></div>AUTORIZÓ CHEF · NOMBRE Y FIRMA</div>
+              <div class="sign" style="text-align:right">
+                ESTA SEMANA · lun 478 · mar 484 · mié 486 · jue 489 · vie 461<br>PÁGINA 1 DE 1
+              </div>
             </div>
           </div>
-          <div class="sheet-body">
-            <div class="tablewrap">
-              <table>
-                <thead><tr>
-                  <th>Nivel</th><th>Servicio</th>
-                  <th class="num">Lun</th><th class="num">Mar</th><th class="num">Mié</th><th class="num">Jue</th><th class="num">Vie</th>
-                  <th class="num">Semana</th>
-                </tr></thead>
-                <tbody>
-                  <tr><td>Preescolar</td><td>Lunch</td><td class="num">64</td><td class="num">64</td><td class="num">64</td><td class="num">64</td><td class="num">64</td><td class="num">320</td></tr>
-                  <tr><td>Preescolar</td><td>Comida</td><td class="num">41</td><td class="num">41</td><td class="num">41</td><td class="num">41</td><td class="num">41</td><td class="num">205</td></tr>
-                  <tr><td>Preescolar</td><td>Comida por taller <span class="varies">◆</span></td><td class="num">12</td><td class="num">19</td><td class="num">14</td><td class="num">21</td><td class="num">8</td><td class="num">74</td></tr>
-                  <tr><td>Primaria</td><td>Lunch</td><td class="num">88</td><td class="num">88</td><td class="num">88</td><td class="num">88</td><td class="num">88</td><td class="num">440</td></tr>
-                  <tr><td>Primaria</td><td>Comida</td><td class="num">52</td><td class="num">52</td><td class="num">52</td><td class="num">52</td><td class="num">52</td><td class="num">260</td></tr>
-                  <tr><td>Primaria</td><td>Almuerzo</td><td class="num">33</td><td class="num">33</td><td class="num">33</td><td class="num">33</td><td class="num">33</td><td class="num">165</td></tr>
-                  <tr><td>Primaria</td><td>Comida por taller <span class="varies">◆</span></td><td class="num">22</td><td class="num">15</td><td class="num">27</td><td class="num">18</td><td class="num">12</td><td class="num">94</td></tr>
-                  <tr class="tot"><td colspan="2">Total de órdenes</td><td class="num">312</td><td class="num">312</td><td class="num">319</td><td class="num">317</td><td class="num">298</td><td class="num">1,558</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="sheet-foot">
-            <div class="sign"><div class="rule"></div>AUTORIZÓ CHEF · NOMBRE Y FIRMA</div>
-            <div class="sign" style="text-align:right">
-              84 NIÑOS EN TALLER × 2 DÍAS = 168 ENTREGAS<br>PÁGINA 1 DE 3
-            </div>
-          </div>
-        </div>
         </div>
       </div>
     </div>
@@ -2375,7 +2387,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
     <span><i style="background:var(--muted)"></i>Servicio diario — mismo número los cinco días</span>
     <span><i style="background:var(--accent)"></i>◆ Servicio por taller — varía según los días que eligió cada papá</span>
   </div>
-  <div class="note"><span><b>Lo que esta hoja demuestra:</b> 84 niños en taller producen 168 entregas repartidas de forma desigual entre lunes y viernes. Calcular eso a mano cada semana, para cada escuela, es exactamente el trabajo que la plataforma elimina.</span></div>
+  <div class="note"><span><b>Los renglones con rombo son los de taller, y son los que mueven el número.</b> Los servicios diarios son planos; los talleres no, porque cada papá eligió sus dos días. Por eso el total del día cambia toda la semana —lun 478 · mar 484 · mié 486 · jue 489 · vie 461— y por eso calcular esto a mano, cada día y para tres escuelas, es justo el trabajo que la plataforma elimina.</span></div>
 </section>
 
 <footer class="proto">

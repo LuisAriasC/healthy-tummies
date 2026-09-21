@@ -258,8 +258,11 @@ tratos.
   primaria—, no siete por escuela. La carga de trabajo mensual de Healthy Tummies no
   crece al sumar colegios, y conviene señalarlo en la propuesta
 - Generación automática de la **lista de cafetería**, por escuela y día, con nombres
-- Generación automática de los **conteos de cocina**, por escuela, servicio y día —
-  respetando los días elegidos individualmente en el servicio de taller
+- Generación automática de la **orden de producción diaria de la cocina central**, con
+  **todas las escuelas juntas** en una sola hoja, desglosada por escuela, nivel y
+  servicio, y respetando los días elegidos individualmente en el servicio de taller. La
+  cocina cuece una vez para todos, así que su unidad es el día y no la escuela —al revés
+  que la lista de cafetería, que es por escuela y por día
 - Entrega de ambos por correo o descarga, en PDF y hoja de cálculo
 - Conciliación automática de los pagos SPEI, sin revisar comprobantes a mano
 
@@ -306,7 +309,7 @@ INSCRIPCIÓN  =  niño × servicio × mes        ← la pieza central
       │
       ├──→ Cobro            (monto + comisión + penalización si entró tarde)
       ├──→ Lista de cafetería   (por escuela, por día, con nombres)
-      └──→ Conteos de cocina    (por escuela, por servicio, por día de la semana)
+      └──→ Orden de cocina      (por día · todas las escuelas · por servicio)
 ```
 
 Si esa pieza está bien modelada, las tres salidas son consultas.
