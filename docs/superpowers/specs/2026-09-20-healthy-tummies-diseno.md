@@ -214,9 +214,7 @@ tratos.
   — se piden antes del primer pago, donde ya hay motivación
 - **La escuela no se pregunta en el onboarding.** La escuela es un atributo del hijo, no
   del tutor: un papá puede tener un hijo en un colegio y otro en otro, y el sistema debe
-  soportarlo con una sola cuenta y un solo pago mensual. Se captura al agregar cada hijo.
-  Como consecuencia, la pantalla de menú lleva **selector de escuela**, porque ese papá
-  necesita ver los dos menús
+  soportarlo con una sola cuenta y un solo pago mensual. Se captura al agregar cada hijo
 - Alta de sus hijos: nombre, **matrícula**, escuela, **grado** y
   alergias o restricciones alimentarias
 - **Grado significa preescolar o primaria, y nada más.** El año escolar y el grupo son
@@ -243,6 +241,10 @@ tratos.
   o monto fijo). El menú es un calendario mensual que Healthy Tummies ya produce hoy; la
   plataforma lo almacena y lo publica segmentado por grado y por servicio, sin
   interpretarlo
+- **El menú es el mismo para todas las escuelas.** No se segmenta por colegio, sino por
+  grado y servicio: son **7 menús al mes en total** —tres de preescolar, cuatro de
+  primaria—, no siete por escuela. La carga de trabajo mensual de Healthy Tummies no
+  crece al sumar colegios, y conviene señalarlo en la propuesta
 - Generación automática de la **lista de cafetería**, por escuela y día, con nombres
 - Generación automática de los **conteos de cocina**, por escuela, servicio y día —
   respetando los días elegidos individualmente en el servicio de taller
@@ -281,7 +283,7 @@ Escuela ──┬── nivel(es): preescolar / primaria
 
 Catálogo de servicios ── tipo, nivel, precio
 
-Menú del mes ──┬── nivel / escuela
+Menú del mes ──┬── grado y servicio · EL MISMO PARA TODAS LAS ESCUELAS
                ├── fecha de corte: día 5
                └── penalización: porcentaje | monto fijo
 
