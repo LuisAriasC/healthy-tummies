@@ -1,0 +1,751 @@
+<title>Healthy Tummies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Karla:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#F5F8F2; --surface:#FFFFFF; --surface-2:#EFF3EA;
+  --ink:#16211B; --ink-2:#3D4B43; --muted:#6D7A71; --line:#DDE4D8; --line-2:#C9D3C2;
+  --brand:#1F4435; --brand-soft:#E4EDE4;
+  --accent:#D96A2B; --accent-soft:#FBEADF;
+  --ok:#3A7D53; --ok-soft:#E2F0E4;
+  --warn:#9A6A08; --warn-soft:#F8EED6;
+  --alert:#B4432E; --alert-soft:#F8E4DF;
+  --paper:#FFFFFF; --paper-ink:#1B1B1A; --paper-line:#D8D8D2; --paper-band:#F0F0EA;
+  --shadow:0 1px 2px rgba(22,33,27,.06), 0 8px 24px -12px rgba(22,33,27,.18);
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Karla","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0F1512; --surface:#18211D; --surface-2:#1F2A24;
+    --ink:#E9EEE7; --ink-2:#BCC7BD; --muted:#93A198; --line:#2A3730; --line-2:#3A4941;
+    --brand:#8CC3A5; --brand-soft:#1D2C25;
+    --accent:#F0864A; --accent-soft:#33211A;
+    --ok:#6FB884; --ok-soft:#18271C;
+    --warn:#D6A63C; --warn-soft:#2A2314;
+    --alert:#E0755C; --alert-soft:#2C1A17;
+    --paper:#F7F7F3; --paper-ink:#1B1B1A; --paper-line:#D8D8D2; --paper-band:#EAEAE3;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0F1512; --surface:#18211D; --surface-2:#1F2A24;
+  --ink:#E9EEE7; --ink-2:#BCC7BD; --muted:#93A198; --line:#2A3730; --line-2:#3A4941;
+  --brand:#8CC3A5; --brand-soft:#1D2C25;
+  --accent:#F0864A; --accent-soft:#33211A;
+  --ok:#6FB884; --ok-soft:#18271C;
+  --warn:#D6A63C; --warn-soft:#2A2314;
+  --alert:#E0755C; --alert-soft:#2C1A17;
+  --paper:#F7F7F3; --paper-ink:#1B1B1A; --paper-line:#D8D8D2; --paper-band:#EAEAE3;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--body);line-height:1.5;
+  padding-inline:20px;padding-block:0;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.015em}
+p{margin:0}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.wrap{max-width:1120px;margin-inline:auto}
+
+/* ---------- barra superior del prototipo ---------- */
+.proto-bar{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;
+  padding-block:18px 16px;border-bottom:1px solid var(--line)}
+.mark{display:flex;align-items:center;gap:11px}
+.mark-glyph{width:34px;height:34px;border-radius:11px;background:var(--brand);color:var(--ground);
+  display:grid;place-items:center;flex:none}
+.mark-glyph svg{width:20px;height:20px;display:block}
+.mark-name{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.02em;line-height:1.1}
+.mark-sub{font-size:11.5px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;line-height:1.1;margin-top:2px}
+.proto-flag{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink-2);
+  background:var(--warn-soft);border:1px solid var(--warn);border-radius:999px;padding:5px 13px}
+.proto-flag b{color:var(--warn);font-weight:600}
+.dotpulse{width:7px;height:7px;border-radius:50%;background:var(--warn);flex:none}
+
+/* ---------- navegación de pantallas ---------- */
+nav.screens{display:flex;flex-wrap:wrap;gap:22px;padding-block:16px 20px}
+.navgroup{display:flex;flex-direction:column;gap:7px;min-width:0}
+.navgroup > span{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.navrow{display:flex;flex-wrap:wrap;gap:6px}
+.tab{display:flex;align-items:center;gap:7px;padding:7px 12px;border-radius:8px;font-size:13.5px;
+  border:1px solid var(--line);background:var(--surface);color:var(--ink-2);transition:.14s}
+.tab:hover{border-color:var(--line-2);color:var(--ink)}
+.tab .n{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.tab[aria-selected="true"]{background:var(--brand);border-color:var(--brand);color:var(--ground);font-weight:600}
+.tab[aria-selected="true"] .n{color:var(--ground);opacity:.62}
+:root[data-theme="dark"] .tab[aria-selected="true"],
+:root[data-theme="dark"] .mark-glyph{color:#0F1512}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tab[aria-selected="true"],
+  :root:not([data-theme="light"]) .mark-glyph{color:#0F1512}}
+
+/* ---------- encabezado de cada pantalla ---------- */
+.screen{padding-block:6px 40px}
+.screen-head{max-width:66ch;margin-bottom:20px}
+.screen-head h2{font-size:clamp(21px,3.4vw,27px);font-weight:600}
+.screen-head p{color:var(--muted);font-size:14.5px;margin-top:6px}
+.note{display:flex;gap:9px;align-items:flex-start;margin-top:14px;padding:11px 13px;border-radius:9px;
+  background:var(--accent-soft);border-left:3px solid var(--accent);font-size:13.5px;color:var(--ink-2);max-width:72ch}
+.note b{color:var(--accent);font-weight:600}
+
+/* ---------- marcos de dispositivo ---------- */
+.frame-phone{max-width:412px;margin-inline:auto;border:1px solid var(--line-2);border-radius:26px;
+  background:var(--surface);box-shadow:var(--shadow);overflow:hidden}
+.frame-web{border:1px solid var(--line-2);border-radius:13px;background:var(--surface);
+  box-shadow:var(--shadow);overflow:hidden}
+.chrome{display:flex;align-items:center;gap:9px;padding:9px 13px;background:var(--surface-2);
+  border-bottom:1px solid var(--line)}
+.chrome i{width:9px;height:9px;border-radius:50%;background:var(--line-2);flex:none}
+.url{flex:1;text-align:center;font-family:var(--mono);font-size:11.5px;color:var(--muted);
+  background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:3px 10px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.caption{text-align:center;font-size:12px;color:var(--muted);margin-top:11px}
+
+/* ---------- app del papá ---------- */
+.app-top{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:14px 18px;background:var(--brand);color:var(--ground)}
+:root[data-theme="dark"] .app-top{color:#0F1512}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .app-top{color:#0F1512}}
+.app-top .t{font-family:var(--display);font-weight:600;font-size:15px}
+.app-top .s{font-size:11.5px;opacity:.72}
+.app-body{padding:18px}
+.stack{display:flex;flex-direction:column;gap:14px}
+
+.cut{display:flex;gap:10px;align-items:center;padding:11px 13px;border-radius:10px;
+  background:var(--warn-soft);border:1px solid var(--warn)}
+.cut .big{font-family:var(--display);font-weight:700;font-size:19px;color:var(--warn);line-height:1;flex:none}
+.cut p{font-size:12.5px;color:var(--ink-2);line-height:1.35}
+
+.eyebrow{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.menu-day{border:1px solid var(--line);border-radius:11px;background:var(--surface);overflow:hidden}
+.menu-day > header{display:flex;align-items:baseline;gap:8px;padding:9px 13px;background:var(--surface-2);
+  border-bottom:1px solid var(--line)}
+.menu-day .dow{font-family:var(--display);font-weight:600;font-size:13.5px}
+.menu-day .date{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.menu-day ul{list-style:none;margin:0;padding:11px 13px;display:flex;flex-direction:column;gap:5px}
+.menu-day li{font-size:13.5px;color:var(--ink-2);padding-left:15px;position:relative}
+.menu-day li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--brand)}
+.menu-day li.bebida{color:var(--muted);font-size:12.5px}
+.menu-day li.bebida::before{background:var(--accent)}
+
+.svc{display:flex;gap:12px;align-items:flex-start;padding:13px;border:1px solid var(--line);
+  border-radius:11px;background:var(--surface)}
+.svc.on{border-color:var(--brand);background:var(--brand-soft)}
+.svc .box{width:19px;height:19px;border-radius:6px;border:1.5px solid var(--line-2);flex:none;margin-top:1px;
+  display:grid;place-items:center;background:var(--surface)}
+.svc.on .box{background:var(--brand);border-color:var(--brand)}
+.svc.on .box::after{content:"";width:9px;height:5px;border-left:2px solid var(--ground);
+  border-bottom:2px solid var(--ground);transform:rotate(-45deg) translateY(-1px)}
+:root[data-theme="dark"] .svc.on .box::after{border-color:#0F1512}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .svc.on .box::after{border-color:#0F1512}}
+.svc .grow{flex:1;min-width:0}
+.svc .nm{font-weight:600;font-size:14px}
+.svc .ds{font-size:12.5px;color:var(--muted);margin-top:2px}
+.svc .pr{font-family:var(--mono);font-size:13.5px;font-weight:500;white-space:nowrap}
+
+.days{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.day{width:37px;height:37px;border-radius:9px;border:1px solid var(--line-2);background:var(--surface);
+  display:grid;place-items:center;font-size:12.5px;font-weight:600;color:var(--muted)}
+.day.pick{background:var(--accent);border-color:var(--accent);color:#fff}
+.hint{font-size:12px;color:var(--muted);margin-top:7px}
+
+.kid{display:flex;align-items:center;gap:11px;padding:12px 13px;border:1px solid var(--line);
+  border-radius:11px;background:var(--surface)}
+.avatar{width:36px;height:36px;border-radius:11px;background:var(--brand-soft);color:var(--brand);
+  display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:13px;flex:none}
+.kid .nm{font-weight:600;font-size:14px}
+.kid .ds{font-size:12.5px;color:var(--muted)}
+
+.line-item{display:flex;justify-content:space-between;gap:12px;font-size:13.5px;padding-block:7px}
+.line-item .l{color:var(--ink-2);min-width:0}
+.line-item .l small{display:block;color:var(--muted);font-size:11.5px}
+.line-item .r{font-family:var(--mono);white-space:nowrap}
+hr{border:none;border-top:1px solid var(--line);margin:4px 0}
+
+.pay{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--surface);position:relative}
+.pay.best{border-color:var(--ok);background:var(--ok-soft)}
+.pay .hd{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.pay .nm{font-family:var(--display);font-weight:600;font-size:15px}
+.pay .tot{font-family:var(--mono);font-size:19px;font-weight:600;margin-top:9px}
+.pay .brk{font-size:12.5px;color:var(--muted);margin-top:3px}
+.badge{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;font-weight:700;
+  padding:3px 9px;border-radius:999px;background:var(--ok);color:#fff;white-space:nowrap}
+.saving{margin-top:11px;padding:9px 11px;border-radius:8px;background:var(--surface);
+  border:1px dashed var(--ok);font-size:12.5px;color:var(--ink-2)}
+.saving b{font-family:var(--mono);color:var(--ok);font-weight:600}
+
+.cta{display:block;width:100%;text-align:center;padding:13px;border-radius:11px;background:var(--accent);
+  color:#fff;font-weight:600;font-size:15px;border:none}
+.ghost{display:block;width:100%;text-align:center;padding:11px;border-radius:11px;
+  border:1px solid var(--line-2);font-size:14px;color:var(--ink-2)}
+
+.done{text-align:center;padding-block:8px 4px}
+.check{width:54px;height:54px;border-radius:50%;background:var(--ok);margin:0 auto 14px;display:grid;place-items:center}
+.check::after{content:"";width:18px;height:9px;border-left:3px solid #fff;border-bottom:3px solid #fff;
+  transform:rotate(-45deg) translate(1px,-2px)}
+.done h3{font-size:20px;font-weight:600}
+.done p{font-size:13.5px;color:var(--muted);margin-top:5px}
+.ref{font-family:var(--mono);font-size:12px;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:8px;padding:9px 11px;margin-top:14px;color:var(--ink-2);word-break:break-all}
+
+/* ---------- panel admin ---------- */
+.admin{display:flex;min-height:520px}
+.side{width:186px;flex:none;border-right:1px solid var(--line);background:var(--surface-2);padding:14px 11px;
+  display:flex;flex-direction:column;gap:3px}
+.side .lbl{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+  font-weight:600;padding:9px 9px 5px}
+.side a{display:flex;align-items:center;gap:8px;padding:8px 9px;border-radius:7px;font-size:13px;
+  color:var(--ink-2);text-decoration:none}
+.side a.on{background:var(--brand);color:var(--ground);font-weight:600}
+:root[data-theme="dark"] .side a.on{color:#0F1512}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .side a.on{color:#0F1512}}
+.main{flex:1;min-width:0;padding:18px 20px;display:flex;flex-direction:column;gap:17px}
+.main-head{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;justify-content:space-between}
+.main-head h3{font-size:19px;font-weight:600}
+.main-head .sub{font-size:12.5px;color:var(--muted);margin-top:3px}
+.filters{display:flex;gap:7px;flex-wrap:wrap}
+.chip{border:1px solid var(--line-2);border-radius:8px;padding:6px 11px;font-size:12.5px;
+  background:var(--surface);color:var(--ink-2)}
+.chip.on{background:var(--brand-soft);border-color:var(--brand);color:var(--brand);font-weight:600}
+
+.sync{display:flex;align-items:center;gap:9px;padding:10px 13px;border-radius:9px;
+  background:var(--ok-soft);border:1px solid var(--ok);font-size:13px;color:var(--ink-2)}
+.sync .dot{width:7px;height:7px;border-radius:50%;background:var(--ok);flex:none}
+.sync b{color:var(--ok);font-weight:600}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(142px,1fr));gap:11px}
+.stat{border:1px solid var(--line);border-radius:10px;padding:12px 13px;background:var(--surface)}
+.stat .k{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.stat .v{font-family:var(--display);font-size:24px;font-weight:700;margin-top:5px;line-height:1;
+  font-variant-numeric:tabular-nums}
+.stat .d{font-size:11.5px;color:var(--muted);margin-top:4px}
+.stat.flag .v{color:var(--warn)}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+thead th{text-align:left;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
+  font-weight:600;padding:10px 13px;background:var(--surface-2);border-bottom:1px solid var(--line);white-space:nowrap}
+tbody td{padding:10px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.who{font-weight:600}
+.who small{display:block;font-weight:400;color:var(--muted);font-size:11.5px;margin-top:1px}
+.pill{display:inline-block;font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.warn{background:var(--warn-soft);color:var(--warn)}
+.pill.alert{background:var(--alert-soft);color:var(--alert)}
+.pill.mono{font-family:var(--mono);font-weight:500;background:var(--surface-2);color:var(--muted)}
+.svclist{display:flex;flex-wrap:wrap;gap:4px}
+.svctag{font-size:11.5px;padding:2px 8px;border-radius:6px;background:var(--surface-2);
+  border:1px solid var(--line);color:var(--ink-2);white-space:nowrap}
+
+/* ---------- hojas impresas ---------- */
+.sheet{background:var(--paper);color:var(--paper-ink);border:1px solid var(--paper-line);border-radius:6px;
+  box-shadow:var(--shadow);overflow:hidden;max-width:800px;margin-inline:auto}
+.sheet-head{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:flex-start;
+  padding:18px 22px;border-bottom:2px solid var(--paper-ink)}
+.sheet-head h4{font-family:var(--display);font-size:17px;font-weight:700;letter-spacing:-.01em}
+.sheet-head .meta{font-family:var(--mono);font-size:11px;line-height:1.7;color:#4A4A46;text-align:right}
+.sheet-head .org{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:#6A6A64;margin-bottom:4px}
+.sheet-body{padding:0}
+.sheet table{font-size:12.5px}
+.sheet thead th{background:var(--paper-band);color:#4A4A46;border-bottom:1px solid var(--paper-line)}
+.sheet tbody td{border-bottom:1px solid var(--paper-line);color:var(--paper-ink)}
+.sheet tbody tr:nth-child(even) td{background:rgba(0,0,0,.018)}
+.tick{width:17px;height:17px;border:1.5px solid #7A7A74;border-radius:3px;display:inline-block}
+.sheet .grp{font-family:var(--mono);font-size:11.5px;color:#5A5A54}
+.sheet-foot{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end;
+  padding:18px 22px;border-top:1px solid var(--paper-line);background:var(--paper-band)}
+.sign{font-family:var(--mono);font-size:10.5px;color:#5A5A54}
+.sign .rule{border-bottom:1px solid #8A8A84;width:190px;max-width:100%;margin-bottom:5px;height:22px}
+.sheet .tot td{font-weight:700;background:var(--paper-band)!important;border-top:2px solid var(--paper-ink)}
+.varies{color:#A8541F;font-weight:600}
+
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:14px;font-size:12.5px;color:var(--muted)}
+.legend span{display:flex;align-items:center;gap:6px}
+.legend i{width:11px;height:11px;border-radius:3px;display:inline-block;flex:none}
+
+footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:12.5px;color:var(--muted);
+  display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between}
+
+@media (max-width:760px){
+  .admin{flex-direction:column;min-height:0}
+  .side{width:auto;border-right:none;border-bottom:1px solid var(--line);flex-direction:row;
+    flex-wrap:wrap;gap:5px;padding:11px}
+  .side .lbl{display:none}
+  .main{padding:15px}
+}
+</style>
+
+<div class="wrap">
+
+<div class="proto-bar">
+  <div class="mark">
+    <span class="mark-glyph" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 21c4.5-2.2 7-5.6 7-9.4A5.6 5.6 0 0 0 12 7a5.6 5.6 0 0 0-7 4.6c0 3.8 2.5 7.2 7 9.4Z"/>
+        <path d="M12 21V9"/><path d="M12 11c1.8 0 3.2-1.3 3.2-3.1 0-2-1.5-4-3.2-4.9-1.7.9-3.2 2.9-3.2 4.9C8.8 9.7 10.2 11 12 11Z"/>
+      </svg>
+    </span>
+    <div>
+      <div class="mark-name">Healthy Tummies</div>
+      <div class="mark-sub">Prototipo · monclair</div>
+    </div>
+  </div>
+  <div class="proto-flag"><span class="dotpulse"></span><span><b>Prototipo no funcional.</b> Escuelas, niños y cifras son ejemplos.</span></div>
+</div>
+
+<nav class="screens">
+  <div class="navgroup">
+    <span>Lo que ve el papá</span>
+    <div class="navrow" role="tablist" aria-label="Pantallas del papá">
+      <button class="tab" role="tab" aria-selected="true" data-s="s1"><span class="n">1</span>Menú del mes</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s2"><span class="n">2</span>Mis hijos</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s3"><span class="n">3</span>Servicios</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s4"><span class="n">4</span>Pago</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s5"><span class="n">5</span>Listo</button>
+    </div>
+  </div>
+  <div class="navgroup">
+    <span>Lo que ve Healthy Tummies</span>
+    <div class="navrow" role="tablist" aria-label="Pantallas de operación">
+      <button class="tab" role="tab" aria-selected="false" data-s="s6">Inscripciones</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s7">Lista de cafetería</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s8">Conteos de cocina</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ======================= 1 · MENÚ ======================= -->
+<section class="screen" id="s1">
+  <div class="screen-head">
+    <h2>El menú de octubre, en el teléfono del papá</h2>
+    <p>Hoy la escuela circula el menú en papel o por WhatsApp. Aquí vive en una página que el papá abre desde el mismo mensaje, con el contador de la fecha de corte a la vista.</p>
+  </div>
+  <div class="frame-phone">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx/monteverde</span></div>
+    <div class="app-top">
+      <div><div class="t">Menú de octubre</div><div class="s">Colegio Monteverde · Primaria</div></div>
+      <div class="s">2 oct</div>
+    </div>
+    <div class="app-body stack">
+      <div class="cut">
+        <span class="big">3</span>
+        <p>días para inscribirte sin recargo.<br>Después del <b>5 de octubre</b> se aplica 10% sobre el servicio.</p>
+      </div>
+      <div class="eyebrow">Semana del 5 al 9 de octubre · Lunch</div>
+      <div class="menu-day">
+        <header><span class="dow">Lunes</span><span class="date">05 OCT</span></header>
+        <ul><li>Sándwich de pavo en pan integral</li><li>Bastones de zanahoria con limón</li><li>Manzana</li><li class="bebida">Agua de jamaica</li></ul>
+      </div>
+      <div class="menu-day">
+        <header><span class="dow">Martes</span><span class="date">06 OCT</span></header>
+        <ul><li>Quesadillas de flor de calabaza</li><li>Frijoles de olla</li><li>Jícama con chile</li><li class="bebida">Agua de limón</li></ul>
+      </div>
+      <div class="menu-day">
+        <header><span class="dow">Miércoles</span><span class="date">07 OCT</span></header>
+        <ul><li>Pechuga a la plancha con arroz</li><li>Ensalada de lechuga y jitomate</li><li>Mandarina</li><li class="bebida">Agua de horchata</li></ul>
+      </div>
+      <div class="menu-day">
+        <header><span class="dow">Jueves</span><span class="date">08 OCT</span></header>
+        <ul><li>Pasta con calabacita y elote</li><li>Palitos de pepino</li><li>Plátano</li><li class="bebida">Agua de piña</li></ul>
+      </div>
+      <div class="menu-day">
+        <header><span class="dow">Viernes</span><span class="date">09 OCT</span></header>
+        <ul><li>Molletes de frijol con pico de gallo</li><li>Uvas</li><li class="bebida">Agua de melón</li></ul>
+      </div>
+      <button class="cta">Inscribir a mis hijos</button>
+      <button class="ghost">Ver las otras tres semanas</button>
+    </div>
+  </div>
+  <p class="caption">Vista del papá · teléfono</p>
+  <div class="note"><span><b>Por qué importa:</b> el menú deja de ser un archivo que se reenvía y se pierde. Es la puerta de entrada al cobro — el papá lo abre, ve la fecha de corte y se inscribe en el mismo lugar.</span></div>
+</section>
+
+<!-- ======================= 2 · HIJOS ======================= -->
+<section class="screen" id="s2" hidden>
+  <div class="screen-head">
+    <h2>Un papá, varios hijos, varias escuelas</h2>
+    <p>El tutor da de alta a sus hijos una sola vez. El grado determina qué catálogo de servicios y qué precios le corresponden a cada uno — preescolar y primaria no cuestan lo mismo.</p>
+  </div>
+  <div class="frame-phone">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx/mis-hijos</span></div>
+    <div class="app-top">
+      <div><div class="t">Mis hijos</div><div class="s">Laura Mendoza Vega</div></div>
+    </div>
+    <div class="app-body stack">
+      <div class="kid">
+        <span class="avatar">MH</span>
+        <div class="grow"><div class="nm">Mateo Hernández Mendoza</div><div class="ds">Colegio Monteverde · Primaria 2°A</div></div>
+      </div>
+      <div class="kid">
+        <span class="avatar">AH</span>
+        <div class="grow"><div class="nm">Ana Sofía Hernández Mendoza</div><div class="ds">Colegio Monteverde · Preescolar K2</div></div>
+      </div>
+      <button class="ghost">+ Agregar otro hijo</button>
+      <hr>
+      <div class="eyebrow">Octubre 2026</div>
+      <div class="line-item"><span class="l">Mateo<small>Sin servicios seleccionados</small></span><span class="r">—</span></div>
+      <div class="line-item"><span class="l">Ana Sofía<small>Sin servicios seleccionados</small></span><span class="r">—</span></div>
+      <button class="cta">Elegir servicios</button>
+    </div>
+  </div>
+  <p class="caption">Vista del papá · teléfono</p>
+  <div class="note"><span><b>El dato que desaparece del proceso manual:</b> nombre completo, escuela, grado y grupo capturados por el papá, no transcritos por alguien desde un comprobante.</span></div>
+</section>
+
+<!-- ======================= 3 · SERVICIOS ======================= -->
+<section class="screen" id="s3" hidden>
+  <div class="screen-head">
+    <h2>Elegir servicios — y los dos días del taller</h2>
+    <p>Esta es la pantalla menos obvia del sistema. Como el papá elige libremente qué dos días de la semana come su hijo en el taller, la cocina deja de tener un número por escuela y pasa a tener un número por día.</p>
+  </div>
+  <div class="frame-phone">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx/servicios</span></div>
+    <div class="app-top">
+      <div><div class="t">Mateo · Primaria 2°A</div><div class="s">Octubre 2026</div></div>
+    </div>
+    <div class="app-body stack">
+      <div class="svc on">
+        <span class="box"></span>
+        <span class="grow"><span class="nm">Lunch</span><span class="ds">Todos los días · 20 días de servicio</span></span>
+        <span class="pr">$1,200</span>
+      </div>
+      <div class="svc">
+        <span class="box"></span>
+        <span class="grow"><span class="nm">Comida</span><span class="ds">Todos los días · 20 días de servicio</span></span>
+        <span class="pr">$1,350</span>
+      </div>
+      <div class="svc">
+        <span class="box"></span>
+        <span class="grow"><span class="nm">Almuerzo</span><span class="ds">Todos los días · 20 días de servicio</span></span>
+        <span class="pr">$1,350</span>
+      </div>
+      <div class="svc on" style="flex-wrap:wrap">
+        <span class="box"></span>
+        <span class="grow"><span class="nm">Comida por taller</span><span class="ds">Dos días a la semana, los que tú elijas</span></span>
+        <span class="pr">$600</span>
+        <div style="width:100%;padding-left:31px">
+          <div class="days">
+            <span class="day">L</span><span class="day pick">M</span><span class="day">X</span><span class="day pick">J</span><span class="day">V</span>
+          </div>
+          <p class="hint">Martes y jueves — los días de robótica de Mateo.</p>
+        </div>
+      </div>
+      <hr>
+      <div class="line-item"><span class="l">Lunch</span><span class="r">$1,200.00</span></div>
+      <div class="line-item"><span class="l">Comida por taller<small>Martes y jueves</small></span><span class="r">$600.00</span></div>
+      <button class="cta">Continuar con Ana Sofía</button>
+    </div>
+  </div>
+  <p class="caption">Vista del papá · teléfono</p>
+  <div class="note"><span><b>La consecuencia operativa:</b> cien niños en el taller pueden producir cien combinaciones distintas. Hoy eso se resuelve a mano; aquí el conteo por día sale solo. Es la parte del modelo que no se puede simplificar.</span></div>
+</section>
+
+<!-- ======================= 4 · PAGO ======================= -->
+<section class="screen" id="s4" hidden>
+  <div class="screen-head">
+    <h2>Pago — con la comisión a la vista</h2>
+    <p>Como la comisión la absorbe el papá, el método de cobro es una decisión de producto y no solo de infraestructura. En SPEI la comisión es fija; con tarjeta es porcentual. Sobre un carrito de tres servicios la diferencia es de cien pesos.</p>
+  </div>
+  <div class="frame-phone">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx/pago</span></div>
+    <div class="app-top">
+      <div><div class="t">Pago de octubre</div><div class="s">2 servicios · 2 niños</div></div>
+    </div>
+    <div class="app-body stack">
+      <div class="line-item"><span class="l">Mateo · Lunch<small>Primaria 2°A · 20 días</small></span><span class="r">$1,200.00</span></div>
+      <div class="line-item"><span class="l">Mateo · Comida por taller<small>Martes y jueves · 8 días</small></span><span class="r">$600.00</span></div>
+      <div class="line-item"><span class="l">Ana Sofía · Comida<small>Preescolar K2 · 20 días</small></span><span class="r">$1,250.00</span></div>
+      <hr>
+      <div class="line-item"><span class="l"><b>Subtotal</b></span><span class="r"><b>$3,050.00</b></span></div>
+      <div class="eyebrow" style="margin-top:6px">Cómo quieres pagar</div>
+      <div class="pay best">
+        <div class="hd"><span class="nm">Transferencia SPEI</span><span class="badge">Recomendado</span></div>
+        <div class="tot">$3,058.12</div>
+        <div class="brk">$3,050.00 + $8.12 de comisión fija</div>
+        <div class="saving">Es la misma transferencia que ya haces hoy, pero llega identificada. Ahorras <b>$104.68</b> frente a la tarjeta.</div>
+      </div>
+      <div class="pay">
+        <div class="hd"><span class="nm">Tarjeta de crédito o débito</span></div>
+        <div class="tot">$3,162.80</div>
+        <div class="brk">$3,050.00 + $112.80 de comisión (3.6% + $3)</div>
+      </div>
+      <button class="cta">Pagar $3,058.12 por SPEI</button>
+      <p class="hint" style="text-align:center">Te damos una CLABE y una referencia única. En cuanto llegue el dinero, tus hijos quedan inscritos.</p>
+    </div>
+  </div>
+  <p class="caption">Vista del papá · teléfono</p>
+  <div class="note"><span><b>El argumento de venta:</b> los papás ya pagan por transferencia. SPEI no les cambia el hábito — cambia que el pago llega conciliado solo, en vez de llegar como un comprobante que alguien revisa a mano.</span></div>
+</section>
+
+<!-- ======================= 5 · CONFIRMACIÓN ======================= -->
+<section class="screen" id="s5" hidden>
+  <div class="screen-head">
+    <h2>Confirmado, sin que nadie revise un comprobante</h2>
+    <p>El pago llega con su referencia. El sistema lo concilia, inscribe a los niños y los suma a la lista de la cafetería y a los conteos de la cocina en el mismo instante.</p>
+  </div>
+  <div class="frame-phone">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx/listo</span></div>
+    <div class="app-body stack">
+      <div class="done">
+        <div class="check" aria-hidden="true"></div>
+        <h3>Inscripción confirmada</h3>
+        <p>Recibimos tu transferencia el 2 de octubre a las 18:42</p>
+      </div>
+      <div class="ref">REF HT-2610-MND-0447<br>SPEI · STP · $3,058.12 MXN</div>
+      <hr>
+      <div class="eyebrow">Octubre 2026</div>
+      <div class="kid">
+        <span class="avatar">MH</span>
+        <div class="grow"><div class="nm">Mateo Hernández Mendoza</div><div class="ds">Lunch · Comida por taller (mar, jue)</div></div>
+        <span class="pill ok">Activo</span>
+      </div>
+      <div class="kid">
+        <span class="avatar">AH</span>
+        <div class="grow"><div class="nm">Ana Sofía Hernández Mendoza</div><div class="ds">Comida</div></div>
+        <span class="pill ok">Activo</span>
+      </div>
+      <div class="note" style="margin-top:2px"><span>Tu factura llega a <b>laura.mendoza@correo.mx</b> en las próximas 24 horas.</span></div>
+      <button class="ghost">Descargar comprobante</button>
+    </div>
+  </div>
+  <p class="caption">Vista del papá · teléfono</p>
+  <div class="note"><span><b>Aquí muere el cuello de botella.</b> Entre que el papá paga y que el niño aparece en la lista de la cafetería no queda ninguna persona en medio.</span></div>
+</section>
+
+<!-- ======================= 6 · PANEL ======================= -->
+<section class="screen" id="s6" hidden>
+  <div class="screen-head">
+    <h2>Inscripciones de octubre, por escuela</h2>
+    <p>Lo que hoy vive en una hoja de cálculo y una carpeta de comprobantes. Quién pagó, quién no, quién entró tarde y le toca recargo.</p>
+  </div>
+  <div class="frame-web">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">panel.healthytummies.mx/inscripciones</span></div>
+    <div class="admin">
+      <div class="side">
+        <span class="lbl">Operación</span>
+        <a href="#" class="on">Inscripciones</a>
+        <a href="#">Lista de cafetería</a>
+        <a href="#">Conteos de cocina</a>
+        <a href="#">Pagos</a>
+        <span class="lbl">Catálogo</span>
+        <a href="#">Escuelas</a>
+        <a href="#">Servicios y precios</a>
+        <a href="#">Menús</a>
+      </div>
+      <div class="main">
+        <div class="main-head">
+          <div><h3>Inscripciones</h3><div class="sub">Octubre 2026 · corte el 5 de octubre</div></div>
+          <div class="filters">
+            <button class="chip on">Colegio Monteverde</button>
+            <button class="chip">Los Fresnos</button>
+            <button class="chip">Nueva Castilla</button>
+          </div>
+        </div>
+        <div class="sync"><span class="dot"></span><span><b>Conciliado hace 4 minutos.</b> 312 pagos SPEI identificados automáticamente este mes. Ningún comprobante revisado a mano.</span></div>
+        <div class="stats">
+          <div class="stat"><div class="k">Inscripciones</div><div class="v">347</div><div class="d">en 7 servicios</div></div>
+          <div class="stat"><div class="k">Cobrado</div><div class="v">$389,400</div><div class="d">de $402,150 emitidos</div></div>
+          <div class="stat flag"><div class="k">Pendientes</div><div class="v">9</div><div class="d">$12,750 sin confirmar</div></div>
+          <div class="stat"><div class="k">Recargos</div><div class="v">$4,110</div><div class="d">14 altas después del día 5</div></div>
+        </div>
+        <div class="tablewrap">
+          <table>
+            <thead><tr>
+              <th>Alumno</th><th>Servicios</th><th>Método</th><th>Estado</th><th class="num">Monto</th>
+            </tr></thead>
+            <tbody>
+              <tr>
+                <td class="who">Mateo Hernández Mendoza<small>Primaria 2°A</small></td>
+                <td><span class="svclist"><span class="svctag">Lunch</span><span class="svctag">Taller · mar, jue</span></span></td>
+                <td><span class="pill mono">SPEI</span></td>
+                <td><span class="pill ok">Pagado</span></td>
+                <td class="num">$1,800.00</td>
+              </tr>
+              <tr>
+                <td class="who">Ana Sofía Hernández Mendoza<small>Preescolar K2</small></td>
+                <td><span class="svclist"><span class="svctag">Comida</span></span></td>
+                <td><span class="pill mono">SPEI</span></td>
+                <td><span class="pill ok">Pagado</span></td>
+                <td class="num">$1,250.00</td>
+              </tr>
+              <tr>
+                <td class="who">Valentina Torres Ibarra<small>Primaria 4°B</small></td>
+                <td><span class="svclist"><span class="svctag">Almuerzo</span><span class="svctag">Taller · lun, mié</span></span></td>
+                <td><span class="pill mono">SPEI</span></td>
+                <td><span class="pill warn">Recargo 10%</span></td>
+                <td class="num">$2,145.00</td>
+              </tr>
+              <tr>
+                <td class="who">Diego Alejandro Peña Ruiz<small>Primaria 3°A</small></td>
+                <td><span class="svclist"><span class="svctag">Lunch</span></span></td>
+                <td><span class="pill mono">Tarjeta</span></td>
+                <td><span class="pill ok">Pagado</span></td>
+                <td class="num">$1,200.00</td>
+              </tr>
+              <tr>
+                <td class="who">Regina Castillo Ordaz<small>Preescolar K3</small></td>
+                <td><span class="svclist"><span class="svctag">Lunch</span><span class="svctag">Comida</span></span></td>
+                <td><span class="pill mono">SPEI</span></td>
+                <td><span class="pill ok">Pagado</span></td>
+                <td class="num">$2,500.00</td>
+              </tr>
+              <tr>
+                <td class="who">Emiliano Vargas Solís<small>Primaria 5°A</small></td>
+                <td><span class="svclist"><span class="svctag">Comida</span></span></td>
+                <td><span class="pill mono">—</span></td>
+                <td><span class="pill alert">Sin pago</span></td>
+                <td class="num">$1,350.00</td>
+              </tr>
+              <tr>
+                <td class="who">Camila Fernanda Ortiz Lara<small>Primaria 1°B</small></td>
+                <td><span class="svclist"><span class="svctag">Lunch</span><span class="svctag">Taller · mié, vie</span></span></td>
+                <td><span class="pill mono">SPEI</span></td>
+                <td><span class="pill ok">Pagado</span></td>
+                <td class="num">$1,800.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="caption">Vista de Healthy Tummies · escritorio</p>
+  <div class="note"><span><b>El estado "Sin pago" es el que hoy no existe.</b> Cuando la verificación es manual, un niño sin pago confirmado es indistinguible de uno cuyo comprobante nadie alcanzó a revisar. Esa ambigüedad es la fuga más cara del diagnóstico.</span></div>
+</section>
+
+<!-- ======================= 7 · CAFETERÍA ======================= -->
+<section class="screen" id="s7" hidden>
+  <div class="screen-head">
+    <h2>La lista que recibe la cafetería</h2>
+    <p>Se genera sola cada mañana y llega por correo en PDF. En la Fase 1 la escuela no necesita aprender ningún sistema: recibe su hoja, igual que hoy, pero correcta y al día.</p>
+  </div>
+  <div class="sheet">
+    <div class="sheet-head">
+      <div>
+        <div class="org">Healthy Tummies · Cocina central</div>
+        <h4>Lista de entrega — Cafetería</h4>
+      </div>
+      <div class="meta">
+        COLEGIO MONTEVERDE<br>
+        MARTES 6 DE OCTUBRE 2026<br>
+        GENERADA 06:10 H · 3 DE 3
+      </div>
+    </div>
+    <div class="sheet-body">
+      <div class="tablewrap" style="border:none;border-radius:0">
+        <table>
+          <thead><tr>
+            <th style="width:38px">✓</th><th>Alumno</th><th>Grado</th><th>Servicio</th><th>Nota</th>
+          </tr></thead>
+          <tbody>
+            <tr><td><span class="tick"></span></td><td>Castillo Ordaz, Regina</td><td class="grp">K3</td><td>Lunch · Comida</td><td class="grp">—</td></tr>
+            <tr><td><span class="tick"></span></td><td>Hernández Mendoza, Ana Sofía</td><td class="grp">K2</td><td>Comida</td><td class="grp">—</td></tr>
+            <tr><td><span class="tick"></span></td><td>Hernández Mendoza, Mateo</td><td class="grp">2°A</td><td>Lunch · Taller</td><td class="grp">Robótica</td></tr>
+            <tr><td><span class="tick"></span></td><td>Márquez Delgado, Santiago</td><td class="grp">4°A</td><td>Lunch</td><td class="grp">—</td></tr>
+            <tr><td><span class="tick"></span></td><td>Ortiz Lara, Camila Fernanda</td><td class="grp">1°B</td><td>Lunch</td><td class="grp">—</td></tr>
+            <tr><td><span class="tick"></span></td><td>Peña Ruiz, Diego Alejandro</td><td class="grp">3°A</td><td>Lunch</td><td class="grp">—</td></tr>
+            <tr><td><span class="tick"></span></td><td>Ramírez Olvera, Ana Paula</td><td class="grp">2°A</td><td>Lunch</td><td class="grp">Sin lácteos</td></tr>
+            <tr><td><span class="tick"></span></td><td>Solís Barrera, Ximena</td><td class="grp">5°B</td><td>Almuerzo</td><td class="grp">—</td></tr>
+            <tr><td><span class="tick"></span></td><td>Torres Ibarra, Valentina</td><td class="grp">4°B</td><td>Almuerzo · Taller</td><td class="grp">Ballet</td></tr>
+            <tr><td><span class="tick"></span></td><td>Vargas Solís, Emiliano</td><td class="grp">5°A</td><td>—</td><td class="grp"><b class="varies">No entregar · sin pago</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="sheet-foot">
+      <div class="sign"><div class="rule"></div>ENTREGÓ · NOMBRE Y FIRMA</div>
+      <div class="sign" style="text-align:right">
+        188 ENTREGAS PROGRAMADAS<br>PÁGINA 1 DE 9
+      </div>
+    </div>
+  </div>
+  <div class="note"><span><b>El renglón que hoy no se puede imprimir:</b> "No entregar · sin pago". Con verificación manual nadie se atreve a negar un servicio, porque no hay certeza de si el papá pagó o si el comprobante se traspapeló. Aquí sí la hay.</span></div>
+</section>
+
+<!-- ======================= 8 · COCINA ======================= -->
+<section class="screen" id="s8" hidden>
+  <div class="screen-head">
+    <h2>Los conteos que recibe la cocina central</h2>
+    <p>La cocina nunca ve nombres — solo cuántas órdenes produce, por escuela y por servicio. Lo que cambia respecto a hoy es la columna por día: los servicios diarios son planos toda la semana, los talleres no.</p>
+  </div>
+  <div class="sheet">
+    <div class="sheet-head">
+      <div>
+        <div class="org">Healthy Tummies · Cocina central</div>
+        <h4>Orden de producción — Semana 5 al 9 de octubre</h4>
+      </div>
+      <div class="meta">
+        COLEGIO MONTEVERDE<br>
+        EMITIDA 02 OCT 2026 · 19:00 H<br>
+        CORTE APLICADO · DEFINITIVA
+      </div>
+    </div>
+    <div class="sheet-body">
+      <div class="tablewrap" style="border:none;border-radius:0">
+        <table>
+          <thead><tr>
+            <th>Nivel</th><th>Servicio</th>
+            <th class="num">Lun</th><th class="num">Mar</th><th class="num">Mié</th><th class="num">Jue</th><th class="num">Vie</th>
+            <th class="num">Semana</th>
+          </tr></thead>
+          <tbody>
+            <tr><td>Preescolar</td><td>Lunch</td><td class="num">64</td><td class="num">64</td><td class="num">64</td><td class="num">64</td><td class="num">64</td><td class="num">320</td></tr>
+            <tr><td>Preescolar</td><td>Comida</td><td class="num">41</td><td class="num">41</td><td class="num">41</td><td class="num">41</td><td class="num">41</td><td class="num">205</td></tr>
+            <tr><td>Preescolar</td><td>Comida por taller <span class="varies">◆</span></td><td class="num">12</td><td class="num">19</td><td class="num">14</td><td class="num">21</td><td class="num">8</td><td class="num">74</td></tr>
+            <tr><td>Primaria</td><td>Lunch</td><td class="num">88</td><td class="num">88</td><td class="num">88</td><td class="num">88</td><td class="num">88</td><td class="num">440</td></tr>
+            <tr><td>Primaria</td><td>Comida</td><td class="num">52</td><td class="num">52</td><td class="num">52</td><td class="num">52</td><td class="num">52</td><td class="num">260</td></tr>
+            <tr><td>Primaria</td><td>Almuerzo</td><td class="num">33</td><td class="num">33</td><td class="num">33</td><td class="num">33</td><td class="num">33</td><td class="num">165</td></tr>
+            <tr><td>Primaria</td><td>Comida por taller <span class="varies">◆</span></td><td class="num">22</td><td class="num">15</td><td class="num">27</td><td class="num">18</td><td class="num">12</td><td class="num">94</td></tr>
+            <tr class="tot"><td colspan="2">Total de órdenes</td><td class="num">312</td><td class="num">312</td><td class="num">319</td><td class="num">317</td><td class="num">298</td><td class="num">1,558</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="sheet-foot">
+      <div class="sign"><div class="rule"></div>AUTORIZÓ CHEF · NOMBRE Y FIRMA</div>
+      <div class="sign" style="text-align:right">
+        84 NIÑOS EN TALLER × 2 DÍAS = 168 ENTREGAS<br>PÁGINA 1 DE 3
+      </div>
+    </div>
+  </div>
+  <div class="legend">
+    <span><i style="background:var(--muted)"></i>Servicio diario — mismo número los cinco días</span>
+    <span><i style="background:var(--accent)"></i>◆ Servicio por taller — varía según los días que eligió cada papá</span>
+  </div>
+  <div class="note"><span><b>Lo que esta hoja demuestra:</b> 84 niños en taller producen 168 entregas repartidas de forma desigual entre lunes y viernes. Calcular eso a mano cada semana, para cada escuela, es exactamente el trabajo que la plataforma elimina.</span></div>
+</section>
+
+<footer class="proto">
+  <span>Prototipo de alta fidelidad · pantallas no funcionales · datos de ejemplo</span>
+  <span>monclair para Healthy Tummies · septiembre 2026</span>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
+  function show(id){
+    tabs.forEach(function(t){
+      var on = t.dataset.s === id;
+      t.setAttribute("aria-selected", on ? "true" : "false");
+    });
+    ["s1","s2","s3","s4","s5","s6","s7","s8"].forEach(function(s){
+      var el = document.getElementById(s);
+      if (el) el.hidden = (s !== id);
+    });
+  }
+  tabs.forEach(function(t){
+    t.addEventListener("click", function(){
+      show(t.dataset.s);
+      window.scrollTo({top:0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+    });
+  });
+})();
+</script>
