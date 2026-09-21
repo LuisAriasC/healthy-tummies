@@ -238,8 +238,12 @@ tratos.
 - Selección de servicio por niño, con catálogo y precio correctos según nivel
 - **Para el servicio de taller, elección de los dos días de la semana** que le
   corresponden a ese niño
-- Pago en línea del mes por SPEI o tarjeta, con la comisión desglosada a la vista y la
-  diferencia entre ambos métodos visible
+- **Los servicios se guardan sin pagar, y el inicio hace de carrito.** Se eligen por
+  hijo y quedan guardados; el inicio acumula lo no cubierto y desde ahí se paga todo
+  junto, una sola vez. No hay asistente que encadene hijo tras hijo: si el papá se
+  interrumpe a media captura, lo avanzado no se pierde
+- Pago en línea del mes por SPEI o tarjeta, **solo de lo que falta por pagar**, con la
+  comisión desglosada a la vista y la diferencia entre ambos métodos visible
 - Aplicación automática de la **penalización** a quien se inscriba después del día 5
 - Confirmación y recibo
 
