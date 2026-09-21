@@ -47,19 +47,22 @@ La información está partida entre tres lugares:
 | Comida 2x/semana por taller | $550 | $600 |
 | Almuerzo | — | $1,350 |
 
-> ⚠️ **Sin confirmar:** que el Lunch de primaria ($1,200) sea más barato que el de
-> preescolar ($1,250). Se preguntó dos veces y quedó sin respuesta. Verificar antes de
-> que entre al prototipo o a la propuesta.
+Los precios están confirmados por el cliente, incluido que el Lunch de primaria
+($1,200) sea más barato que el de preescolar ($1,250). No es error de captura.
 
-### El flujo de dinero es mixto
+### El flujo de dinero
 
-El cobro **depende de cada escuela**, y esto es una restricción dura del diseño:
+**Hoy todas las escuelas operan en modo directo:** el papá le transfiere a Healthy
+Tummies y manda el comprobante. Healthy Tummies lo verifica a mano.
 
-- **Modo directo:** el papá le transfiere a Healthy Tummies y manda comprobante.
-- **Modo concentrado:** la escuela le cobra al papá y le paga a Healthy Tummies un
-  consolidado. Healthy Tummies no trata dinero con el papá.
+En una respuesta anterior el cliente describió el cobro como mixto y después lo corrigió
+a que todas están en directo. La lectura que se adopta es que **el modo concentrado
+—que la escuela cobre y entregue un consolidado— es posible en el futuro pero no existe
+hoy**. Decisión de diseño: el modelo de datos conserva un campo de modo de cobro a nivel
+escuela, porque cuesta casi nada, pero **la Fase 1 no construye el flujo concentrado**.
+Eso quita alcance sin cerrar la puerta.
 
-Cualquier sistema tiene que convivir con los dos desde el primer día.
+**Facturación:** Healthy Tummies factura **tanto a los papás como a las escuelas**.
 
 ---
 
@@ -77,11 +80,14 @@ Estas vienen del cliente y están cerradas:
 
 | Regla | Definición |
 |---|---|
-| Alta a media de mes | Sin prorrateo. Se cobra una **penalización** |
+| Fecha de corte | **Día 5 de cada mes.** Hasta ese día se inscribe sin penalización |
+| Alta después del corte | Sin prorrateo. Se cobra **penalización** |
+| Monto de la penalización | Configurable **por menú**: un porcentaje o una cantidad fija |
 | Bajas | Sin devolución |
 | Ausencias del niño | Se pierden. No se reponen ni se acreditan |
 | Comisión del PSP | La absorbe **el papá** |
-| Taller 2x/semana | Dos días cualesquiera de la semana |
+| Taller 2x/semana | Dos días cualesquiera de la semana, **elegidos por el papá** |
+| Facturación | A papás **y** a escuelas |
 
 **Consecuencia técnica importante, y es buena noticia para el costo:** sin prorrateo,
 sin reembolsos y sin reposiciones, el cobro es un cargo mensual simple. No hay lógica
@@ -91,29 +97,35 @@ reglas le están abaratando el desarrollo.
 
 **Consecuencia en la interfaz:** como el papá absorbe la comisión, el precio en
 pantalla no es $1,250 — es $1,250 más comisión, desglosada a la vista. Debe aparecer
-así en el prototipo.
+así en el prototipo. Esto vuelve la elección de pasarela una decisión de producto, no
+solo de infraestructura: define lo que el papá ve que paga de más. Ver sección 6.
+
+**Consecuencia en el modelo:** que el papá elija libremente los dos días del taller
+significa que la inscripción al servicio de taller **almacena los dos días elegidos**.
+Los conteos de cocina de ese servicio ya no son un número por escuela: son un número por
+escuela y por día de la semana, porque cada papá puede haber elegido una combinación
+distinta. Es la parte menos trivial del modelo de datos.
+
+**Consecuencia en el cobro:** la penalización se define por menú y puede ser porcentaje o
+monto fijo, así que es **configuración, no código**. El panel de administración necesita
+capturarla al publicar cada menú, y el cobro tiene que aplicarla automáticamente a quien
+se inscriba después del día 5.
 
 ---
 
-## 5. Supuestos abiertos — preguntas para el cliente
+## 5. Preguntas que siguen abiertas
 
-Nada de esto se debe inventar. Va como lista para la junta:
+La mayoría se resolvieron. Quedan estas para la junta:
 
-1. **¿De cuánto es la penalización** por alta a media de mes? El sistema la cobra
-   automáticamente, así que necesita un monto o una fórmula.
-2. **Los dos días del taller: ¿los define el taller o los elige el papá?** Se asume que
-   los define el taller — el niño asiste a un taller que cae, por ejemplo, martes y
-   jueves, y come esos días. Si el papá los escoge libremente, cambia el modelo de datos
-   y la pantalla de inscripción.
-3. **Facturación / CFDI:** ¿Healthy Tummies factura al papá, a la escuela, o a ambos
-   según el modo de cobro de esa escuela?
-4. **Fecha de corte mensual:** ¿hasta cuándo puede inscribirse un papá para el mes
-   siguiente?
-5. **¿Qué escuelas están en modo directo y cuáles en modo concentrado, hoy?**
-6. **PSP:** ¿ya tienen cuenta con alguno (Stripe, Mercado Pago, Conekta)? ¿Con qué banco
-   está la cuenta de la empresa?
-7. **Volumen real:** número de niños inscritos por escuela y por servicio. Sirve para
-   dimensionar y para cuantificar el ahorro en el diagnóstico.
+1. **Volumen real por escuela y por servicio.** Número de niños inscritos hoy. Es el dato
+   que convierte el diagnóstico de la sección 13 en cifras reales en vez de un modelo.
+2. **¿Ya tienen cuenta con algún PSP?** ¿Con qué banco está la cuenta de la empresa? De
+   eso depende qué tan rápido se puede habilitar el cobro (ver sección 6).
+3. **¿Cuánto servicio se entrega al mes sin haberse cobrado?** Niños que aparecen en la
+   lista pero cuyo pago nunca se confirmó, o que pagaron tarde y nadie cobró penalización.
+   **Es la pregunta más importante de la junta** — ahí está la mayor parte del retorno.
+4. **Días de servicio al mes** y **costo de insumos como porcentaje del precio.** Se usan
+   para el diagnóstico; ahora mismo están modelados con supuestos.
 
 ---
 
@@ -138,6 +150,36 @@ aprenderse un sistema.
 C entrega el mismo valor operativo que A, con bastante menos superficie que construir, y
 es el "sí" más fácil de conseguir de un cliente que todavía no sabe qué quiere.
 
+### Pasarela de pagos: Stripe cobrando por SPEI
+
+Esta decisión merece su propio análisis porque **la comisión la paga el papá**, así que
+elegir mal encarece el servicio a la vista del cliente final.
+
+Comisiones vigentes a septiembre de 2026:
+
+| Pasarela | Tarjeta | SPEI (transferencia) | OXXO |
+|---|---|---|---|
+| **Stripe** | 3.6% + $3 | **$7 + IVA ≈ $8.12 fijo** | — |
+| Conekta (BBVA) | 3.4% + $3 + IVA | desde $12.50 + IVA | 2.6% + $3 + IVA |
+| Mercado Pago | 3.49% + $4 + IVA | 3.49% + $4 (cobra como tarjeta) | — |
+| Openpay (BBVA) | desde 2.9% + $2.50, negociable | — | — |
+
+**El hallazgo: en SPEI la comisión es fija, no porcentual.** Sobre un servicio de $1,250,
+la tarjeta cuesta $48 y el SPEI cuesta $8.12. Es seis veces menos, y lo paga el papá.
+
+Y hay un argumento todavía más fuerte que el precio: **los papás ya pagan por
+transferencia bancaria hoy.** Cobrar por SPEI no les cambia el hábito en absoluto — lo
+único que cambia es que Healthy Tummies deja de verificar el comprobante a mano, porque
+la conciliación llega resuelta. Se automatiza exactamente el proceso que ya existe, en
+lugar de pedirle al papá que aprenda otro.
+
+**Recomendación: Stripe, con SPEI como método principal y tarjeta como alternativa** para
+quien la prefiera, mostrando la diferencia de comisión en pantalla.
+
+Dos advertencias honestas: estas tarifas son de lista y **en volumen se negocian**, así
+que conviene pedir cotización a Stripe y a Conekta antes de firmar; y si en algún momento
+quieren cobrar en efectivo, Conekta con OXXO Pay entra mejor que Stripe.
+
 ### Nota comercial
 
 **B se incluye en la propuesta como comparación explícita, aunque no se recomiende.**
@@ -155,20 +197,22 @@ tratos.
 - Sitio público con el menú del mes, filtrado por escuela y nivel
 - Registro del tutor y alta de sus hijos (nombre, escuela, grado, grupo)
 - Selección de servicio por niño, con catálogo y precio correctos según nivel
-- **Dos modos de inscripción, configurables por escuela:**
-  - *Modo directo* — el papá se inscribe y paga en línea
-  - *Modo concentrado* — el papá se inscribe pero no paga; queda como inscrito y
-    Healthy Tummies concilia con la escuela por fuera
-- Pago en línea del mes, con la comisión desglosada a la vista
+- **Para el servicio de taller, elección de los dos días de la semana** que le
+  corresponden a ese niño
+- Pago en línea del mes por SPEI o tarjeta, con la comisión desglosada a la vista y la
+  diferencia entre ambos métodos visible
+- Aplicación automática de la **penalización** a quien se inscriba después del día 5
 - Confirmación y recibo
 
 ### De cara a Healthy Tummies
 
-- Panel de administración: escuelas, precios, talleres, niños, inscripciones, estado de pago
-- Carga del menú del mes
+- Panel de administración: escuelas, precios, niños, inscripciones y estado de pago
+- Carga del menú del mes, **con su penalización asociada** (porcentaje o monto fijo)
 - Generación automática de la **lista de cafetería**, por escuela y día, con nombres
-- Generación automática de los **conteos de cocina**, por escuela, servicio y día
+- Generación automática de los **conteos de cocina**, por escuela, servicio y día —
+  respetando los días elegidos individualmente en el servicio de taller
 - Entrega de ambos por correo o descarga, en PDF y hoja de cálculo
+- Conciliación automática de los pagos SPEI, sin revisar comprobantes a mano
 
 ### Fuera de alcance de la Fase 1
 
@@ -176,9 +220,11 @@ Debe decirse explícitamente en la propuesta, para que nadie lo dé por hecho:
 
 - Portales con acceso propio para escuela y cocina
 - Constructor de menús (en Fase 1 el menú se carga como archivo)
-- Facturación / CFDI
+- **Facturación / CFDI automatizada.** El cliente factura a papás y a escuelas; en Fase 1
+  eso sigue haciéndose fuera del sistema. Automatizarlo es Fase 3
+- **Modo de cobro concentrado** (que la escuela cobre y entregue un consolidado). Hoy
+  ninguna escuela opera así; el campo queda en el modelo, el flujo no se construye
 - Aplicación móvil
-- Conciliación automática con el banco
 
 ---
 
@@ -189,21 +235,30 @@ servicio en un mes.** De ahí se derivan las tres salidas que hoy se hacen a man
 
 ```
 Escuela ──┬── nivel(es): preescolar / primaria
-          ├── modo de cobro: directo | concentrado
-          └── talleres ── días de la semana
+          └── modo de cobro: directo   (concentrado reservado, sin usar)
 
 Tutor ──── Niño ── escuela, grado, grupo
 
 Catálogo de servicios ── tipo, nivel, precio
 
+Menú del mes ──┬── nivel / escuela
+               ├── fecha de corte: día 5
+               └── penalización: porcentaje | monto fijo
+
 INSCRIPCIÓN  =  niño × servicio × mes        ← la pieza central
+      │         (+ los dos días elegidos, si el servicio es taller)
       │
-      ├──→ Cobro            (monto + comisión + penalización si aplica)
+      ├──→ Cobro            (monto + comisión + penalización si entró tarde)
       ├──→ Lista de cafetería   (por escuela, por día, con nombres)
-      └──→ Conteos de cocina    (por escuela, por servicio, por día)
+      └──→ Conteos de cocina    (por escuela, por servicio, por día de la semana)
 ```
 
 Si esa pieza está bien modelada, las tres salidas son consultas.
+
+**El detalle que no se puede simplificar:** como cada papá elige libremente los dos días
+del taller de su hijo, el conteo de ese servicio se calcula por día de la semana y no
+como un total mensual repartido. Un servicio de taller con 100 niños puede producir
+conteos muy distintos entre lunes y viernes.
 
 ---
 
