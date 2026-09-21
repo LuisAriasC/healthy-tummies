@@ -129,9 +129,10 @@ La mayoría se resolvieron. Quedan estas para la junta:
 5. **¿Las escuelas están dispuestas a entregar su padrón de alumnos con matrículas?**
    ¿En qué formato lo tienen y cada cuánto cambia? De esto depende la verificación del
    alta (ver sección 11).
-6. **¿El padrón de la escuela trae el grupo?** Las hojas de cafetería hoy se ordenan con
-   grado y grupo. Si el sistema no captura el grupo, o viene del padrón o esa columna
-   pierde la letra.
+6. **¿La cafetería puede localizar a los niños solo por nombre?** Las listas van
+   ordenadas por apellido y muestran únicamente preescolar o primaria, porque el año y el
+   grupo no se capturan. Conviene confirmarlo con quien entrega hoy en la escuela antes
+   de darlo por bueno.
 
 ---
 
@@ -202,14 +203,15 @@ tratos.
 
 - Sitio público con el menú del mes, filtrado por escuela y nivel
 - Registro del tutor y alta de sus hijos: nombre, **matrícula**, escuela, **grado** y
-  alergias o restricciones alimentarias. No se captura el grupo — Healthy Tummies no lo
-  necesita para operar
+  alergias o restricciones alimentarias
+- **Grado significa preescolar o primaria, y nada más.** El año escolar y el grupo son
+  información de la escuela, no de Healthy Tummies: no se capturan, no se almacenan y no
+  aparecen en ninguna salida. Es la distinción que define el catálogo y el precio, así
+  que es la única que el negocio necesita
 - **Verificación de nombre y matrícula contra la lista de alumnos de la escuela.** Solo
   esos dos campos: impide altas inventadas y amarra el padrón de Healthy Tummies con el
   oficial de la escuela. **El grado lo elige el papá libremente y no se verifica** —
   decisión consciente del cliente para la primera versión, revisable más adelante
-- El grado determina el catálogo de servicios y el precio, porque de él se deriva el
-  nivel
 - Las alergias capturadas por el papá viajan hasta la lista impresa de la cafetería
 - Selección de servicio por niño, con catálogo y precio correctos según nivel
 - **Para el servicio de taller, elección de los dos días de la semana** que le
@@ -318,9 +320,8 @@ archivo es una conversación de Healthy Tummies con cada escuela, no una tarea d
 desarrollo, y conviene que arranque antes que el proyecto.
 
 Como el grado lo elige el papá sin verificarse, hay un riesgo residual asumido: un papá
-puede equivocarse de grado y con eso pagar el precio del nivel equivocado. A escala
-piloto se corrige a mano; si el padrón de la escuela trae el grado, cerrarlo más adelante
-es barato.
+puede marcar preescolar en vez de primaria y pagar el precio equivocado. A escala piloto
+se corrige a mano, y es una decisión consciente del cliente para la primera versión.
 
 **Reglas sin definir.** Si el cliente no cierra el monto de la penalización y la
 política de bajas de cara al papá, el pago en línea le va a generar reclamos que hoy no

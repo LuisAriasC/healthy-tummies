@@ -447,7 +447,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 
       <div class="eyebrow">Hoy comen</div>
       <div class="today">
-        <header><span class="who">Mateo</span><span class="gr">2°</span></header>
+        <header><span class="who">Mateo</span><span class="gr">Primaria</span></header>
         <div class="plate">
           <div class="sv">Lunch</div>
           <div class="dish">Quesadillas de flor de calabaza · Frijoles de olla · Jícama con chile · Agua de limón</div>
@@ -459,7 +459,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
         </div>
       </div>
       <div class="today">
-        <header><span class="who">Ana Sofía</span><span class="gr">K2</span></header>
+        <header><span class="who">Ana Sofía</span><span class="gr">Preescolar</span></header>
         <div class="plate">
           <div class="sv">Comida</div>
           <div class="dish">Sopa de lentejas · Albóndigas al chipotle con arroz · Ensalada de nopales · Agua de tamarindo</div>
@@ -482,7 +482,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
         <div class="bcard">
           <div class="hd">
             <span class="avatar">AH</span>
-            <span class="grow"><span class="nm">Ana Sofía Hernández Mendoza</span><span class="ds">Preescolar K2 · Matrícula MV-2022-0913</span></span>
+            <span class="grow"><span class="nm">Ana Sofía Hernández Mendoza</span><span class="ds">Preescolar · Matrícula MV-2022-0913</span></span>
             <span class="pill ok">Al corriente</span>
           </div>
           <div class="rows">
@@ -578,7 +578,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
       </div>
       <div class="kid">
         <span class="avatar">AH</span>
-        <div class="grow"><div class="nm">Ana Sofía Hernández Mendoza</div><div class="ds">Colegio Monteverde · Preescolar K2</div></div>
+        <div class="grow"><div class="nm">Ana Sofía Hernández Mendoza</div><div class="ds">Colegio Monteverde · Preescolar</div></div>
       </div>
       <button class="ghost">+ Agregar otro hijo</button>
       <hr>
@@ -660,7 +660,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
     <div class="app-body stack">
       <div class="line-item"><span class="l">Mateo · Lunch<small>Primaria 2° · 20 días</small></span><span class="r">$1,200.00</span></div>
       <div class="line-item"><span class="l">Mateo · Comida por taller<small>Martes y jueves · 8 días</small></span><span class="r">$600.00</span></div>
-      <div class="line-item"><span class="l">Ana Sofía · Comida<small>Preescolar K2 · 20 días</small></span><span class="r">$1,250.00</span></div>
+      <div class="line-item"><span class="l">Ana Sofía · Comida<small>Preescolar · 20 días</small></span><span class="r">$1,250.00</span></div>
       <hr>
       <div class="line-item"><span class="l"><b>Subtotal</b></span><span class="r"><b>$3,050.00</b></span></div>
       <div class="eyebrow" style="margin-top:6px">Cómo quieres pagar</div>
@@ -821,11 +821,8 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
       </div>
       <div class="field">
         <label for="f-grado">Grado</label>
-        <select id="f-grado">
-          <optgroup label="Preescolar"><option>K1</option><option>K2</option><option>K3</option></optgroup>
-          <optgroup label="Primaria"><option>1°</option><option selected>2°</option><option>3°</option><option>4°</option><option>5°</option><option>6°</option></optgroup>
-        </select>
-        <span class="help">El grado define el catálogo de servicios y el precio que te corresponde.</span>
+        <select id="f-grado"><option>Preescolar</option><option selected>Primaria</option></select>
+        <span class="help">Preescolar y primaria tienen catálogos y precios distintos.</span>
       </div>
       <div class="field">
         <label for="f-notas">Alergias o restricciones</label>
@@ -870,11 +867,8 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
       </div>
       <div class="field">
         <label for="e-grado">Grado</label>
-        <select id="e-grado">
-          <optgroup label="Preescolar"><option>K1</option><option>K2</option><option>K3</option></optgroup>
-          <optgroup label="Primaria"><option>1°</option><option selected>2°</option><option>3°</option><option>4°</option><option>5°</option><option>6°</option></optgroup>
-        </select>
-        <span class="help">El grado define el catálogo de servicios y el precio que te corresponde.</span>
+        <select id="e-grado"><option>Preescolar</option><option selected>Primaria</option></select>
+        <span class="help">Preescolar y primaria tienen catálogos y precios distintos.</span>
       </div>
       <div class="field">
         <label for="e-notas">Alergias o restricciones</label>
@@ -944,49 +938,49 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
             </tr></thead>
             <tbody>
               <tr>
-                <td class="who">Mateo Hernández Mendoza<small>Primaria 2°A</small></td>
+                <td class="who">Mateo Hernández Mendoza<small>Primaria</small></td>
                 <td><span class="svclist"><span class="svctag">Lunch</span><span class="svctag">Taller · mar, jue</span></span></td>
                 <td><span class="pill mono">SPEI</span></td>
                 <td><span class="pill ok">Pagado</span></td>
                 <td class="num">$1,800.00</td>
               </tr>
               <tr>
-                <td class="who">Ana Sofía Hernández Mendoza<small>Preescolar K2</small></td>
+                <td class="who">Ana Sofía Hernández Mendoza<small>Preescolar</small></td>
                 <td><span class="svclist"><span class="svctag">Comida</span></span></td>
                 <td><span class="pill mono">SPEI</span></td>
                 <td><span class="pill ok">Pagado</span></td>
                 <td class="num">$1,250.00</td>
               </tr>
               <tr>
-                <td class="who">Valentina Torres Ibarra<small>Primaria 4°B</small></td>
+                <td class="who">Valentina Torres Ibarra<small>Primaria</small></td>
                 <td><span class="svclist"><span class="svctag">Almuerzo</span><span class="svctag">Taller · lun, mié</span></span></td>
                 <td><span class="pill mono">SPEI</span></td>
                 <td><span class="pill warn">Recargo 10%</span></td>
                 <td class="num">$2,145.00</td>
               </tr>
               <tr>
-                <td class="who">Diego Alejandro Peña Ruiz<small>Primaria 3°A</small></td>
+                <td class="who">Diego Alejandro Peña Ruiz<small>Primaria</small></td>
                 <td><span class="svclist"><span class="svctag">Lunch</span></span></td>
                 <td><span class="pill mono">Tarjeta</span></td>
                 <td><span class="pill ok">Pagado</span></td>
                 <td class="num">$1,200.00</td>
               </tr>
               <tr>
-                <td class="who">Regina Castillo Ordaz<small>Preescolar K3</small></td>
+                <td class="who">Regina Castillo Ordaz<small>Preescolar</small></td>
                 <td><span class="svclist"><span class="svctag">Lunch</span><span class="svctag">Comida</span></span></td>
                 <td><span class="pill mono">SPEI</span></td>
                 <td><span class="pill ok">Pagado</span></td>
                 <td class="num">$2,500.00</td>
               </tr>
               <tr>
-                <td class="who">Emiliano Vargas Solís<small>Primaria 5°A</small></td>
+                <td class="who">Emiliano Vargas Solís<small>Primaria</small></td>
                 <td><span class="svclist"><span class="svctag">Comida</span></span></td>
                 <td><span class="pill mono">—</span></td>
                 <td><span class="pill alert">Sin pago</span></td>
                 <td class="num">$1,350.00</td>
               </tr>
               <tr>
-                <td class="who">Camila Fernanda Ortiz Lara<small>Primaria 1°B</small></td>
+                <td class="who">Camila Fernanda Ortiz Lara<small>Primaria</small></td>
                 <td><span class="svclist"><span class="svctag">Lunch</span><span class="svctag">Taller · mié, vie</span></span></td>
                 <td><span class="pill mono">SPEI</span></td>
                 <td><span class="pill ok">Pagado</span></td>
@@ -1027,16 +1021,16 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
             <th style="width:38px">✓</th><th>Alumno</th><th>Grado</th><th>Servicio</th><th>Nota</th>
           </tr></thead>
           <tbody>
-            <tr><td><span class="tick"></span></td><td>Castillo Ordaz, Regina</td><td class="grp">K3</td><td>Lunch · Comida</td><td class="grp">—</td></tr>
-            <tr><td><span class="tick"></span></td><td>Hernández Mendoza, Ana Sofía</td><td class="grp">K2</td><td>Comida</td><td class="grp">—</td></tr>
-            <tr><td><span class="tick"></span></td><td>Hernández Mendoza, Mateo</td><td class="grp">2°A</td><td>Lunch · Taller</td><td class="grp">Robótica · <b class="varies">sin lácteos</b></td></tr>
-            <tr><td><span class="tick"></span></td><td>Márquez Delgado, Santiago</td><td class="grp">4°A</td><td>Lunch</td><td class="grp">—</td></tr>
-            <tr><td><span class="tick"></span></td><td>Ortiz Lara, Camila Fernanda</td><td class="grp">1°B</td><td>Lunch</td><td class="grp">—</td></tr>
-            <tr><td><span class="tick"></span></td><td>Peña Ruiz, Diego Alejandro</td><td class="grp">3°A</td><td>Lunch</td><td class="grp">—</td></tr>
-            <tr><td><span class="tick"></span></td><td>Ramírez Olvera, Ana Paula</td><td class="grp">2°A</td><td>Lunch</td><td class="grp"><b class="varies">Alergia a la nuez</b></td></tr>
-            <tr><td><span class="tick"></span></td><td>Solís Barrera, Ximena</td><td class="grp">5°B</td><td>Almuerzo</td><td class="grp">—</td></tr>
-            <tr><td><span class="tick"></span></td><td>Torres Ibarra, Valentina</td><td class="grp">4°B</td><td>Almuerzo · Taller</td><td class="grp">Ballet</td></tr>
-            <tr><td><span class="tick"></span></td><td>Vargas Solís, Emiliano</td><td class="grp">5°A</td><td>—</td><td class="grp"><b class="varies">No entregar · sin pago</b></td></tr>
+            <tr><td><span class="tick"></span></td><td>Castillo Ordaz, Regina</td><td class="grp">Preescolar</td><td>Lunch · Comida</td><td class="grp">—</td></tr>
+            <tr><td><span class="tick"></span></td><td>Hernández Mendoza, Ana Sofía</td><td class="grp">Preescolar</td><td>Comida</td><td class="grp">—</td></tr>
+            <tr><td><span class="tick"></span></td><td>Hernández Mendoza, Mateo</td><td class="grp">Primaria</td><td>Lunch · Taller</td><td class="grp">Robótica · <b class="varies">sin lácteos</b></td></tr>
+            <tr><td><span class="tick"></span></td><td>Márquez Delgado, Santiago</td><td class="grp">Primaria</td><td>Lunch</td><td class="grp">—</td></tr>
+            <tr><td><span class="tick"></span></td><td>Ortiz Lara, Camila Fernanda</td><td class="grp">Primaria</td><td>Lunch</td><td class="grp">—</td></tr>
+            <tr><td><span class="tick"></span></td><td>Peña Ruiz, Diego Alejandro</td><td class="grp">Primaria</td><td>Lunch</td><td class="grp">—</td></tr>
+            <tr><td><span class="tick"></span></td><td>Ramírez Olvera, Ana Paula</td><td class="grp">Primaria</td><td>Lunch</td><td class="grp"><b class="varies">Alergia a la nuez</b></td></tr>
+            <tr><td><span class="tick"></span></td><td>Solís Barrera, Ximena</td><td class="grp">Primaria</td><td>Almuerzo</td><td class="grp">—</td></tr>
+            <tr><td><span class="tick"></span></td><td>Torres Ibarra, Valentina</td><td class="grp">Primaria</td><td>Almuerzo · Taller</td><td class="grp">Ballet</td></tr>
+            <tr><td><span class="tick"></span></td><td>Vargas Solís, Emiliano</td><td class="grp">Primaria</td><td>—</td><td class="grp"><b class="varies">No entregar · sin pago</b></td></tr>
           </tbody>
         </table>
       </div>
