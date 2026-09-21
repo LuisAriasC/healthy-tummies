@@ -423,6 +423,17 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);
   border:1px solid var(--accent);white-space:nowrap}
 .dimmed{opacity:.72}
+
+.mini{text-align:center;padding:17px 14px;border:1px dashed var(--line-2);border-radius:11px;
+  background:var(--surface)}
+.mini .nm{font-size:13.5px;font-weight:600;color:var(--ink-2)}
+.mini .ds{font-size:12.5px;color:var(--muted);margin-top:5px;line-height:1.45;max-width:34ch;margin-inline:auto}
+.mini.nudge{border-style:solid;border-color:var(--warn);background:var(--warn-soft);text-align:left}
+.mini.nudge .nm{color:var(--warn)}
+.mini.nudge .ds{color:var(--ink-2);margin-inline:0;max-width:none}
+.minibtn{margin-top:12px;padding:9px 15px;border-radius:9px;background:var(--accent);color:#fff;
+  font-size:13px;font-weight:600}
+.hintline{font-size:12px;color:var(--muted);line-height:1.4}
 </style>
 
 <div class="wrap">
@@ -453,6 +464,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
       <button class="tab" role="tab" aria-selected="false" data-s="s2">Mis hijos</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s13">Mis hijos · vacío</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s11">Cuenta</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s14">Cuenta · vacía</button>
     </div>
   </div>
   <div class="navgroup">
@@ -1108,6 +1120,69 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   </div>
   <p class="caption">Vista del papá · teléfono</p>
   <div class="note"><span><b>Aquí vive el historial de pagos, y no en la barra.</b> El papá ya resuelve su pregunta de tranquilidad con la píldora "Al corriente" del inicio; un historial completo se consulta una vez al mes o menos. Un quinto de la barra es un lugar demasiado caro para eso.</span></div>
+</section>
+
+<!-- ======================= 14 · CUENTA VACÍA ======================= -->
+<section class="screen" id="s14" hidden>
+  <div class="screen-head">
+    <h2>Cuenta recién creada</h2>
+    <p>El papá se registró pero todavía no ha pagado nada. Sus datos personales ya existen — los dio al entrar. Lo que falta son los fiscales y el historial, y los avisos vienen encendidos de fábrica.</p>
+  </div>
+  <div class="frame-phone">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx/cuenta</span></div>
+    <div class="app-top">
+      <div><div class="t">Mi cuenta</div><div class="s">Laura Mendoza Vega</div></div>
+    </div>
+    <div class="app-body stack">
+      <div class="eyebrow">Mis datos</div>
+      <div class="sect">
+        <div class="rowlink">
+          <span class="grow"><span class="nm">Laura Mendoza Vega</span><span class="ds">laura.mendoza@correo.mx · 55 1847 2290</span></span>
+          <span class="arw">›</span>
+        </div>
+      </div>
+
+      <div class="eyebrow">Datos de facturación</div>
+      <div class="mini nudge">
+        <div class="nm">Todavía no los has agregado</div>
+        <div class="ds">Agrégalos <b>antes de pagar</b>. Tu factura se emite en el mismo mes en que haces el pago, así que después ya no se puede.</div>
+        <button class="minibtn">Agregar datos de facturación</button>
+      </div>
+
+      <div class="eyebrow">Avisos</div>
+      <div class="sect">
+        <div class="rowlink">
+          <span class="grow"><span class="nm">Recordatorio del corte</span><span class="ds">El día 3 de cada mes, antes de que apliquen recargos</span></span>
+          <span class="switch on"></span>
+        </div>
+        <div class="rowlink">
+          <span class="grow"><span class="nm">Menú nuevo publicado</span><span class="ds">Cuando se publica el menú del mes siguiente</span></span>
+          <span class="switch on"></span>
+        </div>
+        <div class="rowlink">
+          <span class="grow"><span class="nm">Confirmación de pago</span><span class="ds">Cuando se acredita tu transferencia</span></span>
+          <span class="switch on"></span>
+        </div>
+      </div>
+      <p class="hintline">Los tres vienen activos. Puedes apagar el que quieras cuando quieras.</p>
+
+      <div class="eyebrow">Historial</div>
+      <div class="mini">
+        <div class="nm">Aún no tienes pagos</div>
+        <div class="ds">Aquí van a aparecer tus pagos con su comprobante, mes por mes.</div>
+      </div>
+
+      <button class="signout">Cerrar sesión</button>
+    </div>
+  <div class="tabbar">
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.6 12 3.4l9 7.2"/><path d="M5.4 9.6V20h13.2V9.6"/><path d="M9.7 20v-5.6h4.6V20"/></svg>Inicio</a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v4.8a2 2 0 0 0 4 0V3"/><path d="M9 9.6V21"/><path d="M17.2 3c1.6 2.4 1.6 6.4 0 8.8V21"/></svg>Menú</a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.2" cy="8" r="3.1"/><path d="M3.4 19.8c0-3.1 2.6-4.9 5.8-4.9s5.8 1.8 5.8 4.9"/><circle cx="17.6" cy="9.6" r="2.3"/><path d="M17.6 14.4c1.6 0 3 .9 3 2.6"/></svg>Hijos</a>
+    <a href="#" class="on" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.2" r="3.4"/><path d="M5 20.2c0-3.6 3.1-5.6 7-5.6s7 2 7 5.6"/></svg>Cuenta</a>
+  </div>
+  </div>
+  <p class="caption">Vista del papá · teléfono · cuenta sin actividad</p>
+  <div class="note"><span><b>Los avisos encendidos por defecto son una decisión, no un descuido.</b> El del día 3 es el que le recuerda al papá inscribirse antes del recargo — si viniera apagado, el papá que más lo necesita nunca lo encendería. Y la tarjeta de facturación no es un simple "falta un dato": dice <b>por qué</b> hay que llenarlo antes de pagar, porque una factura no se puede emitir en un mes distinto al del pago.</span></div>
 </section>
 
 <!-- ======================= 9 · AGREGAR HIJO ======================= -->
