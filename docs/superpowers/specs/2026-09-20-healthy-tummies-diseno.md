@@ -205,7 +205,14 @@ tratos.
 ### De cara al papá
 
 - Sitio público con el menú del mes, filtrado por escuela y nivel
-- Registro del tutor y alta de sus hijos: nombre, **matrícula**, escuela, **grado** y
+- **Acceso sin contraseña:** enlace por correo, o con cuenta de Google o de Microsoft.
+  Microsoft importa porque muchos colegios en México operan con Microsoft 365 y el papá
+  ya tiene esa cuenta. Un papá que entra una vez al mes olvida cualquier contraseña, y
+  cada olvido es soporte que alguien de Healthy Tummies tiene que atender
+- **Onboarding de una sola pantalla:** nombre completo, teléfono opcional con su razón a
+  la vista, confirmación de escuela y **aceptación del aviso de privacidad**. Los datos
+  fiscales no se piden aquí — se piden antes del primer pago, donde ya hay motivación
+- Alta de sus hijos: nombre, **matrícula**, escuela, **grado** y
   alergias o restricciones alimentarias
 - **Grado significa preescolar o primaria, y nada más.** El año escolar y el grupo son
   información de la escuela, no de Healthy Tummies: no se capturan, no se almacenan y no
@@ -320,9 +327,15 @@ conciliación automática con el banco.
 
 ## 11. Riesgos
 
-**Datos de menores.** El sistema almacena nombres de niños y las escuelas a las que
-asisten. En México eso exige aviso de privacidad y cuidado con quién ve qué.
-Declararlo en la propuesta juega a favor de monclair: casi nadie lo hace.
+**Datos de menores.** El sistema almacena nombres de niños, sus escuelas y sus alergias.
+En México eso cae bajo la Ley Federal de Protección de Datos Personales en Posesión de
+los Particulares: hace falta un **aviso de privacidad** y el **consentimiento expreso
+del tutor**, que en el diseño se recoge como casilla obligatoria en el onboarding. Sin
+esa casilla no se pueden guardar los datos del niño.
+
+Redactar el aviso de privacidad es trabajo legal, no de desarrollo, y debe quedar como
+entregable del cliente. Declararlo en la propuesta juega a favor de monclair: casi nadie
+lo hace, y demuestra que se entendió el riesgo de operar con datos de menores.
 
 **Alta con el PSP.** El contrato y la cuenta bancaria son trámite del cliente, no de
 monclair, y puede tardar más que el desarrollo mismo. Debe quedar como dependencia

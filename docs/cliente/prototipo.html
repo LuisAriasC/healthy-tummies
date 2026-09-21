@@ -453,6 +453,38 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .app.on,
   :root:not([data-theme="light"]) .app.on .ico{color:#0F1512}}
 @media (max-width:560px){.apps{grid-template-columns:1fr}}
+
+/* ---------- acceso y onboarding ---------- */
+.welcome{text-align:center;padding-block:18px 4px}
+.welcome .glyph{width:52px;height:52px;border-radius:16px;background:var(--brand);color:var(--ground);
+  display:grid;place-items:center;margin:0 auto 15px}
+.welcome .glyph svg{width:29px;height:29px;stroke:currentColor;fill:none;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round}
+:root[data-theme="dark"] .welcome .glyph{color:#0F1512}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .welcome .glyph{color:#0F1512}}
+.welcome h3{font-family:var(--display);font-size:20px;font-weight:600}
+.welcome p{font-size:13.5px;color:var(--muted);margin-top:7px;max-width:31ch;margin-inline:auto;line-height:1.45}
+.sso{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:12px;
+  border-radius:11px;border:1px solid var(--line-2);background:var(--surface);font-size:14px;font-weight:600}
+.sso svg{width:18px;height:18px;flex:none}
+.divider{display:flex;align-items:center;gap:11px;color:var(--muted);font-size:11.5px}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line)}
+.legal{font-size:11.5px;color:var(--muted);text-align:center;line-height:1.5;max-width:33ch;margin-inline:auto}
+.legal b{color:var(--ink-2);font-weight:600}
+.readonly{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:9px;
+  background:var(--surface-2);border:1px solid var(--line);font-size:13.5px;color:var(--ink-2)}
+.readonly .tick2{width:16px;height:16px;border-radius:50%;background:var(--ok);flex:none;position:relative}
+.readonly .tick2::after{content:"";position:absolute;left:5px;top:4px;width:6px;height:3px;
+  border-left:1.6px solid #fff;border-bottom:1.6px solid #fff;transform:rotate(-45deg)}
+.checkrow{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--ink-2);line-height:1.45}
+.cbox{width:19px;height:19px;border-radius:5px;border:1.5px solid var(--line-2);flex:none;margin-top:1px;
+  background:var(--surface);display:grid;place-items:center}
+.cbox.on{background:var(--brand);border-color:var(--brand)}
+.cbox.on::after{content:"";width:9px;height:5px;border-left:2px solid var(--ground);
+  border-bottom:2px solid var(--ground);transform:rotate(-45deg) translateY(-1px)}
+:root[data-theme="dark"] .cbox.on::after{border-color:#0F1512}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cbox.on::after{border-color:#0F1512}}
+.checkrow u{text-decoration:underline;text-underline-offset:2px}
 </style>
 
 <div class="wrap">
@@ -476,7 +508,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 <div class="apps" role="tablist" aria-label="Aplicaciones">
   <button class="app on" role="tab" aria-selected="true" data-app="papa">
     <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.6"/><path d="M10.6 5.4h2.8"/></svg></span>
-    <span><span class="an">App de papás</span><span class="ac">12 pantallas · teléfono</span></span>
+    <span><span class="an">App de papás</span><span class="ac">14 pantallas · teléfono</span></span>
   </button>
   <button class="app" role="tab" aria-selected="false" data-app="ht">
     <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M9 20.5h6"/><path d="M12 16.5v4"/></svg></span>
@@ -485,6 +517,13 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 </div>
 
 <nav class="screens" data-app="papa">
+  <div class="navgroup">
+    <span>Entrada</span>
+    <div class="navrow" role="tablist" aria-label="Acceso">
+      <button class="tab" role="tab" aria-selected="false" data-s="s15">Login</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s16">Onboarding</button>
+    </div>
+  </div>
   <div class="navgroup">
     <span>Destinos de la barra</span>
     <div class="navrow" role="tablist" aria-label="Destinos">
@@ -529,6 +568,84 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
     </div>
   </div>
 </nav>
+
+<!-- ======================= 15 · ACCESO ======================= -->
+<section class="screen" id="s15" hidden>
+  <div class="screen-head">
+    <h2>Entrar</h2>
+    <p>El papá llega desde el mensaje que le mandó la escuela. Tres formas de entrar, sin contraseña nueva que inventar y recordar. Microsoft está porque muchos colegios en México operan con cuentas de Microsoft 365 y el papá ya la tiene.</p>
+  </div>
+  <div class="frame-phone">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx/monteverde</span></div>
+    <div class="app-body stack">
+      <div class="welcome">
+        <span class="glyph" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 21c4.5-2.2 7-5.6 7-9.4A5.6 5.6 0 0 0 12 7a5.6 5.6 0 0 0-7 4.6c0 3.8 2.5 7.2 7 9.4Z"/>
+            <path d="M12 21V9"/><path d="M12 11c1.8 0 3.2-1.3 3.2-3.1 0-2-1.5-4-3.2-4.9-1.7.9-3.2 2.9-3.2 4.9C8.8 9.7 10.2 11 12 11Z"/>
+          </svg>
+        </span>
+        <h3>Healthy Tummies</h3>
+        <p>El servicio de alimentos del <b>Colegio Monteverde</b>. Inscribe a tus hijos y paga desde aquí.</p>
+      </div>
+      <button class="sso"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>Continuar con Google</button>
+      <button class="sso"><svg viewBox="0 0 23 23" aria-hidden="true"><rect fill="#F25022" x="1" y="1" width="10" height="10"/><rect fill="#7FBA00" x="12" y="1" width="10" height="10"/><rect fill="#00A4EF" x="1" y="12" width="10" height="10"/><rect fill="#FFB900" x="12" y="12" width="10" height="10"/></svg>Continuar con Microsoft</button>
+      <div class="divider">o con tu correo</div>
+      <div class="field">
+        <label for="l-correo">Correo electrónico</label>
+        <input id="l-correo" type="email" placeholder="tucorreo@ejemplo.com" autocomplete="email">
+      </div>
+      <button class="cta">Continuar</button>
+      <p class="legal">Te mandamos un enlace de acceso. <b>No hay contraseña que recordar.</b></p>
+    </div>
+  </div>
+  <p class="caption">Vista del papá · teléfono</p>
+  <div class="note"><span><b>Sin contraseña.</b> Un papá que entra una vez al mes olvida su contraseña garantizado, y cada contraseña olvidada es un correo que alguien de Healthy Tummies tiene que atender. Con enlace por correo y los dos proveedores, ese trabajo desaparece.</span></div>
+</section>
+
+<!-- ======================= 16 · ONBOARDING ======================= -->
+<section class="screen" id="s16" hidden>
+  <div class="screen-head">
+    <h2>Tus datos, una sola pantalla</h2>
+    <p>Todo lo que se pregunta aquí tiene que justificarse, porque cada campo pierde papás. Van cuatro cosas: el nombre real, el teléfono con su razón a la vista, la confirmación de escuela y el consentimiento de privacidad — que no es opcional, porque el sistema guarda datos de menores.</p>
+  </div>
+  <div class="frame-phone">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx/bienvenida</span></div>
+    <div class="app-top">
+      <div><div class="t">Antes de empezar</div><div class="s">Solo esta pantalla</div></div>
+    </div>
+    <div class="app-body stack">
+      <div class="readonly"><span class="tick2"></span><span>Entraste con <b>laura.mendoza@gmail.com</b></span></div>
+      <div class="field">
+        <label for="o-nombre">Tu nombre completo</label>
+        <input id="o-nombre" type="text" value="Laura Mendoza Vega" autocomplete="name">
+        <span class="help">Como aparece en tus datos fiscales. Lo usamos para tu factura.</span>
+      </div>
+      <div class="field">
+        <label for="o-tel">Teléfono <span style="text-transform:none;letter-spacing:0;font-weight:400">— opcional</span></label>
+        <input id="o-tel" type="tel" placeholder="55 0000 0000" autocomplete="tel">
+        <span class="help">Para avisarte por WhatsApp si hay algo con el servicio de tu hijo. Si lo dejas en blanco, te escribimos por correo.</span>
+      </div>
+      <div class="field">
+        <label for="o-escuela">Escuela</label>
+        <select id="o-escuela">
+          <option selected>Colegio Monteverde</option>
+          <option>Instituto Bilingüe Los Fresnos</option>
+          <option>Colegio Nueva Castilla</option>
+        </select>
+        <span class="help">La tomamos del enlace que te mandó tu escuela. Cámbiala si no es la correcta.</span>
+      </div>
+      <div class="checkrow">
+        <span class="cbox on"></span>
+        <span>He leído y acepto el <u>aviso de privacidad</u> y los <u>términos del servicio</u>. Entiendo que Healthy Tummies tratará los datos de mis hijos para darles el servicio de alimentos.</span>
+      </div>
+      <button class="cta">Crear mi cuenta</button>
+      <p class="legal">Tus datos de facturación te los pedimos más adelante, <b>justo antes de tu primer pago</b>.</p>
+    </div>
+  </div>
+  <p class="caption">Vista del papá · teléfono</p>
+  <div class="note"><span><b>Lo que no se pregunta aquí es la decisión importante.</b> Los datos fiscales —RFC, régimen, uso de CFDI, código postal— son el conjunto de campos con más fricción del producto, y pedirlos antes de que el papá haya visto un menú es la forma más rápida de perderlo. Se piden antes del primer pago, donde ya hay motivación. El consentimiento de privacidad, en cambio, no se puede diferir: sin él no se pueden guardar datos de un menor.</span></div>
+</section>
 
 <!-- ======================= 0 · INICIO ======================= -->
 <section class="screen" id="s0">
