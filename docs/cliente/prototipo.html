@@ -563,6 +563,18 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 .slot .nm{font-size:13px;font-weight:600;flex:1}
 .slot .fi{font-family:var(--mono);font-size:10.5px;color:var(--muted);white-space:nowrap}
 .slot.empty .nm{color:var(--muted);font-weight:400}
+
+.chk{width:22px;height:22px;border-radius:50%;flex:none;display:grid;place-items:center;
+  font-size:11px;font-weight:700;margin-top:1px}
+.chk.done{background:var(--ok);color:#fff}
+.chk.todo{background:var(--warn-soft);color:var(--warn);border:1px solid var(--warn)}
+.chk.wait{background:var(--surface-2);color:var(--muted);border:1px solid var(--line-2)}
+.emptybox{display:flex;flex-direction:column;align-items:center;text-align:center;
+  padding:26px 18px;border:1px dashed var(--line-2);border-radius:12px;background:var(--surface)}
+.emptybox svg{width:60px;height:60px;stroke:var(--line-2);fill:none;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round;margin-bottom:13px}
+.emptybox h4{font-size:16px;font-weight:600}
+.emptybox p{font-size:13px;color:var(--muted);margin-top:6px;max-width:44ch;line-height:1.5}
 </style>
 
 <div class="wrap">
@@ -590,7 +602,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   </button>
   <button class="app" role="tab" aria-selected="false" data-app="ht">
     <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M9 20.5h6"/><path d="M12 16.5v4"/></svg></span>
-    <span><span class="an">Sistema de Healthy Tummies</span><span class="ac">7 pantallas · escritorio</span></span>
+    <span><span class="an">Sistema de Healthy Tummies</span><span class="ac">8 pantallas · escritorio</span></span>
   </button>
 </div>
 
@@ -651,9 +663,15 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 
 <nav class="screens" data-app="ht" hidden>
   <div class="navgroup">
+    <span>Inscripciones</span>
+    <div class="navrow" role="tablist" aria-label="Inscripciones">
+      <button class="tab" role="tab" aria-selected="false" data-s="s26">Vacío</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s6">Con datos</button>
+    </div>
+  </div>
+  <div class="navgroup">
     <span>Operación</span>
     <div class="navrow" role="tablist" aria-label="Operación">
-      <button class="tab" role="tab" aria-selected="false" data-s="s6">Inscripciones</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s7">Lista de cafetería</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s8">Conteos de cocina</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s22">Pagos</button>
@@ -2110,6 +2128,74 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   </div>
   <p class="caption">Vista de Healthy Tummies · escritorio</p>
   <div class="note"><span><b>El recargo se configura por menú, no en el código.</b> Healthy Tummies decide cada mes si es un porcentaje o un monto fijo, y el sistema lo aplica solo a quien se inscriba después del día 5. Por eso noviembre no se puede publicar todavía: sin ese dato, el cobro no sabría qué hacer.</span></div>
+</section>
+
+<!-- ======================= 26 · INSCRIPCIONES VACÍO ======================= -->
+<section class="screen" id="s26" hidden>
+  <div class="screen-head">
+    <h2>Inscripciones, antes de la primera</h2>
+    <p>Lo que Healthy Tummies ve el día uno, y también cada vez que abre un mes nuevo antes de que alguien se inscriba. Una tabla vacía no diría nada útil; lo que sirve aquí es qué falta para que empiecen a llegar.</p>
+  </div>
+  <div class="frame-web">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">panel.healthytummies.mx/inscripciones</span></div>
+    <div class="admin">
+      <div class="side">
+        <span class="lbl">Operación</span>
+        <a href="#" class="on">Inscripciones</a>
+        <a href="#">Lista de cafetería</a>
+        <a href="#">Conteos de cocina</a>
+        <a href="#">Pagos</a>
+        <span class="lbl">Catálogo</span>
+        <a href="#">Escuelas</a>
+        <a href="#">Servicios y precios</a>
+        <a href="#">Menús</a>
+      </div>
+      <div class="main">
+        <div class="main-head">
+          <div><h3>Inscripciones</h3><div class="sub">Octubre 2026 · corte el 5 de octubre</div></div>
+        </div>
+        <div class="emptybox">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect x="9" y="13" width="46" height="38" rx="5" stroke-dasharray="5 5"/>
+            <path d="M9 25h46" stroke-dasharray="5 5"/>
+            <path d="M20 35h24"/><path d="M20 43h16"/>
+          </svg>
+          <h4>Todavía no hay inscripciones</h4>
+          <p>Van a aparecer aquí, una por una, en cuanto los papás empiecen a inscribirse. Faltan dos cosas para que eso pueda pasar.</p>
+        </div>
+        <div class="eyebrow">Para abrir octubre</div>
+        <div class="steps">
+          <div class="step">
+            <span class="chk done">✓</span>
+            <span><span class="nm">3 escuelas dadas de alta</span><span class="ds">Monteverde, Los Fresnos y Nueva Castilla.</span></span>
+          </div>
+          <div class="step">
+            <span class="chk done">✓</span>
+            <span><span class="nm">Servicios y precios confirmados</span><span class="ds">Siete servicios entre preescolar y primaria.</span></span>
+          </div>
+          <div class="step">
+            <span class="chk todo">!</span>
+            <span><span class="nm">Falta el padrón de Colegio Nueva Castilla</span><span class="ds">Sin él, las altas de esos papás no se pueden verificar contra la lista de la escuela.</span></span>
+          </div>
+          <div class="step">
+            <span class="chk todo">!</span>
+            <span><span class="nm">El menú de octubre no está publicado</span><span class="ds">Faltan 5 de 7 archivos y el recargo del mes. Sin recargo definido, el cobro no sabría qué aplicar después del día 5.</span></span>
+          </div>
+          <div class="step">
+            <span class="chk wait">3</span>
+            <span><span class="nm">Comparte el enlace con las escuelas</span><span class="ds">Cada escuela lo circula entre sus papás. Las inscripciones empiezan a llegar en minutos.</span></span>
+          </div>
+        </div>
+        <div class="toolbar">
+          <span class="spacer"></span>
+          <button class="tbtn">Cargar padrón</button>
+          <button class="tbtn pri">Publicar menú de octubre</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="caption">Vista de Healthy Tummies · escritorio · sin inscripciones</p>
+  <div class="note"><span><b>Un estado vacío en el panel vale más que en la app del papá.</b> Aquí responde la pregunta que el cliente va a hacer en la junta —"¿y cómo arrancamos?"— y la responde con una lista que ya trae dos pendientes reales del prototipo: el padrón que Nueva Castilla no ha entregado y el recargo de noviembre sin definir. No es una pantalla de relleno: es el guion del primer día.</span></div>
 </section>
 
 <!-- ======================= 6 · PANEL ======================= -->
