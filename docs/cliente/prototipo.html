@@ -254,8 +254,10 @@ td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabu
 .sheet-body{padding:0}
 .sheet table{font-size:12.5px}
 .sheet thead th{background:var(--paper-band);color:#4A4A46;border-bottom:1px solid var(--paper-line)}
-.sheet tbody td{border-bottom:1px solid var(--paper-line);color:var(--paper-ink)}
-.sheet tbody tr:nth-child(even) td{background:rgba(0,0,0,.018)}
+.sheet .tablewrap{background:var(--paper);border:none;border-radius:0}
+.sheet tbody td{border-bottom:1px solid var(--paper-line);color:var(--paper-ink);
+  background:var(--paper)}
+.sheet tbody tr:nth-child(even) td{background:var(--paper-band)}
 .tick{width:17px;height:17px;border:1.5px solid #7A7A74;border-radius:3px;display:inline-block}
 .sheet .grp{font-family:var(--mono);font-size:11.5px;color:#5A5A54}
 .sheet-foot{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end;
@@ -2257,7 +2259,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
             </div>
           </div>
           <div class="sheet-body">
-            <div class="tablewrap" style="border:none;border-radius:0">
+            <div class="tablewrap">
               <table>
                 <thead><tr>
                   <th style="width:38px">✓</th><th>Alumno</th><th>Grado</th><th>Servicio</th><th>Nota</th>
@@ -2337,7 +2339,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
             </div>
           </div>
           <div class="sheet-body">
-            <div class="tablewrap" style="border:none;border-radius:0">
+            <div class="tablewrap">
               <table>
                 <thead><tr>
                   <th>Nivel</th><th>Servicio</th>
