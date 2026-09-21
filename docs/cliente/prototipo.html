@@ -494,6 +494,15 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   border:1px dashed var(--line-2);border-radius:12px;background:var(--surface);
   font-size:13.5px;font-weight:600;color:var(--ink-2)}
 .addkid b{font-size:17px;line-height:1;color:var(--muted);font-weight:400}
+
+.nosvc{font-size:12.5px;color:var(--muted);line-height:1.45}
+.ctasm{display:block;width:100%;margin-top:10px;text-align:center;padding:9px;border-radius:9px;
+  background:var(--accent);color:#fff;font-size:13px;font-weight:600}
+.duebox{border:1px solid var(--warn);background:var(--warn-soft);border-radius:12px;padding:14px}
+.dueline{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.dueline span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--warn);font-weight:700}
+.dueline b{font-family:var(--mono);font-size:22px;font-weight:600;color:var(--ink)}
+.duebox p{font-size:12.5px;color:var(--ink-2);margin-top:8px;line-height:1.45}
 </style>
 
 <div class="wrap">
@@ -517,7 +526,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 <div class="apps" role="tablist" aria-label="Aplicaciones">
   <button class="app on" role="tab" aria-selected="true" data-app="papa">
     <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.6"/><path d="M10.6 5.4h2.8"/></svg></span>
-    <span><span class="an">App de papás</span><span class="ac">12 pantallas · teléfono</span></span>
+    <span><span class="an">App de papás</span><span class="ac">14 pantallas · teléfono</span></span>
   </button>
   <button class="app" role="tab" aria-selected="false" data-app="ht">
     <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M9 20.5h6"/><path d="M12 16.5v4"/></svg></span>
@@ -537,7 +546,9 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
     <span>Inicio</span>
     <div class="navrow" role="tablist" aria-label="Inicio">
       <button class="tab" role="tab" aria-selected="false" data-s="s12">Vacío</button>
-      <button class="tab" role="tab" aria-selected="true" data-s="s0">Con datos</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s17">Sin servicios</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s18">Sin pagar</button>
+      <button class="tab" role="tab" aria-selected="true" data-s="s0">Todo al día</button>
     </div>
   </div>
   <div class="navgroup">
@@ -800,6 +811,129 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   </div>
   <p class="caption">Vista del papá · teléfono · primera vez</p>
   <div class="note"><span><b>Este estado vacío absorbió al de la pantalla de Hijos</b>, que desapareció: de ahí viene la línea de que solo se piden dos datos y de que los hijos pueden estar en escuelas distintas. <b>Los tres pasos van numerados porque sí son una secuencia.</b> Y el botón secundario deja ver el menú sin registrarse: el menú es público, es lo único que el papá vino a ver, y pedirle datos antes de enseñárselo es la forma más rápida de perderlo. La fecha de corte aparece desde aquí, no después de que se registre.</span></div>
+</section>
+
+<!-- ======================= 17 · INICIO SIN SERVICIOS ======================= -->
+<section class="screen" id="s17" hidden>
+  <div class="screen-head">
+    <h2>Con hijos, sin servicios contratados</h2>
+    <p>El papá ya dio de alta a sus hijos pero no ha elegido qué van a comer. No hay nada que mostrarle del día — no está inscrito — así que la pantalla se dedica entera a lo único que importa: que el corte se acerca.</p>
+  </div>
+  <div class="frame-phone">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx</span></div>
+    <div class="app-top">
+      <div><div class="t">Healthy Tummies</div><div class="s">Octubre 2026</div></div>
+    </div>
+    <div class="app-body stack">
+      <div class="greet"><h3>Hola, Laura</h3><span class="dt">Vie 2 oct</span></div>
+      <div class="cut">
+        <span class="big">3</span>
+        <p>días para inscribir en octubre sin recargo.<br>Después del <b>5 de octubre</b> se aplica 10%.</p>
+      </div>
+      <div class="eyebrow">Tus hijos</div>
+      <div class="board">
+        <div class="bcard">
+          <div class="hd">
+            <span class="avatar">MH</span>
+            <span class="grow"><span class="nm">Mateo Hernández Mendoza</span><span class="ds">Colegio Monteverde · Primaria</span></span>
+            <span class="pill mono">Sin servicios</span>
+          </div>
+          <div class="rows">
+            <div class="nosvc">Todavía no eliges qué va a comer este mes. Tiene cuatro servicios disponibles, desde $600.</div>
+            <button class="ctasm">Elegir servicios de Mateo</button>
+          </div>
+        </div>
+        <div class="bcard">
+          <div class="hd">
+            <span class="avatar">AH</span>
+            <span class="grow"><span class="nm">Ana Sofía Hernández Mendoza</span><span class="ds">Colegio Monteverde · Preescolar</span></span>
+            <span class="pill mono">Sin servicios</span>
+          </div>
+          <div class="rows">
+            <div class="nosvc">Todavía no eliges qué va a comer este mes. Tiene tres servicios disponibles, desde $550.</div>
+            <button class="ctasm">Elegir servicios de Ana Sofía</button>
+          </div>
+        </div>
+        <button class="addkid"><b>+</b> Agregar otro hijo</button>
+      </div>
+      <button class="ghost">Ver el menú de octubre</button>
+    </div>
+  <div class="tabbar">
+    <a href="#" class="on" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.6 12 3.4l9 7.2"/><path d="M5.4 9.6V20h13.2V9.6"/><path d="M9.7 20v-5.6h4.6V20"/></svg>Inicio</a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v4.8a2 2 0 0 0 4 0V3"/><path d="M9 9.6V21"/><path d="M17.2 3c1.6 2.4 1.6 6.4 0 8.8V21"/></svg>Menú</a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.2" r="3.4"/><path d="M5 20.2c0-3.6 3.1-5.6 7-5.6s7 2 7 5.6"/></svg>Cuenta</a>
+  </div>
+  </div>
+  <p class="caption">Vista del papá · teléfono · hijos sin inscribir</p>
+  <div class="note"><span><b>Aquí no va el "hoy comen", y es correcto que no vaya.</b> El niño no está inscrito, así que no hay platillo que enseñar. En vez de dejar un hueco, cada tarjeta dice cuántos servicios tiene disponibles y desde qué precio — la información que el papá necesita justo para decidir.</span></div>
+</section>
+
+<!-- ======================= 18 · INICIO SIN PAGAR ======================= -->
+<section class="screen" id="s18" hidden>
+  <div class="screen-head">
+    <h2>Servicios elegidos, sin pagar</h2>
+    <p>La pantalla más valiosa de la app, y no por bonita: aquí hay un papá decidido al que solo le falta pagar. Todo lo que no sea empujar ese pago sobra.</p>
+  </div>
+  <div class="frame-phone">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx</span></div>
+    <div class="app-top">
+      <div><div class="t">Healthy Tummies</div><div class="s">Octubre 2026</div></div>
+    </div>
+    <div class="app-body stack">
+      <div class="greet"><h3>Hola, Laura</h3><span class="dt">Dom 4 oct</span></div>
+
+      <div class="duebox">
+        <div class="dueline"><span>Pendiente de pago</span><b>$3,050.00</b></div>
+        <p>Tus hijos <b>todavía no están inscritos</b>. Aparecen en la lista de la cafetería en cuanto se confirme tu pago.</p>
+        <button class="cta" style="margin-top:12px">Pagar $3,058.12 por SPEI</button>
+      </div>
+
+      <div class="cut">
+        <span class="big">1</span>
+        <p>día para pagar sin recargo.<br>A partir del <b>5 de octubre</b> se suman 10% sobre cada servicio.</p>
+      </div>
+
+      <div class="eyebrow">Lo que elegiste</div>
+      <div class="board">
+        <div class="bcard">
+          <div class="hd">
+            <span class="avatar">MH</span>
+            <span class="grow"><span class="nm">Mateo Hernández Mendoza</span><span class="ds">Colegio Monteverde · Primaria</span></span>
+            <span class="pill warn">Sin pagar</span>
+          </div>
+          <div class="rows">
+            <div class="brow"><span class="l">Lunch</span><span class="r">22 días · $1,200</span></div>
+            <div class="brow"><span class="l">Comida por taller<small> · martes y jueves</small></span><span class="r">9 días · $600</span></div>
+            <div class="bactions">
+              <button>Editar datos</button>
+              <button>Cambiar servicios</button>
+            </div>
+          </div>
+        </div>
+        <div class="bcard">
+          <div class="hd">
+            <span class="avatar">AH</span>
+            <span class="grow"><span class="nm">Ana Sofía Hernández Mendoza</span><span class="ds">Colegio Monteverde · Preescolar</span></span>
+            <span class="pill warn">Sin pagar</span>
+          </div>
+          <div class="rows">
+            <div class="brow"><span class="l">Comida</span><span class="r">22 días · $1,250</span></div>
+            <div class="bactions">
+              <button>Editar datos</button>
+              <button>Cambiar servicios</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="tabbar">
+    <a href="#" class="on" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.6 12 3.4l9 7.2"/><path d="M5.4 9.6V20h13.2V9.6"/><path d="M9.7 20v-5.6h4.6V20"/></svg>Inicio</a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v4.8a2 2 0 0 0 4 0V3"/><path d="M9 9.6V21"/><path d="M17.2 3c1.6 2.4 1.6 6.4 0 8.8V21"/></svg>Menú</a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.2" r="3.4"/><path d="M5 20.2c0-3.6 3.1-5.6 7-5.6s7 2 7 5.6"/></svg>Cuenta</a>
+  </div>
+  </div>
+  <p class="caption">Vista del papá · teléfono · inscripción sin pagar</p>
+  <div class="note"><span><b>"Todavía no están inscritos" es la frase que hace el trabajo.</b> Decir solo "pago pendiente" deja al papá creyendo que ya apartó su lugar. Nombrar la consecuencia real —que el niño no aparece en la lista de la cafetería hasta que el pago se confirme— es honesto y además es lo que mueve a pagar. En esta pantalla vive la fuga más cara del diagnóstico.</span></div>
 </section>
 
 <!-- ======================= 1 · MENÚ ======================= -->
