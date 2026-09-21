@@ -214,8 +214,7 @@ tratos.
   ya tiene esa cuenta. Un papá que entra una vez al mes olvida cualquier contraseña, y
   cada olvido es soporte que alguien de Healthy Tummies tiene que atender
 - **Onboarding de una sola pantalla:** nombre completo, teléfono opcional con su razón a
-  la vista y **aceptación del aviso de privacidad**. Los datos fiscales no se piden aquí
-  — se piden antes del primer pago, donde ya hay motivación
+  la vista y **aceptación del aviso de privacidad**
 - **La escuela no se pregunta en el onboarding.** La escuela es un atributo del hijo, no
   del tutor: un papá puede tener un hijo en un colegio y otro en otro, y el sistema debe
   soportarlo con una sola cuenta y un solo pago mensual. Se captura al agregar cada hijo
@@ -273,8 +272,10 @@ Debe decirse explícitamente en la propuesta, para que nadie lo dé por hecho:
   Requiere capturar el menú como datos; mientras sea una imagen el sistema no puede
   saber qué se sirve cada día. En Fase 1 el inicio muestra el board de hijos y el aviso
   de corte, no el platillo del día
-- **Facturación / CFDI automatizada.** El cliente factura a papás y a escuelas; en Fase 1
-  eso sigue haciéndose fuera del sistema. Automatizarlo es Fase 3
+- **Facturación completa, incluidos los datos fiscales del papá.** En Fase 1 Healthy
+  Tummies factura a papás y escuelas por fuera del sistema, exactamente como hoy: ni se
+  capturan RFC, régimen y uso de CFDI, ni se emite el comprobante. Todo eso es **Fase 2**.
+  La pantalla de cuenta lo muestra etiquetado para que el cliente no lo dé por incluido
 - **Modo de cobro concentrado** (que la escuela cobre y entregue un consolidado). Hoy
   ninguna escuela opera así; el campo queda en el modelo, el flujo no se construye
 - Aplicación móvil
@@ -333,8 +334,9 @@ conteos muy distintos entre lunes y viernes.
 
 **Fase 2 — Portales y menús.** Acceso propio para la escuela (ve su lista, marca
 entregas) y para la cocina (ve sus conteos, confirma producción); sustituye los
-exportables por pantallas en vivo. Y el **constructor de menús**, que habilita el "hoy
-comen" en la app del papá.
+exportables por pantallas en vivo. El **constructor de menús**, que habilita el "hoy
+comen" en la app del papá. Y la **facturación**: captura de datos fiscales del tutor y
+emisión automática del CFDI a papás y a escuelas.
 
 Sobre el constructor conviene un argumento que se le puede dar al cliente: **no es
 trabajo nuevo para Healthy Tummies.** Ya escriben el menú en alguna herramienta para
@@ -342,8 +344,8 @@ producir la imagen que mandan a las escuelas. Si lo escriben en la plataforma, l
 plataforma genera ese archivo. El trabajo neto no sube, y a cambio el papá recibe el
 menú del día.
 
-**Fase 3 — Madurez.** Reportes de consumo y merma, facturación CFDI automatizada, y
-conciliación automática con el banco.
+**Fase 3 — Madurez.** Reportes de consumo y merma, y conciliación automática con el
+banco.
 
 ---
 
