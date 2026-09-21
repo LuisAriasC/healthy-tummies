@@ -126,6 +126,9 @@ La mayoría se resolvieron. Quedan estas para la junta:
    **Es la pregunta más importante de la junta** — ahí está la mayor parte del retorno.
 4. **Días de servicio al mes** y **costo de insumos como porcentaje del precio.** Se usan
    para el diagnóstico; ahora mismo están modelados con supuestos.
+5. **¿Las escuelas están dispuestas a entregar su padrón de alumnos con matrículas?**
+   ¿En qué formato lo tienen y cada cuánto cambia? De esto depende toda la verificación
+   del alta (ver sección 11).
 
 ---
 
@@ -195,7 +198,12 @@ tratos.
 ### De cara al papá
 
 - Sitio público con el menú del mes, filtrado por escuela y nivel
-- Registro del tutor y alta de sus hijos (nombre, escuela, grado, grupo)
+- Registro del tutor y alta de sus hijos: nombre, **matrícula**, escuela, nivel y
+  alergias o restricciones alimentarias
+- **Verificación de la matrícula contra la lista de alumnos de la escuela.** El grado y
+  el grupo no los captura el papá: se toman de esa lista. Evita errores de dedo, impide
+  altas inventadas, y amarra el padrón de Healthy Tummies con el oficial de la escuela
+- Las alergias capturadas por el papá viajan hasta la lista impresa de la cafetería
 - Selección de servicio por niño, con catálogo y precio correctos según nivel
 - **Para el servicio de taller, elección de los dos días de la semana** que le
   corresponden a ese niño
@@ -294,6 +302,14 @@ Declararlo en la propuesta juega a favor de monclair: casi nadie lo hace.
 **Alta con el PSP.** El contrato y la cuenta bancaria son trámite del cliente, no de
 monclair, y puede tardar más que el desarrollo mismo. Debe quedar como dependencia
 explícita, con el riesgo de calendario a cargo del cliente.
+
+**La lista de alumnos de cada escuela.** Como el grado deja de capturarlo el papá y se
+toma de la lista oficial, **cada escuela tiene que entregarle a Healthy Tummies su padrón
+con matrículas, nombres y grados**, y mantenerlo al día cada ciclo escolar. Es una
+dependencia dura: sin esa lista no hay verificación, el alta vuelve a ser texto libre y
+regresa el problema de nombres duplicados y datos mal escritos. Conseguir ese archivo es
+una conversación de Healthy Tummies con cada escuela, no una tarea de desarrollo, y
+conviene que arranque antes que el proyecto.
 
 **Reglas sin definir.** Si el cliente no cierra el monto de la penalización y la
 política de bajas de cara al papá, el pago en línea le va a generar reclamos que hoy no

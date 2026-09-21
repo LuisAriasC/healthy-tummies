@@ -810,7 +810,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
         <input id="f-matricula" type="text" value="MV-2019-0447" autocomplete="off">
         <span class="help">La encuentras en la credencial o en el recibo de colegiatura.</span>
       </div>
-      <div class="verify"><span><b>Matrícula verificada.</b> Coincide con Mateo Hernández Mendoza, 2°A, en la lista del Colegio Monteverde.</span></div>
+      <div class="verify"><span><b>Matrícula verificada contra la lista del Colegio Monteverde.</b> Mateo Hernández Mendoza · 2°A de primaria. El grado lo tomamos de ahí — no lo capturas tú.</span></div>
       <div class="field">
         <label for="f-escuela">Escuela</label>
         <select id="f-escuela">
@@ -819,18 +819,9 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
           <option>Colegio Nueva Castilla</option>
         </select>
       </div>
-      <div class="pair">
-        <div class="field">
-          <label for="f-nivel">Nivel</label>
-          <select id="f-nivel"><option>Preescolar</option><option selected>Primaria</option></select>
-        </div>
-        <div class="field">
-          <label for="f-grado">Grado y grupo</label>
-          <select id="f-grado">
-            <option>1°A</option><option>1°B</option><option selected>2°A</option>
-            <option>2°B</option><option>3°A</option><option>3°B</option>
-          </select>
-        </div>
+      <div class="field">
+        <label for="f-nivel">Nivel</label>
+        <select id="f-nivel"><option>Preescolar</option><option selected>Primaria</option></select>
       </div>
       <div class="field">
         <label for="f-notas">Alergias o restricciones</label>
@@ -864,15 +855,18 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
         <label for="e-matricula">Matrícula</label>
         <input id="e-matricula" type="text" value="MV-2019-0447" autocomplete="off">
       </div>
-      <div class="pair">
-        <div class="field">
-          <label for="e-nivel">Nivel</label>
-          <select id="e-nivel"><option>Preescolar</option><option selected>Primaria</option></select>
-        </div>
-        <div class="field">
-          <label for="e-grado">Grado y grupo</label>
-          <select id="e-grado"><option selected>2°A</option><option>2°B</option><option>3°A</option></select>
-        </div>
+      <div class="field">
+        <label for="e-escuela">Escuela</label>
+        <select id="e-escuela">
+          <option selected>Colegio Monteverde</option>
+          <option>Instituto Bilingüe Los Fresnos</option>
+          <option>Colegio Nueva Castilla</option>
+        </select>
+        <span class="help">Si cambia de escuela, la matrícula también cambia — la verificamos contra la lista de la escuela nueva.</span>
+      </div>
+      <div class="field">
+        <label for="e-nivel">Nivel</label>
+        <select id="e-nivel"><option>Preescolar</option><option selected>Primaria</option></select>
       </div>
       <div class="field">
         <label for="e-notas">Alergias o restricciones</label>
