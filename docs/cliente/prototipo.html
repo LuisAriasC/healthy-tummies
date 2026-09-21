@@ -509,6 +509,25 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 .kidgroup .nm{font-weight:600;font-size:14px}
 .kidgroup .ds{font-size:11.5px;color:var(--muted);margin-top:1px}
 .mcard .days-badge{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-left:auto;white-space:nowrap}
+
+/* ---------- historial de pagos ---------- */
+.cyclehd{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:2px 2px 0}
+.cyclehd .ct{font-family:var(--display);font-weight:600;font-size:14px}
+.cyclehd .cs{font-family:var(--mono);font-size:11px;color:var(--muted);white-space:nowrap}
+.paylist{border:1px solid var(--line);border-radius:11px;background:var(--surface);overflow:hidden}
+.payrow{display:flex;align-items:center;gap:10px;padding:10px 13px;border-bottom:1px solid var(--line)}
+.payrow:last-child{border-bottom:none}
+.payrow .pm{font-size:13.5px;font-weight:600;flex:1;min-width:0}
+.payrow .pd{font-family:var(--mono);font-size:10.5px;color:var(--muted);white-space:nowrap}
+.payrow .pa{font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap;min-width:82px;text-align:right}
+.payrow.rec .pm::after{content:"recargo";margin-left:7px;font-family:var(--mono);font-size:9.5px;
+  font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--warn);
+  background:var(--warn-soft);border-radius:4px;padding:1px 6px;vertical-align:1px}
+.cycleclosed{display:flex;align-items:center;gap:10px;width:100%;padding:12px 13px;text-align:left;
+  border:1px solid var(--line);border-radius:11px;background:var(--surface)}
+.cycleclosed .ct{font-size:13.5px;font-weight:600;flex:1}
+.cycleclosed .cs{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.cycleclosed .arw{color:var(--muted);font-size:16px}
 </style>
 
 <div class="wrap">
@@ -532,7 +551,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 <div class="apps" role="tablist" aria-label="Aplicaciones">
   <button class="app on" role="tab" aria-selected="true" data-app="papa">
     <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.6"/><path d="M10.6 5.4h2.8"/></svg></span>
-    <span><span class="an">App de papás</span><span class="ac">15 pantallas · teléfono</span></span>
+    <span><span class="an">App de papás</span><span class="ac">16 pantallas · teléfono</span></span>
   </button>
   <button class="app" role="tab" aria-selected="false" data-app="ht">
     <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M9 20.5h6"/><path d="M12 16.5v4"/></svg></span>
@@ -569,6 +588,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
     <div class="navrow" role="tablist" aria-label="Cuenta">
       <button class="tab" role="tab" aria-selected="false" data-s="s14">Vacía</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s11">Con datos</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s20">Historial</button>
     </div>
   </div>
   <div class="navgroup">
@@ -1588,6 +1608,63 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   </div>
   <p class="caption">Vista del papá · teléfono · cuenta sin actividad</p>
   <div class="note"><span><b>Los avisos encendidos por defecto son una decisión, no un descuido.</b> El del día 3 es el que le recuerda al papá inscribirse antes del recargo — si viniera apagado, el papá que más lo necesita nunca lo encendería. Y la tarjeta de facturación no es un simple "falta un dato": dice <b>por qué</b> hay que llenarlo antes de pagar, porque una factura no se puede emitir en un mes distinto al del pago.</span></div>
+</section>
+
+<!-- ======================= 20 · CUENTA CON HISTORIAL ======================= -->
+<section class="screen" id="s20" hidden>
+  <div class="screen-head">
+    <h2>Historial, sin paginación</h2>
+    <p>Un papá paga una vez al mes: un ciclo escolar son unos diez pagos. Paginar eso en un teléfono es peor que deslizar. Lo que sí sirve es agrupar por ciclo — el que corre abierto, los anteriores colapsados con su total.</p>
+  </div>
+  <div class="frame-phone">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx/cuenta/pagos</span></div>
+    <div class="app-top">
+      <div><div class="t">Mis pagos</div><div class="s">Laura Mendoza Vega</div></div>
+    </div>
+    <div class="app-body stack">
+      <div class="cyclehd">
+        <span class="ct">Ciclo 2026-2027</span>
+        <span class="cs">3 pagos · $7,974.36</span>
+      </div>
+      <div class="paylist">
+        <div class="payrow"><span class="pm">Octubre 2026</span><span class="pd">SPEI · 2 oct</span><span class="pa">$3,058.12</span></div>
+        <div class="payrow"><span class="pm">Septiembre 2026</span><span class="pd">SPEI · 3 sep</span><span class="pa">$3,058.12</span></div>
+        <div class="payrow"><span class="pm">Agosto 2026</span><span class="pd">SPEI · 4 ago</span><span class="pa">$1,858.12</span></div>
+      </div>
+
+      <div class="cyclehd">
+        <span class="ct">Ciclo 2025-2026</span>
+        <span class="cs">10 pagos · $28,030.74</span>
+      </div>
+      <div class="paylist">
+        <div class="payrow"><span class="pm">Junio 2026</span><span class="pd">SPEI · 3 jun</span><span class="pa">$2,908.12</span></div>
+        <div class="payrow"><span class="pm">Mayo 2026</span><span class="pd">SPEI · 2 may</span><span class="pa">$2,908.12</span></div>
+        <div class="payrow"><span class="pm">Abril 2026</span><span class="pd">SPEI · 4 abr</span><span class="pa">$2,908.12</span></div>
+        <div class="payrow rec"><span class="pm">Marzo 2026</span><span class="pd">SPEI · 9 mar</span><span class="pa">$3,198.92</span></div>
+        <div class="payrow"><span class="pm">Febrero 2026</span><span class="pd">SPEI · 3 feb</span><span class="pa">$2,908.12</span></div>
+        <div class="payrow"><span class="pm">Enero 2026</span><span class="pd">SPEI · 5 ene</span><span class="pa">$2,908.12</span></div>
+        <div class="payrow"><span class="pm">Diciembre 2025</span><span class="pd">SPEI · 2 dic</span><span class="pa">$1,454.06</span></div>
+        <div class="payrow"><span class="pm">Noviembre 2025</span><span class="pd">SPEI · 4 nov</span><span class="pa">$2,908.12</span></div>
+        <div class="payrow"><span class="pm">Octubre 2025</span><span class="pd">SPEI · 3 oct</span><span class="pa">$2,908.12</span></div>
+        <div class="payrow rec"><span class="pm">Septiembre 2025</span><span class="pd">Tarjeta · 8 sep</span><span class="pa">$3,020.92</span></div>
+      </div>
+
+      <button class="cycleclosed">
+        <span class="ct">Ciclo 2024-2025</span>
+        <span class="cs">10 pagos</span>
+        <span class="arw">›</span>
+      </button>
+
+      <p class="hintline">Toca cualquier pago para ver su comprobante y qué servicios cubrió.</p>
+    </div>
+  <div class="tabbar">
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.6 12 3.4l9 7.2"/><path d="M5.4 9.6V20h13.2V9.6"/><path d="M9.7 20v-5.6h4.6V20"/></svg>Inicio</a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v4.8a2 2 0 0 0 4 0V3"/><path d="M9 9.6V21"/><path d="M17.2 3c1.6 2.4 1.6 6.4 0 8.8V21"/></svg>Menú</a>
+    <a href="#" class="on" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.2" r="3.4"/><path d="M5 20.2c0-3.6 3.1-5.6 7-5.6s7 2 7 5.6"/></svg>Cuenta</a>
+  </div>
+  </div>
+  <p class="caption">Vista del papá · teléfono · historial completo</p>
+  <div class="note"><span><b>Trece pagos a la vista y ningún paginador.</b> Un corte de 5 o de 10 no significa nada para el papá; "ciclo 2025-2026" sí, y es como piensa su historial. La agrupación además escala sola: cuando sobren ciclos, se colapsan los viejos — que es paginación con sentido en vez de un número arbitrario. El recargo de marzo queda marcado, porque es el dato que un papá va a querer revisar.</span></div>
 </section>
 
 <!-- ======================= 9 · AGREGAR HIJO ======================= -->
