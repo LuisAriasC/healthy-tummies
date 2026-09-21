@@ -387,6 +387,35 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   font-family:var(--mono);font-size:11px;font-weight:600;display:grid;place-items:center;flex:none;margin-top:1px}
 .step .nm{font-size:13.5px;font-weight:600}
 .step .ds{font-size:12.5px;color:var(--muted);margin-top:2px;line-height:1.4}
+
+/* ---------- menú por grado y servicio ---------- */
+.seg{display:flex;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:3px;gap:3px}
+.seg button{flex:1;padding:8px 6px;border-radius:7px;font-size:13.5px;font-weight:600;color:var(--muted)}
+.seg button.on{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(22,33,27,.1)}
+.mcard{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.mcard > header{display:flex;align-items:flex-start;gap:10px;padding:12px 13px}
+.mcard .nm{font-family:var(--display);font-weight:600;font-size:15px}
+.mcard .ds{font-size:12px;color:var(--muted);margin-top:2px}
+.mcard .pr{font-family:var(--mono);font-size:14px;font-weight:600;margin-left:auto;white-space:nowrap}
+.mcard .pr small{display:block;font-size:10px;color:var(--muted);text-align:right;font-weight:400;margin-top:1px}
+.calthumb{position:relative;margin:0 13px;border-radius:7px;overflow:hidden;border:1px solid var(--paper-line);
+  background:var(--paper);padding:8px;cursor:pointer}
+.calgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:3px}
+.calgrid .dow{font-family:var(--mono);font-size:7px;text-align:center;color:#6A6A64;letter-spacing:.08em;padding-bottom:1px}
+.calcell{background:var(--paper-band);border-radius:3px;padding:3px 3px 4px;min-height:27px}
+.calcell.off{background:transparent}
+.calcell b{display:block;font-family:var(--mono);font-size:6.5px;color:#4A4A46;margin-bottom:2px;font-weight:600}
+.calcell i{display:block;height:2px;background:#C6C6BF;border-radius:1px;margin-bottom:2px}
+.calcell i.s{width:62%}
+.calcell i.m{width:84%}
+.zoom{position:absolute;right:14px;bottom:14px;background:rgba(20,26,22,.86);color:#fff;font-size:10.5px;
+  font-weight:600;padding:4px 9px;border-radius:999px;letter-spacing:.02em}
+.fileline{display:flex;align-items:center;gap:7px;padding:9px 13px 0;font-family:var(--mono);
+  font-size:10.5px;color:var(--muted)}
+.mactions{display:flex;gap:8px;padding:11px 13px 13px}
+.mactions button{flex:1;padding:9px;border-radius:9px;font-size:13px;font-weight:600}
+.mactions .go{background:var(--accent);color:#fff}
+.mactions .sec{border:1px solid var(--line-2);color:var(--ink-2)}
 </style>
 
 <div class="wrap">
@@ -490,8 +519,8 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
             <span class="pill ok">Al corriente</span>
           </div>
           <div class="rows">
-            <div class="brow"><span class="l">Lunch</span><span class="r">20 días · $1,200</span></div>
-            <div class="brow"><span class="l">Comida por taller<small> · martes y jueves</small></span><span class="r">8 días · $600</span></div>
+            <div class="brow"><span class="l">Lunch</span><span class="r">22 días · $1,200</span></div>
+            <div class="brow"><span class="l">Comida por taller<small> · martes y jueves</small></span><span class="r">9 días · $600</span></div>
           </div>
         </div>
         <div class="bcard">
@@ -501,7 +530,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
             <span class="pill ok">Al corriente</span>
           </div>
           <div class="rows">
-            <div class="brow"><span class="l">Comida</span><span class="r">20 días · $1,250</span></div>
+            <div class="brow"><span class="l">Comida</span><span class="r">22 días · $1,250</span></div>
           </div>
         </div>
       </div>
@@ -584,43 +613,209 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 <!-- ======================= 1 · MENÚ ======================= -->
 <section class="screen" id="s1" hidden>
   <div class="screen-head">
-    <h2>El menú de octubre, en el teléfono del papá</h2>
-    <p>Hoy la escuela circula el menú en papel o por WhatsApp. Aquí vive en una página que el papá abre desde el mismo mensaje, con el contador de la fecha de corte a la vista.</p>
+    <h2>El menú del mes, por grado y por servicio</h2>
+    <p>Healthy Tummies publica el menú como imagen o PDF — un calendario del mes con lo que se da día por día. La pantalla no pelea con ese formato: lo trata como lo que es, un adjunto que se abre en grande, y alrededor pone lo único que el papá necesita leer en chico.</p>
   </div>
   <div class="frame-phone">
-    <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx/monteverde</span></div>
+    <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx/menu</span></div>
     <div class="app-top">
-      <div><div class="t">Menú de octubre</div><div class="s">Colegio Monteverde · Primaria</div></div>
+      <div><div class="t">Menú de octubre</div><div class="s">Colegio Monteverde</div></div>
       <div class="s">2 oct</div>
     </div>
     <div class="app-body stack">
+      <div class="seg">
+        <button>Kinder</button>
+        <button class="on">Primaria</button>
+      </div>
       <div class="cut">
         <span class="big">3</span>
-        <p>días para inscribirte sin recargo.<br>Después del <b>5 de octubre</b> se aplica 10% sobre el servicio.</p>
+        <p>días para inscribir sin recargo.<br>Después del <b>5 de octubre</b> se aplica 10%.</p>
       </div>
-      <div class="eyebrow">Semana del 5 al 9 de octubre · Lunch</div>
-      <div class="menu-day">
-        <header><span class="dow">Lunes</span><span class="date">05 OCT</span></header>
-        <ul><li>Sándwich de pavo en pan integral</li><li>Bastones de zanahoria con limón</li><li>Manzana</li><li class="bebida">Agua de jamaica</li></ul>
+      <div class="eyebrow">4 servicios disponibles para primaria</div>
+      <div class="mcard">
+        <header>
+          <span><span class="nm">Lunch</span><span class="ds">Todos los días · 22 días de servicio</span></span>
+          <span class="pr">$1,200<small>al mes</small></span>
+        </header>
+        <div class="calthumb">
+          <div class="calgrid">
+            <span class="dow">L</span>
+            <span class="dow">M</span>
+            <span class="dow">X</span>
+            <span class="dow">J</span>
+            <span class="dow">V</span>
+            <span class="calcell off"></span>
+            <span class="calcell off"></span>
+            <span class="calcell off"></span>
+            <span class="calcell"><b>1</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>2</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>5</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>6</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>7</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>8</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>9</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>12</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>13</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>14</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>15</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>16</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>19</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>20</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>21</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>22</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>23</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>26</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>27</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>28</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>29</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>30</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+          </div>
+          <span class="zoom">Toca para ver completo</span>
+        </div>
+        <div class="fileline">PDF · 1.4 MB · cargado el 25 sep</div>
+        <div class="mactions">
+          <button class="sec">Descargar</button>
+          <button class="go">Inscribir</button>
+        </div>
       </div>
-      <div class="menu-day">
-        <header><span class="dow">Martes</span><span class="date">06 OCT</span></header>
-        <ul><li>Quesadillas de flor de calabaza</li><li>Frijoles de olla</li><li>Jícama con chile</li><li class="bebida">Agua de limón</li></ul>
+      <div class="mcard">
+        <header>
+          <span><span class="nm">Comida</span><span class="ds">Todos los días · 22 días de servicio</span></span>
+          <span class="pr">$1,350<small>al mes</small></span>
+        </header>
+        <div class="calthumb">
+          <div class="calgrid">
+            <span class="dow">L</span>
+            <span class="dow">M</span>
+            <span class="dow">X</span>
+            <span class="dow">J</span>
+            <span class="dow">V</span>
+            <span class="calcell off"></span>
+            <span class="calcell off"></span>
+            <span class="calcell off"></span>
+            <span class="calcell"><b>1</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>2</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>5</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>6</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>7</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>8</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>9</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>12</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>13</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>14</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>15</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>16</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>19</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>20</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>21</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>22</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>23</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>26</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>27</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>28</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>29</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>30</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+          </div>
+          <span class="zoom">Toca para ver completo</span>
+        </div>
+        <div class="fileline">PDF · 1.4 MB · cargado el 25 sep</div>
+        <div class="mactions">
+          <button class="sec">Descargar</button>
+          <button class="go">Inscribir</button>
+        </div>
       </div>
-      <div class="menu-day">
-        <header><span class="dow">Miércoles</span><span class="date">07 OCT</span></header>
-        <ul><li>Pechuga a la plancha con arroz</li><li>Ensalada de lechuga y jitomate</li><li>Mandarina</li><li class="bebida">Agua de horchata</li></ul>
+      <div class="mcard">
+        <header>
+          <span><span class="nm">Almuerzo</span><span class="ds">Todos los días · 22 días de servicio</span></span>
+          <span class="pr">$1,350<small>al mes</small></span>
+        </header>
+        <div class="calthumb">
+          <div class="calgrid">
+            <span class="dow">L</span>
+            <span class="dow">M</span>
+            <span class="dow">X</span>
+            <span class="dow">J</span>
+            <span class="dow">V</span>
+            <span class="calcell off"></span>
+            <span class="calcell off"></span>
+            <span class="calcell off"></span>
+            <span class="calcell"><b>1</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>2</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>5</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>6</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>7</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>8</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>9</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>12</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>13</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>14</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>15</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>16</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>19</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>20</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>21</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>22</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>23</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>26</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>27</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>28</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>29</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>30</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+          </div>
+          <span class="zoom">Toca para ver completo</span>
+        </div>
+        <div class="fileline">PDF · 1.4 MB · cargado el 25 sep</div>
+        <div class="mactions">
+          <button class="sec">Descargar</button>
+          <button class="go">Inscribir</button>
+        </div>
       </div>
-      <div class="menu-day">
-        <header><span class="dow">Jueves</span><span class="date">08 OCT</span></header>
-        <ul><li>Pasta con calabacita y elote</li><li>Palitos de pepino</li><li>Plátano</li><li class="bebida">Agua de piña</li></ul>
+      <div class="mcard">
+        <header>
+          <span><span class="nm">Comida por taller</span><span class="ds">Dos días a la semana</span><div class="ds">Eliges los días al inscribir</div></span>
+          <span class="pr">$600<small>al mes</small></span>
+        </header>
+        <div class="calthumb">
+          <div class="calgrid">
+            <span class="dow">L</span>
+            <span class="dow">M</span>
+            <span class="dow">X</span>
+            <span class="dow">J</span>
+            <span class="dow">V</span>
+            <span class="calcell off"></span>
+            <span class="calcell off"></span>
+            <span class="calcell off"></span>
+            <span class="calcell"><b>1</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>2</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>5</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>6</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>7</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>8</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>9</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>12</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>13</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>14</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>15</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>16</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>19</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>20</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>21</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>22</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>23</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>26</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>27</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>28</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>29</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>30</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+          </div>
+          <span class="zoom">Toca para ver completo</span>
+        </div>
+        <div class="fileline">PDF · 1.4 MB · cargado el 25 sep</div>
+        <div class="mactions">
+          <button class="sec">Descargar</button>
+          <button class="go">Inscribir</button>
+        </div>
       </div>
-      <div class="menu-day">
-        <header><span class="dow">Viernes</span><span class="date">09 OCT</span></header>
-        <ul><li>Molletes de frijol con pico de gallo</li><li>Uvas</li><li class="bebida">Agua de melón</li></ul>
-      </div>
-      <button class="cta">Inscribir a mis hijos</button>
-      <button class="ghost">Ver las otras tres semanas</button>
     </div>
   <div class="tabbar">
     <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.6 12 3.4l9 7.2"/><path d="M5.4 9.6V20h13.2V9.6"/><path d="M9.7 20v-5.6h4.6V20"/></svg>Inicio</a>
@@ -630,7 +825,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   </div>
   </div>
   <p class="caption">Vista del papá · teléfono</p>
-  <div class="note"><span><b>Por qué importa:</b> el menú deja de ser un archivo que se reenvía y se pierde. Es la puerta de entrada al cobro — el papá lo abre, ve la fecha de corte y se inscribe en el mismo lugar.</span></div>
+  <div class="note"><span><b>Lo que la imagen impide:</b> el sistema no puede leer un PDF, así que no sabe qué platillo toca hoy. Mientras el menú sea una imagen, el "hoy comen" del Inicio no existe — y ese era el motivo por el que el papá abría la app entre semana. Es una decisión de alcance, no de diseño.</span></div>
 </section>
 
 <!-- ======================= 2 · HIJOS ======================= -->
@@ -685,17 +880,17 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
     <div class="app-body stack">
       <div class="svc on">
         <span class="box"></span>
-        <span class="grow"><span class="nm">Lunch</span><span class="ds">Todos los días · 20 días de servicio</span></span>
+        <span class="grow"><span class="nm">Lunch</span><span class="ds">Todos los días · 22 días de servicio</span></span>
         <span class="pr">$1,200</span>
       </div>
       <div class="svc">
         <span class="box"></span>
-        <span class="grow"><span class="nm">Comida</span><span class="ds">Todos los días · 20 días de servicio</span></span>
+        <span class="grow"><span class="nm">Comida</span><span class="ds">Todos los días · 22 días de servicio</span></span>
         <span class="pr">$1,350</span>
       </div>
       <div class="svc">
         <span class="box"></span>
-        <span class="grow"><span class="nm">Almuerzo</span><span class="ds">Todos los días · 20 días de servicio</span></span>
+        <span class="grow"><span class="nm">Almuerzo</span><span class="ds">Todos los días · 22 días de servicio</span></span>
         <span class="pr">$1,350</span>
       </div>
       <div class="svc on" style="flex-wrap:wrap">
@@ -731,9 +926,9 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
       <div><div class="t">Pago de octubre</div><div class="s">2 servicios · 2 niños</div></div>
     </div>
     <div class="app-body stack">
-      <div class="line-item"><span class="l">Mateo · Lunch<small>Primaria 2° · 20 días</small></span><span class="r">$1,200.00</span></div>
-      <div class="line-item"><span class="l">Mateo · Comida por taller<small>Martes y jueves · 8 días</small></span><span class="r">$600.00</span></div>
-      <div class="line-item"><span class="l">Ana Sofía · Comida<small>Preescolar · 20 días</small></span><span class="r">$1,250.00</span></div>
+      <div class="line-item"><span class="l">Mateo · Lunch<small>Primaria 2° · 22 días</small></span><span class="r">$1,200.00</span></div>
+      <div class="line-item"><span class="l">Mateo · Comida por taller<small>Martes y jueves · 9 días</small></span><span class="r">$600.00</span></div>
+      <div class="line-item"><span class="l">Ana Sofía · Comida<small>Preescolar · 22 días</small></span><span class="r">$1,250.00</span></div>
       <hr>
       <div class="line-item"><span class="l"><b>Subtotal</b></span><span class="r"><b>$3,050.00</b></span></div>
       <div class="eyebrow" style="margin-top:6px">Cómo quieres pagar</div>
