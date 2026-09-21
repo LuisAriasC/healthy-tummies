@@ -204,7 +204,11 @@ tratos.
 
 ### De cara al papá
 
-- Sitio público con el menú del mes, filtrado por escuela y nivel
+- Sitio público con el menú del mes. **Dos vistas con lógicas distintas:** "los míos"
+  agrupa por hijo, porque el papá que ya inscribió consulta qué come su hijo; "todos"
+  agrupa por grado y servicio, porque el papá que aún no inscribe explora. El selector
+  entre ambas aparece solo cuando hay hijos inscritos — con un lado vacío estorba más de
+  lo que ayuda. La vista "todos" es además la superficie de venta cruzada
 - **Acceso sin contraseña:** enlace por correo, o con cuenta de Google o de Microsoft.
   Microsoft importa porque muchos colegios en México operan con Microsoft 365 y el papá
   ya tiene esa cuenta. Un papá que entra una vez al mes olvida cualquier contraseña, y

@@ -503,6 +503,12 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 .dueline span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--warn);font-weight:700}
 .dueline b{font-family:var(--mono);font-size:22px;font-weight:600;color:var(--ink)}
 .duebox p{font-size:12.5px;color:var(--ink-2);margin-top:8px;line-height:1.45}
+
+.kidgroup{display:flex;align-items:center;gap:10px;padding-top:4px}
+.kidgroup .avatar{width:31px;height:31px;border-radius:10px;font-size:11.5px}
+.kidgroup .nm{font-weight:600;font-size:14px}
+.kidgroup .ds{font-size:11.5px;color:var(--muted);margin-top:1px}
+.mcard .days-badge{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-left:auto;white-space:nowrap}
 </style>
 
 <div class="wrap">
@@ -526,7 +532,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 <div class="apps" role="tablist" aria-label="Aplicaciones">
   <button class="app on" role="tab" aria-selected="true" data-app="papa">
     <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.6"/><path d="M10.6 5.4h2.8"/></svg></span>
-    <span><span class="an">App de papás</span><span class="ac">14 pantallas · teléfono</span></span>
+    <span><span class="an">App de papás</span><span class="ac">15 pantallas · teléfono</span></span>
   </button>
   <button class="app" role="tab" aria-selected="false" data-app="ht">
     <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M9 20.5h6"/><path d="M12 16.5v4"/></svg></span>
@@ -554,7 +560,8 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   <div class="navgroup">
     <span>Menú</span>
     <div class="navrow" role="tablist" aria-label="Menú">
-      <button class="tab" role="tab" aria-selected="false" data-s="s1">Menú del mes</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s1">Todos</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s19">De mis hijos</button>
     </div>
   </div>
   <div class="navgroup">
@@ -936,11 +943,173 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   <div class="note"><span><b>"Todavía no están inscritos" es la frase que hace el trabajo.</b> Decir solo "pago pendiente" deja al papá creyendo que ya apartó su lugar. Nombrar la consecuencia real —que el niño no aparece en la lista de la cafetería hasta que el pago se confirme— es honesto y además es lo que mueve a pagar. En esta pantalla vive la fuga más cara del diagnóstico.</span></div>
 </section>
 
+<!-- ======================= 19 · MENÚ DE MIS HIJOS ======================= -->
+<section class="screen" id="s19" hidden>
+  <div class="screen-head">
+    <h2>Menú · los de mis hijos</h2>
+    <p>Lo que ve el papá que ya tiene hijos inscritos. Se organiza <b>por hijo, no por grado</b>: nadie piensa "menús de primaria", piensa "qué come Mateo". Como cada hijo ya trae su grado, la segmentación Kinder y Primaria aquí sobra.</p>
+  </div>
+  <div class="frame-phone">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx/menu</span></div>
+    <div class="app-top">
+      <div><div class="t">Menú de octubre</div><div class="s">El mismo en todas las escuelas</div></div>
+    </div>
+    <div class="app-body stack">
+      <div class="seg">
+        <button class="on">Los míos</button>
+        <button>Todos</button>
+      </div>
+      <div class="kidgroup">
+        <span class="avatar">MH</span>
+        <span><span class="nm">Mateo</span><span class="ds">Colegio Monteverde · Primaria</span></span>
+      </div>
+      <div class="mcard">
+        <header>
+          <span><span class="nm">Lunch</span></span>
+          <span class="days-badge">22 días</span>
+        </header>
+        <div class="calthumb">
+          <div class="calgrid">
+            <span class="dow">L</span>
+            <span class="dow">M</span>
+            <span class="dow">X</span>
+            <span class="dow">J</span>
+            <span class="dow">V</span>
+            <span class="calcell off"></span>
+            <span class="calcell off"></span>
+            <span class="calcell off"></span>
+            <span class="calcell"><b>1</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>2</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>5</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>6</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>7</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>8</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>9</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>12</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>13</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>14</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>15</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>16</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>19</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>20</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>21</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>22</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>23</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>26</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>27</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>28</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>29</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>30</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+          </div>
+          <span class="zoom">Toca para ver completo</span>
+        </div>
+        <div class="mactions"><button class="sec">Descargar PDF</button></div>
+      </div>
+      <div class="mcard">
+        <header>
+          <span><span class="nm">Comida por taller</span><span class="ds">Martes y jueves</span></span>
+          <span class="days-badge">9 días</span>
+        </header>
+        <div class="calthumb">
+          <div class="calgrid">
+            <span class="dow">L</span>
+            <span class="dow">M</span>
+            <span class="dow">X</span>
+            <span class="dow">J</span>
+            <span class="dow">V</span>
+            <span class="calcell off"></span>
+            <span class="calcell off"></span>
+            <span class="calcell off"></span>
+            <span class="calcell"><b>1</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>2</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>5</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>6</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>7</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>8</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>9</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>12</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>13</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>14</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>15</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>16</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>19</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>20</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>21</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>22</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>23</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>26</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>27</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>28</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>29</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>30</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+          </div>
+          <span class="zoom">Toca para ver completo</span>
+        </div>
+        <div class="mactions"><button class="sec">Descargar PDF</button></div>
+      </div>
+      <div class="kidgroup">
+        <span class="avatar">AH</span>
+        <span><span class="nm">Ana Sofía</span><span class="ds">Colegio Monteverde · Preescolar</span></span>
+      </div>
+      <div class="mcard">
+        <header>
+          <span><span class="nm">Comida</span></span>
+          <span class="days-badge">22 días</span>
+        </header>
+        <div class="calthumb">
+          <div class="calgrid">
+            <span class="dow">L</span>
+            <span class="dow">M</span>
+            <span class="dow">X</span>
+            <span class="dow">J</span>
+            <span class="dow">V</span>
+            <span class="calcell off"></span>
+            <span class="calcell off"></span>
+            <span class="calcell off"></span>
+            <span class="calcell"><b>1</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>2</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>5</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>6</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>7</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>8</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>9</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>12</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>13</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>14</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>15</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>16</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>19</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>20</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>21</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>22</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>23</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>26</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>27</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>28</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>29</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+            <span class="calcell"><b>30</b><i class="m"></i><i class="s"></i><i class="m"></i></span>
+          </div>
+          <span class="zoom">Toca para ver completo</span>
+        </div>
+        <div class="mactions"><button class="sec">Descargar PDF</button></div>
+      </div>
+      <button class="ghost">Ver todos los servicios disponibles</button>
+    </div>
+  <div class="tabbar">
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.6 12 3.4l9 7.2"/><path d="M5.4 9.6V20h13.2V9.6"/><path d="M9.7 20v-5.6h4.6V20"/></svg>Inicio</a>
+    <a href="#" class="on" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v4.8a2 2 0 0 0 4 0V3"/><path d="M9 9.6V21"/><path d="M17.2 3c1.6 2.4 1.6 6.4 0 8.8V21"/></svg>Menú</a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.2" r="3.4"/><path d="M5 20.2c0-3.6 3.1-5.6 7-5.6s7 2 7 5.6"/></svg>Cuenta</a>
+  </div>
+  </div>
+  <p class="caption">Vista del papá · teléfono · con hijos inscritos</p>
+  <div class="note"><span><b>Dos vistas, dos lógicas.</b> "Los míos" agrupa por hijo porque el papá consulta; "Todos" agrupa por grado porque el papá explora. Y si no hay hijos inscritos, el selector no aparece: se muestra solo "Todos", porque un selector con un lado vacío es peor que no tener selector. El enlace de abajo es la venta cruzada, sin ser insistente.</span></div>
+</section>
+
 <!-- ======================= 1 · MENÚ ======================= -->
 <section class="screen" id="s1" hidden>
   <div class="screen-head">
     <h2>El menú del mes, por grado y por servicio</h2>
-    <p>El menú es el mismo en todas las escuelas, así que no se segmenta por colegio: se segmenta por grado y por servicio, que es lo que de verdad cambia. Healthy Tummies lo publica como imagen o PDF — un calendario del mes con lo que se da día por día. La pantalla no pelea con ese formato: lo trata como lo que es, un adjunto que se abre en grande, y alrededor pone lo único que el papá necesita leer en chico.</p>
+    <p>La vista de exploración, y la única que se muestra cuando el papá todavía no tiene hijos inscritos — sin selector, porque no habría nada del otro lado. El menú es el mismo en todas las escuelas, así que se segmenta por grado y por servicio, que es lo que de verdad cambia. Healthy Tummies lo publica como imagen o PDF — un calendario del mes con lo que se da día por día. La pantalla no pelea con ese formato: lo trata como lo que es, un adjunto que se abre en grande, y alrededor pone lo único que el papá necesita leer en chico.</p>
   </div>
   <div class="frame-phone">
     <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx/menu</span></div>
@@ -949,6 +1118,10 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
       <div class="s">2 oct</div>
     </div>
     <div class="app-body stack">
+      <div class="seg">
+        <button>Los míos</button>
+        <button class="on">Todos</button>
+      </div>
       <div class="seg">
         <button>Kinder</button>
         <button class="on">Primaria</button>
