@@ -434,6 +434,25 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 .minibtn{margin-top:12px;padding:9px 15px;border-radius:9px;background:var(--accent);color:#fff;
   font-size:13px;font-weight:600}
 .hintline{font-size:12px;color:var(--muted);line-height:1.4}
+
+/* ---------- selector de aplicación ---------- */
+.apps{display:grid;grid-template-columns:1fr 1fr;gap:11px;padding-block:18px 2px}
+.app{text-align:left;display:flex;align-items:flex-start;gap:11px;padding:14px 15px;
+  border:1px solid var(--line);border-radius:13px;background:var(--surface);transition:.14s}
+.app:hover{border-color:var(--line-2)}
+.app .ico{width:30px;height:30px;border-radius:9px;background:var(--surface-2);flex:none;
+  display:grid;place-items:center;color:var(--muted)}
+.app .ico svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round}
+.app .an{font-family:var(--display);font-weight:600;font-size:15px;line-height:1.2}
+.app .ac{display:block;font-size:12px;color:var(--muted);line-height:1.35;margin-top:3px}
+.app.on{background:var(--brand);border-color:var(--brand);color:var(--ground)}
+.app.on .ac{color:var(--ground);opacity:.72}
+.app.on .ico{background:rgba(255,255,255,.16);color:var(--ground)}
+:root[data-theme="dark"] .app.on,:root[data-theme="dark"] .app.on .ico{color:#0F1512}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .app.on,
+  :root:not([data-theme="light"]) .app.on .ico{color:#0F1512}}
+@media (max-width:560px){.apps{grid-template-columns:1fr}}
 </style>
 
 <div class="wrap">
@@ -454,36 +473,55 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   <div class="proto-flag"><span class="dotpulse"></span><span><b>Prototipo no funcional.</b> Escuelas, niños y cifras son ejemplos.</span></div>
 </div>
 
-<nav class="screens">
+<div class="apps" role="tablist" aria-label="Aplicaciones">
+  <button class="app on" role="tab" aria-selected="true" data-app="papa">
+    <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.6"/><path d="M10.6 5.4h2.8"/></svg></span>
+    <span><span class="an">App de papás</span><span class="ac">12 pantallas · teléfono</span></span>
+  </button>
+  <button class="app" role="tab" aria-selected="false" data-app="ht">
+    <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M9 20.5h6"/><path d="M12 16.5v4"/></svg></span>
+    <span><span class="an">Sistema de Healthy Tummies</span><span class="ac">3 pantallas · escritorio y hojas impresas</span></span>
+  </button>
+</div>
+
+<nav class="screens" data-app="papa">
   <div class="navgroup">
-    <span>Papá · destinos de la barra</span>
-    <div class="navrow" role="tablist" aria-label="Destinos de la app">
+    <span>Destinos de la barra</span>
+    <div class="navrow" role="tablist" aria-label="Destinos">
       <button class="tab" role="tab" aria-selected="true" data-s="s0">Inicio</button>
-      <button class="tab" role="tab" aria-selected="false" data-s="s12">Inicio · vacío</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s1">Menú del mes</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s2">Mis hijos</button>
-      <button class="tab" role="tab" aria-selected="false" data-s="s13">Mis hijos · vacío</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s11">Cuenta</button>
-      <button class="tab" role="tab" aria-selected="false" data-s="s14">Cuenta · vacía</button>
     </div>
   </div>
   <div class="navgroup">
-    <span>Papá · alta y edición</span>
+    <span>Estados vacíos</span>
+    <div class="navrow" role="tablist" aria-label="Estados vacíos">
+      <button class="tab" role="tab" aria-selected="false" data-s="s12">Inicio</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s13">Mis hijos</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s14">Cuenta</button>
+    </div>
+  </div>
+  <div class="navgroup">
+    <span>Alta y edición</span>
     <div class="navrow" role="tablist" aria-label="Alta y edición">
       <button class="tab" role="tab" aria-selected="false" data-s="s9">Agregar hijo</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s10">Editar hijo</button>
     </div>
   </div>
   <div class="navgroup">
-    <span>Papá · inscripción</span>
+    <span>Inscripción</span>
     <div class="navrow" role="tablist" aria-label="Flujo de inscripción">
       <button class="tab" role="tab" aria-selected="false" data-s="s3"><span class="n">1</span>Servicios</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s4"><span class="n">2</span>Pago</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s5"><span class="n">3</span>Listo</button>
     </div>
   </div>
+</nav>
+
+<nav class="screens" data-app="ht" hidden>
   <div class="navgroup">
-    <span>Lo que ve Healthy Tummies</span>
+    <span>Operación diaria</span>
     <div class="navrow" role="tablist" aria-label="Pantallas de operación">
       <button class="tab" role="tab" aria-selected="false" data-s="s6">Inscripciones</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s7">Lista de cafetería</button>
@@ -1504,21 +1542,34 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 
 <script>
 (function(){
-  var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
-  var ids = tabs.map(function(t){ return t.dataset.s; });
-  function show(id){
+  var apps  = Array.prototype.slice.call(document.querySelectorAll(".app"));
+  var navs  = Array.prototype.slice.call(document.querySelectorAll("nav.screens"));
+  var tabs  = Array.prototype.slice.call(document.querySelectorAll(".tab"));
+  var ids   = tabs.map(function(t){ return t.dataset.s; });
+
+  function verPantalla(id){
     tabs.forEach(function(t){ t.setAttribute("aria-selected", t.dataset.s === id ? "true" : "false"); });
-    ids.forEach(function(s){
-      var el = document.getElementById(s);
-      if (el) el.hidden = (s !== id);
+    ids.forEach(function(x){
+      var el = document.getElementById(x);
+      if (el) el.hidden = (x !== id);
     });
   }
-  tabs.forEach(function(t){
-    t.addEventListener("click", function(){
-      show(t.dataset.s);
-      var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      window.scrollTo({ top: 0, behavior: calm ? "auto" : "smooth" });
+  function verApp(app){
+    apps.forEach(function(a){
+      var on = a.dataset.app === app;
+      a.classList.toggle("on", on);
+      a.setAttribute("aria-selected", on ? "true" : "false");
     });
-  });
+    navs.forEach(function(n){ n.hidden = n.dataset.app !== app; });
+    var activo = navs.filter(function(n){ return n.dataset.app === app; })[0];
+    var primera = activo && activo.querySelector(".tab");
+    if (primera) verPantalla(primera.dataset.s);
+  }
+  function arriba(){
+    var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: calm ? "auto" : "smooth" });
+  }
+  apps.forEach(function(a){ a.addEventListener("click", function(){ verApp(a.dataset.app); arriba(); }); });
+  tabs.forEach(function(t){ t.addEventListener("click", function(){ verPantalla(t.dataset.s); arriba(); }); });
 })();
 </script>
