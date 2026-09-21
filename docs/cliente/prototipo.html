@@ -339,6 +339,40 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 .danger p{font-size:12.5px;color:var(--ink-2);margin-top:4px;line-height:1.45}
 .danger button{margin-top:10px;width:100%;padding:10px;border-radius:9px;border:1px solid var(--alert);
   color:var(--alert);font-size:13.5px;font-weight:600;background:var(--surface)}
+
+/* ---------- barra inferior de la app ---------- */
+.tabbar{display:flex;border-top:1px solid var(--line);background:var(--surface-2)}
+.tabbar a{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;
+  padding:10px 4px 12px;font-size:10.5px;font-weight:600;color:var(--muted);text-decoration:none;
+  letter-spacing:.01em}
+.tabbar a svg{width:21px;height:21px;display:block;stroke:currentColor;fill:none;
+  stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.tabbar a.on{color:var(--brand)}
+.tabbar a.on::before{content:"";position:absolute;top:-1px;left:50%;transform:translateX(-50%);
+  width:26px;height:2px;border-radius:0 0 2px 2px;background:var(--brand)}
+
+/* ---------- cuenta ---------- */
+.sect{display:flex;flex-direction:column;gap:10px}
+.rowlink{display:flex;align-items:center;gap:11px;padding:12px 13px;border:1px solid var(--line);
+  border-radius:11px;background:var(--surface)}
+.rowlink .grow{flex:1;min-width:0}
+.rowlink .nm{font-size:13.5px;font-weight:600}
+.rowlink .ds{font-size:12px;color:var(--muted);margin-top:2px}
+.rowlink .arw{color:var(--muted);font-size:17px;line-height:1}
+.switch{width:38px;height:22px;border-radius:999px;background:var(--line-2);flex:none;position:relative;
+  transition:.15s}
+.switch::after{content:"";position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;
+  background:var(--surface);transition:.15s}
+.switch.on{background:var(--ok)}
+.switch.on::after{left:18px}
+.fiscal{border:1px solid var(--line);border-radius:11px;background:var(--surface);overflow:hidden}
+.fiscal .fr{display:flex;justify-content:space-between;gap:12px;padding:10px 13px;
+  border-bottom:1px solid var(--line);font-size:13px}
+.fiscal .fr:last-child{border-bottom:none}
+.fiscal .fk{color:var(--muted);flex:none}
+.fiscal .fv{font-family:var(--mono);font-size:12.5px;text-align:right;min-width:0;word-break:break-word}
+.signout{display:block;width:100%;text-align:center;padding:11px;border-radius:11px;
+  border:1px solid var(--line-2);font-size:13.5px;color:var(--muted)}
 </style>
 
 <div class="wrap">
@@ -361,26 +395,27 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 
 <nav class="screens">
   <div class="navgroup">
-    <span>Papá · día a día</span>
-    <div class="navrow" role="tablist" aria-label="Pantallas de uso diario">
+    <span>Papá · destinos de la barra</span>
+    <div class="navrow" role="tablist" aria-label="Destinos de la app">
       <button class="tab" role="tab" aria-selected="true" data-s="s0">Inicio</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s1">Menú del mes</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s2">Mis hijos</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s11">Cuenta</button>
+    </div>
+  </div>
+  <div class="navgroup">
+    <span>Papá · alta y edición</span>
+    <div class="navrow" role="tablist" aria-label="Alta y edición">
+      <button class="tab" role="tab" aria-selected="false" data-s="s9">Agregar hijo</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s10">Editar hijo</button>
     </div>
   </div>
   <div class="navgroup">
     <span>Papá · inscripción</span>
-    <div class="navrow" role="tablist" aria-label="Pantallas de inscripción">
-      <button class="tab" role="tab" aria-selected="false" data-s="s9"><span class="n">1</span>Agregar hijo</button>
-      <button class="tab" role="tab" aria-selected="false" data-s="s2"><span class="n">2</span>Mis hijos</button>
-      <button class="tab" role="tab" aria-selected="false" data-s="s3"><span class="n">3</span>Servicios</button>
-      <button class="tab" role="tab" aria-selected="false" data-s="s4"><span class="n">4</span>Pago</button>
-      <button class="tab" role="tab" aria-selected="false" data-s="s5"><span class="n">5</span>Listo</button>
-    </div>
-  </div>
-  <div class="navgroup">
-    <span>Papá · cuenta</span>
-    <div class="navrow" role="tablist" aria-label="Pantallas de cuenta">
-      <button class="tab" role="tab" aria-selected="false" data-s="s10">Editar hijo</button>
+    <div class="navrow" role="tablist" aria-label="Flujo de inscripción">
+      <button class="tab" role="tab" aria-selected="false" data-s="s3"><span class="n">1</span>Servicios</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s4"><span class="n">2</span>Pago</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s5"><span class="n">3</span>Listo</button>
     </div>
   </div>
   <div class="navgroup">
@@ -462,6 +497,12 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
       </div>
       <button class="ghost">Ver el menú completo de octubre</button>
     </div>
+  <div class="tabbar">
+    <a href="#" class="on" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.6 12 3.4l9 7.2"/><path d="M5.4 9.6V20h13.2V9.6"/><path d="M9.7 20v-5.6h4.6V20"/></svg>Inicio</a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v4.8a2 2 0 0 0 4 0V3"/><path d="M9 9.6V21"/><path d="M17.2 3c1.6 2.4 1.6 6.4 0 8.8V21"/></svg>Menú</a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.2" cy="8" r="3.1"/><path d="M3.4 19.8c0-3.1 2.6-4.9 5.8-4.9s5.8 1.8 5.8 4.9"/><circle cx="17.6" cy="9.6" r="2.3"/><path d="M17.6 14.4c1.6 0 3 .9 3 2.6"/></svg>Hijos</a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.2" r="3.4"/><path d="M5 20.2c0-3.6 3.1-5.6 7-5.6s7 2 7 5.6"/></svg>Cuenta</a>
+  </div>
   </div>
   <p class="caption">Vista del papá · teléfono</p>
   <div class="note"><span><b>Por qué "hoy comen" va arriba del board:</b> el estado de pago se consulta una vez al mes; el menú del día, todos los días. Una app que el papá abre seguido es una app donde el aviso del día 5 sí le llega — eso es ingreso para Healthy Tummies, no solo comodidad. Cuando el corte está cerca, este mismo espacio se vuelve la alerta naranja que ves en la pantalla del menú.</span></div>
@@ -508,6 +549,12 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
       <button class="cta">Inscribir a mis hijos</button>
       <button class="ghost">Ver las otras tres semanas</button>
     </div>
+  <div class="tabbar">
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.6 12 3.4l9 7.2"/><path d="M5.4 9.6V20h13.2V9.6"/><path d="M9.7 20v-5.6h4.6V20"/></svg>Inicio</a>
+    <a href="#" class="on" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v4.8a2 2 0 0 0 4 0V3"/><path d="M9 9.6V21"/><path d="M17.2 3c1.6 2.4 1.6 6.4 0 8.8V21"/></svg>Menú</a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.2" cy="8" r="3.1"/><path d="M3.4 19.8c0-3.1 2.6-4.9 5.8-4.9s5.8 1.8 5.8 4.9"/><circle cx="17.6" cy="9.6" r="2.3"/><path d="M17.6 14.4c1.6 0 3 .9 3 2.6"/></svg>Hijos</a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.2" r="3.4"/><path d="M5 20.2c0-3.6 3.1-5.6 7-5.6s7 2 7 5.6"/></svg>Cuenta</a>
+  </div>
   </div>
   <p class="caption">Vista del papá · teléfono</p>
   <div class="note"><span><b>Por qué importa:</b> el menú deja de ser un archivo que se reenvía y se pierde. Es la puerta de entrada al cobro — el papá lo abre, ve la fecha de corte y se inscribe en el mismo lugar.</span></div>
@@ -540,6 +587,12 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
       <div class="line-item"><span class="l">Ana Sofía<small>Sin servicios seleccionados</small></span><span class="r">—</span></div>
       <button class="cta">Elegir servicios</button>
     </div>
+  <div class="tabbar">
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.6 12 3.4l9 7.2"/><path d="M5.4 9.6V20h13.2V9.6"/><path d="M9.7 20v-5.6h4.6V20"/></svg>Inicio</a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v4.8a2 2 0 0 0 4 0V3"/><path d="M9 9.6V21"/><path d="M17.2 3c1.6 2.4 1.6 6.4 0 8.8V21"/></svg>Menú</a>
+    <a href="#" class="on" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.2" cy="8" r="3.1"/><path d="M3.4 19.8c0-3.1 2.6-4.9 5.8-4.9s5.8 1.8 5.8 4.9"/><circle cx="17.6" cy="9.6" r="2.3"/><path d="M17.6 14.4c1.6 0 3 .9 3 2.6"/></svg>Hijos</a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.2" r="3.4"/><path d="M5 20.2c0-3.6 3.1-5.6 7-5.6s7 2 7 5.6"/></svg>Cuenta</a>
+  </div>
   </div>
   <p class="caption">Vista del papá · teléfono</p>
   <div class="note"><span><b>El dato que desaparece del proceso manual:</b> nombre completo, escuela, grado y grupo capturados por el papá, no transcritos por alguien desde un comprobante.</span></div>
@@ -663,6 +716,76 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   </div>
   <p class="caption">Vista del papá · teléfono</p>
   <div class="note"><span><b>Aquí muere el cuello de botella.</b> Entre que el papá paga y que el niño aparece en la lista de la cafetería no queda ninguna persona en medio.</span></div>
+</section>
+
+<!-- ======================= 11 · CUENTA ======================= -->
+<section class="screen" id="s11" hidden>
+  <div class="screen-head">
+    <h2>Cuenta y datos de facturación</h2>
+    <p>La razón de peso para que Cuenta ocupe un lugar en la barra. Healthy Tummies le factura al papá desde el primer mes, así que necesita sus datos fiscales — capturarlos es Fase 1, emitir el CFDI automáticamente es Fase 3.</p>
+  </div>
+  <div class="frame-phone">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx/cuenta</span></div>
+    <div class="app-top">
+      <div><div class="t">Mi cuenta</div><div class="s">Laura Mendoza Vega</div></div>
+    </div>
+    <div class="app-body stack">
+      <div class="eyebrow">Mis datos</div>
+      <div class="sect">
+        <div class="rowlink">
+          <span class="grow"><span class="nm">Laura Mendoza Vega</span><span class="ds">laura.mendoza@correo.mx · 55 1847 2290</span></span>
+          <span class="arw">›</span>
+        </div>
+      </div>
+
+      <div class="eyebrow">Datos de facturación</div>
+      <div class="fiscal">
+        <div class="fr"><span class="fk">RFC</span><span class="fv">MEVL880412H7A</span></div>
+        <div class="fr"><span class="fk">Razón social</span><span class="fv">Laura Mendoza Vega</span></div>
+        <div class="fr"><span class="fk">Régimen</span><span class="fv">605 · Sueldos y salarios</span></div>
+        <div class="fr"><span class="fk">Uso de CFDI</span><span class="fv">G03 · Gastos en general</span></div>
+        <div class="fr"><span class="fk">Código postal</span><span class="fv">03810</span></div>
+        <div class="fr"><span class="fk">Correo</span><span class="fv">laura.mendoza@correo.mx</span></div>
+      </div>
+      <div class="locked">
+        <span>Healthy Tummies emite tu factura con estos datos. <b>Por ahora llega por correo dentro de las 24 horas siguientes a tu pago.</b></span>
+      </div>
+
+      <div class="eyebrow">Avisos</div>
+      <div class="sect">
+        <div class="rowlink">
+          <span class="grow"><span class="nm">Recordatorio del corte</span><span class="ds">El día 3 de cada mes, antes de que apliquen recargos</span></span>
+          <span class="switch on"></span>
+        </div>
+        <div class="rowlink">
+          <span class="grow"><span class="nm">Menú nuevo publicado</span><span class="ds">Cuando se publica el menú del mes siguiente</span></span>
+          <span class="switch on"></span>
+        </div>
+        <div class="rowlink">
+          <span class="grow"><span class="nm">Confirmación de pago</span><span class="ds">Cuando se acredita tu transferencia</span></span>
+          <span class="switch on"></span>
+        </div>
+      </div>
+
+      <div class="eyebrow">Historial</div>
+      <div class="sect">
+        <div class="rowlink">
+          <span class="grow"><span class="nm">Mis pagos</span><span class="ds">Octubre · $3,058.12 · SPEI</span></span>
+          <span class="arw">›</span>
+        </div>
+      </div>
+
+      <button class="signout">Cerrar sesión</button>
+    </div>
+  <div class="tabbar">
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.6 12 3.4l9 7.2"/><path d="M5.4 9.6V20h13.2V9.6"/><path d="M9.7 20v-5.6h4.6V20"/></svg>Inicio</a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v4.8a2 2 0 0 0 4 0V3"/><path d="M9 9.6V21"/><path d="M17.2 3c1.6 2.4 1.6 6.4 0 8.8V21"/></svg>Menú</a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.2" cy="8" r="3.1"/><path d="M3.4 19.8c0-3.1 2.6-4.9 5.8-4.9s5.8 1.8 5.8 4.9"/><circle cx="17.6" cy="9.6" r="2.3"/><path d="M17.6 14.4c1.6 0 3 .9 3 2.6"/></svg>Hijos</a>
+    <a href="#" class="on" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.2" r="3.4"/><path d="M5 20.2c0-3.6 3.1-5.6 7-5.6s7 2 7 5.6"/></svg>Cuenta</a>
+  </div>
+  </div>
+  <p class="caption">Vista del papá · teléfono</p>
+  <div class="note"><span><b>Aquí vive el historial de pagos, y no en la barra.</b> El papá ya resuelve su pregunta de tranquilidad con la píldora "Al corriente" del inicio; un historial completo se consulta una vez al mes o menos. Un quinto de la barra es un lugar demasiado caro para eso.</span></div>
 </section>
 
 <!-- ======================= 9 · AGREGAR HIJO ======================= -->
