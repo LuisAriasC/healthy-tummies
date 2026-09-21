@@ -451,6 +451,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
       <button class="tab" role="tab" aria-selected="false" data-s="s12">Inicio · vacío</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s1">Menú del mes</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s2">Mis hijos</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s13">Mis hijos · vacío</button>
       <button class="tab" role="tab" aria-selected="false" data-s="s11">Cuenta</button>
     </div>
   </div>
@@ -874,6 +875,49 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   </div>
   <p class="caption">Vista del papá · teléfono</p>
   <div class="note"><span><b>El dato que desaparece del proceso manual:</b> nombre completo, escuela, grado y grupo capturados por el papá, no transcritos por alguien desde un comprobante.</span></div>
+</section>
+
+<!-- ======================= 13 · MIS HIJOS VACÍO ======================= -->
+<section class="screen" id="s13" hidden>
+  <div class="screen-head">
+    <h2>Mis hijos, todavía sin nadie</h2>
+    <p>El papá ya entró a la app y tocó Hijos en la barra. Repetirle aquí los tres pasos que acaba de leer en el inicio sería tratarlo como si no hubiera puesto atención. Este estado vacío hace algo distinto: baja la fricción diciéndole lo poco que se le va a pedir.</p>
+  </div>
+  <div class="frame-phone">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">healthytummies.mx/hijos</span></div>
+    <div class="app-top">
+      <div><div class="t">Mis hijos</div><div class="s">Laura Mendoza Vega</div></div>
+    </div>
+    <div class="app-body stack">
+      <div class="empty">
+        <svg viewBox="0 0 80 80" aria-hidden="true">
+          <rect x="15" y="17" width="50" height="46" rx="9" stroke-dasharray="5 5"/>
+          <circle cx="40" cy="36" r="7.5"/>
+          <path d="M27 55c0-7.2 5.8-11 13-11s13 3.8 13 11"/>
+        </svg>
+        <h3>Aquí van tus hijos</h3>
+        <p>Agrega a cada uno para inscribirlo y ver lo que le toca comer.</p>
+      </div>
+
+      <div class="locked">
+        <span>Solo necesitas <b>su nombre y su matrícula</b>. Los verificamos con la lista de la escuela y listo.</span>
+      </div>
+
+      <button class="cta">Agregar hijo</button>
+
+      <div class="locked">
+        <span><b>¿Tienes más de un hijo?</b> Puedes tenerlos a todos aquí, aunque vayan a escuelas distintas. Cada uno con sus propios servicios y un solo pago al mes.</span>
+      </div>
+    </div>
+  <div class="tabbar">
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.6 12 3.4l9 7.2"/><path d="M5.4 9.6V20h13.2V9.6"/><path d="M9.7 20v-5.6h4.6V20"/></svg>Inicio</a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v4.8a2 2 0 0 0 4 0V3"/><path d="M9 9.6V21"/><path d="M17.2 3c1.6 2.4 1.6 6.4 0 8.8V21"/></svg>Menú</a>
+    <a href="#" class="on" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.2" cy="8" r="3.1"/><path d="M3.4 19.8c0-3.1 2.6-4.9 5.8-4.9s5.8 1.8 5.8 4.9"/><circle cx="17.6" cy="9.6" r="2.3"/><path d="M17.6 14.4c1.6 0 3 .9 3 2.6"/></svg>Hijos</a>
+    <a href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.2" r="3.4"/><path d="M5 20.2c0-3.6 3.1-5.6 7-5.6s7 2 7 5.6"/></svg>Cuenta</a>
+  </div>
+  </div>
+  <p class="caption">Vista del papá · teléfono · sin hijos registrados</p>
+  <div class="note"><span><b>Un estado vacío no debe repetir al anterior.</b> El del inicio explica qué es esto, porque el papá acaba de llegar de un link. Este ya no explica: quita fricción diciendo que solo se piden dos datos, y responde la duda del papá con varios hijos — que puede tenerlos juntos aunque estén en escuelas distintas, pagando una sola vez al mes.</span></div>
 </section>
 
 <!-- ======================= 3 · SERVICIOS ======================= -->
