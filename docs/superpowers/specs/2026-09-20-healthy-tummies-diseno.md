@@ -260,6 +260,13 @@ tratos.
   o monto fijo). El menú es un calendario mensual que Healthy Tummies ya produce hoy; la
   plataforma lo almacena y lo publica segmentado por grado y por servicio, sin
   interpretarlo
+- **Un mes se publica completo o no se publica.** Los siete archivos, la fecha de corte y
+  el recargo son requisitos para publicar: si un papá abriera el enlace y faltara el menú
+  de su servicio, no sabría qué está contratando
+- **Un mes publicado congela su corte y su recargo.** Una vez que se le cobró recargo a
+  alguien bajo esas reglas, cambiarlas volvería incorrectos cobros ya hechos. Los
+  archivos sí se pueden reemplazar —un menú se corrige— pero el cambio se avisa a los
+  papás, que contrataron con ese menú a la vista
 - **El menú es el mismo para todas las escuelas.** No se segmenta por colegio, sino por
   grado y servicio: son **7 menús al mes en total** —tres de preescolar, cuatro de
   primaria—, no siete por escuela. La carga de trabajo mensual de Healthy Tummies no

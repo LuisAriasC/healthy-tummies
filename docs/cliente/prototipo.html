@@ -624,7 +624,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   </button>
   <button class="app" role="tab" aria-selected="false" data-app="ht">
     <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M9 20.5h6"/><path d="M12 16.5v4"/></svg></span>
-    <span><span class="an">Sistema de Healthy Tummies</span><span class="ac">14 pantallas · escritorio</span></span>
+    <span><span class="an">Sistema de Healthy Tummies</span><span class="ac">17 pantallas · escritorio</span></span>
   </button>
 </div>
 
@@ -720,7 +720,10 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   <div class="navgroup">
     <span>Menús</span>
     <div class="navrow" role="tablist" aria-label="Menús">
-      <button class="tab" role="tab" aria-selected="false" data-s="s25">Del mes</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s33">Vacío</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s25">Con menús</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s34">Crear el mes</button>
+      <button class="tab" role="tab" aria-selected="false" data-s="s35">Editar publicado</button>
     </div>
   </div>
 </nav>
@@ -2645,6 +2648,215 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   </div>
   <p class="caption">Vista de Healthy Tummies · escritorio</p>
   <div class="note"><span><b>Las tres cifras de arriba son las que hacen que alguien lo piense dos veces:</b> 74 niños, dos escuelas, $44,400 al mes. Un catálogo que solo muestra campos invita a cambiarlos; uno que muestra a quién afecta, no. Y el precio nuevo nunca recalcula el mes en curso, porque quien ya pagó conserva el suyo.</span></div>
+</section>
+
+<!-- ======================= s33 ======================= -->
+<section class="screen" id="s33" hidden>
+  <div class="screen-head">
+    <h2>Menús, antes del primero</h2>
+    <p>Sin menú publicado la plataforma no sirve para nada: es lo que el papá abre y lo que lo convence de contratar. El vacío enumera las tres piezas que lleva un mes.</p>
+  </div>
+  <div class="frame-web">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">panel.healthytummies.mx/menus</span></div>
+    <div class="admin">
+      <div class="side">
+        <span class="lbl">Operación</span>
+        <a href="#">Inscripciones</a>
+        <a href="#">Lista de cafetería</a>
+        <a href="#">Conteos de cocina</a>
+        <a href="#">Pagos</a>
+        <span class="lbl">Catálogo</span>
+        <a href="#">Escuelas</a>
+        <a href="#">Servicios y precios</a>
+        <a href="#" class="on">Menús</a>
+      </div>
+      <div class="main">
+        <div class="main-head">
+          <div><h3>Menús</h3><div class="sub">Ninguno creado</div></div>
+        </div>
+        <div class="emptybox">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect x="11" y="15" width="42" height="38" rx="4" stroke-dasharray="5 5"/>
+            <path d="M11 26h42" stroke-dasharray="5 5"/>
+            <path d="M21 11v8M43 11v8"/>
+            <path d="M21 35h8M35 35h8M21 44h8M35 44h8"/>
+          </svg>
+          <h4>Todavía no hay menús</h4>
+          <p>Sin el menú del mes publicado, los papás no pueden inscribirse: es lo que ven al abrir el enlace de su escuela y lo que decide si contratan.</p>
+        </div>
+        <div class="eyebrow">Lo que lleva un menú del mes</div>
+        <div class="steps">
+          <div class="step">
+            <span class="chk wait">1</span>
+            <span><span class="nm">Siete archivos</span><span class="ds">Uno por cada servicio: tres de preescolar y cuatro de primaria. Imagen o PDF, el calendario del mes tal como ya lo producen. <b>Son los mismos para todas las escuelas</b>, así que no crecen al sumar colegios.</span></span>
+          </div>
+          <div class="step">
+            <span class="chk wait">2</span>
+            <span><span class="nm">Una fecha de corte</span><span class="ds">Hasta qué día del mes se puede inscribir sin recargo. Hoy es el día 5.</span></span>
+          </div>
+          <div class="step">
+            <span class="chk wait">3</span>
+            <span><span class="nm">Un recargo</span><span class="ds">Porcentaje o monto fijo, que se le cobra automáticamente a quien se inscriba después del corte. Se define cada mes.</span></span>
+          </div>
+        </div>
+        <div class="toolbar">
+          <span class="spacer"></span>
+          <button class="tbtn pri">Crear el menú del mes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="caption">Vista de Healthy Tummies · escritorio</p>
+  <div class="note"><span><b>Siete archivos al mes, y no siete por escuela.</b> Es el dato que conviene decir temprano porque contradice lo que el cliente asume: al sumar la cuarta escuela, el trabajo mensual de armar menús no cambia. La pieza que sí se olvida siempre es la tercera, el recargo — sin él, el cobro no sabe qué hacer con quien llega tarde.</span></div>
+</section>
+
+<!-- ======================= s34 ======================= -->
+<section class="screen" id="s34" hidden>
+  <div class="screen-head">
+    <h2>Crear el menú de un mes</h2>
+    <p>El mes, el corte, el recargo y los siete archivos. Es la pantalla que Healthy Tummies visita una vez al mes, y la que abre la ventana de cobro.</p>
+  </div>
+  <div class="frame-web">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">panel.healthytummies.mx/menus/noviembre</span></div>
+    <div class="admin">
+      <div class="side">
+        <span class="lbl">Operación</span>
+        <a href="#">Inscripciones</a>
+        <a href="#">Lista de cafetería</a>
+        <a href="#">Conteos de cocina</a>
+        <a href="#">Pagos</a>
+        <span class="lbl">Catálogo</span>
+        <a href="#">Escuelas</a>
+        <a href="#">Servicios y precios</a>
+        <a href="#" class="on">Menús</a>
+      </div>
+      <div class="main">
+        <div class="main-head">
+          <div><h3>Menú de noviembre</h3><div class="sub">Borrador · 2 de 7 archivos</div></div>
+        </div>
+        <div class="formcol">
+          <div class="pair">
+            <div class="field">
+              <label for="nm-mes">Mes</label>
+              <select id="nm-mes"><option selected>Noviembre 2026</option><option>Diciembre 2026</option></select>
+            </div>
+            <div class="field">
+              <label for="nm-corte">Día de corte</label>
+              <input id="nm-corte" type="text" value="5" class="mono">
+            </div>
+          </div>
+          <div class="field">
+            <label>Recargo después del corte</label>
+            <div class="checkrow" style="margin-top:2px"><span class="rbox on"></span><span>Porcentaje sobre el servicio</span></div>
+            <div class="checkrow"><span class="rbox"></span><span>Monto fijo</span></div>
+          </div>
+          <div class="field">
+            <label for="nm-valor">Valor del recargo</label>
+            <input id="nm-valor" type="text" value="10 %" class="mono">
+            <span class="help">Se le cobra automáticamente a quien se inscriba a partir del día 6.</span>
+          </div>
+          <div class="field">
+            <label>Archivos del mes · 2 de 7</label>
+            <div class="paylist">
+          <div class="slot"><span class="nm">Preescolar · Lunch</span><span class="fi">menu-nov-pre-lunch.pdf · 1.4 MB</span><span class="cp" style="font-size:12px;font-weight:600;color:var(--brand);margin-left:11px">Reemplazar</span></div>
+          <div class="slot empty"><span class="nm">Preescolar · Comida</span><span class="fi">Sin cargar</span><span class="cp" style="font-size:12px;font-weight:600;color:var(--accent);margin-left:11px">Cargar</span></div>
+          <div class="slot empty"><span class="nm">Preescolar · Comida por taller</span><span class="fi">Sin cargar</span><span class="cp" style="font-size:12px;font-weight:600;color:var(--accent);margin-left:11px">Cargar</span></div>
+          <div class="slot"><span class="nm">Primaria · Lunch</span><span class="fi">menu-nov-pri-lunch.pdf · 1.3 MB</span><span class="cp" style="font-size:12px;font-weight:600;color:var(--brand);margin-left:11px">Reemplazar</span></div>
+          <div class="slot empty"><span class="nm">Primaria · Comida</span><span class="fi">Sin cargar</span><span class="cp" style="font-size:12px;font-weight:600;color:var(--accent);margin-left:11px">Cargar</span></div>
+          <div class="slot empty"><span class="nm">Primaria · Almuerzo</span><span class="fi">Sin cargar</span><span class="cp" style="font-size:12px;font-weight:600;color:var(--accent);margin-left:11px">Cargar</span></div>
+          <div class="slot empty"><span class="nm">Primaria · Comida por taller</span><span class="fi">Sin cargar</span><span class="cp" style="font-size:12px;font-weight:600;color:var(--accent);margin-left:11px">Cargar</span></div>
+            </div>
+          </div>
+          <div class="sync" style="background:var(--warn-soft);border-color:var(--warn)">
+            <span class="dot" style="background:var(--warn)"></span>
+            <span><b>Faltan 5 archivos para poder publicar.</b> Un mes se publica completo o no se publica: si un papá abriera el enlace y le faltara el menú de su servicio, no sabría qué está contratando.</span>
+          </div>
+          <div class="toolbar">
+            <button class="tbtn">Guardar borrador</button>
+            <span class="spacer"></span>
+            <button class="tbtn pri">Publicar noviembre</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="caption">Vista de Healthy Tummies · escritorio</p>
+  <div class="note"><span><b>Un mes se publica completo o no se publica.</b> Si un papá abriera el enlace y faltara el menú de su servicio, no sabría qué está contratando — y ese papá no vuelve. Por eso el botón de publicar convive con el aviso de los cinco archivos que faltan, en vez de dejar publicar a medias.</span></div>
+</section>
+
+<!-- ======================= s35 ======================= -->
+<section class="screen" id="s35" hidden>
+  <div class="screen-head">
+    <h2>Editar un mes ya publicado</h2>
+    <p>Con 554 inscripciones cobradas encima, editar deja de ser libre. Lo que se puede tocar y lo que no está determinado por lo que ya se le cobró a alguien.</p>
+  </div>
+  <div class="frame-web">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">panel.healthytummies.mx/menus/octubre</span></div>
+    <div class="admin">
+      <div class="side">
+        <span class="lbl">Operación</span>
+        <a href="#">Inscripciones</a>
+        <a href="#">Lista de cafetería</a>
+        <a href="#">Conteos de cocina</a>
+        <a href="#">Pagos</a>
+        <span class="lbl">Catálogo</span>
+        <a href="#">Escuelas</a>
+        <a href="#">Servicios y precios</a>
+        <a href="#" class="on">Menús</a>
+      </div>
+      <div class="main">
+        <div class="main-head">
+          <div><h3>Menú de octubre</h3><div class="sub">Publicado · 554 inscripciones</div></div>
+        </div>
+        <div class="formcol">
+          <div class="miniStat">
+            <div><div class="k">Inscripciones</div><div class="v">554</div></div>
+            <div><div class="k">Entraron tarde</div><div class="v">14</div></div>
+            <div><div class="k">Recargos cobrados</div><div class="v">$4,110</div></div>
+          </div>
+          <div class="pair">
+            <div class="field">
+              <label for="em-mes">Mes</label>
+              <input id="em-mes" type="text" value="Octubre 2026" readonly>
+            </div>
+            <div class="field">
+              <label for="em-corte">Día de corte</label>
+              <input id="em-corte" type="text" value="5" class="mono" readonly>
+            </div>
+          </div>
+          <div class="field">
+            <label for="em-recargo">Recargo después del corte</label>
+            <input id="em-recargo" type="text" value="10 %" class="mono" readonly>
+          </div>
+          <div class="locked">
+            <span><b>El corte y el recargo de un mes publicado no se pueden cambiar.</b> Ya se le cobraron $4,110 de recargo a 14 papás bajo estas reglas; moverlas ahora volvería incorrectos cobros que ya se hicieron.</span>
+          </div>
+          <div class="field">
+            <label>Archivos del mes · 7 de 7</label>
+            <div class="paylist">
+          <div class="slot"><span class="nm">Preescolar · Lunch</span><span class="fi">menu-oct-pre-lunch.pdf · 1.4 MB</span><span class="cp" style="font-size:12px;font-weight:600;color:var(--brand);margin-left:11px">Reemplazar</span></div>
+          <div class="slot"><span class="nm">Preescolar · Comida</span><span class="fi">menu-oct-pre-comida.pdf · 1.3 MB</span><span class="cp" style="font-size:12px;font-weight:600;color:var(--brand);margin-left:11px">Reemplazar</span></div>
+          <div class="slot"><span class="nm">Preescolar · Comida por taller</span><span class="fi">menu-oct-pre-taller.pdf · 980 KB</span><span class="cp" style="font-size:12px;font-weight:600;color:var(--brand);margin-left:11px">Reemplazar</span></div>
+          <div class="slot"><span class="nm">Primaria · Lunch</span><span class="fi">menu-oct-pri-lunch.pdf · 1.4 MB</span><span class="cp" style="font-size:12px;font-weight:600;color:var(--brand);margin-left:11px">Reemplazar</span></div>
+          <div class="slot"><span class="nm">Primaria · Comida</span><span class="fi">menu-oct-pri-comida.pdf · 1.5 MB</span><span class="cp" style="font-size:12px;font-weight:600;color:var(--brand);margin-left:11px">Reemplazar</span></div>
+          <div class="slot"><span class="nm">Primaria · Almuerzo</span><span class="fi">menu-oct-pri-almuerzo.pdf · 1.2 MB</span><span class="cp" style="font-size:12px;font-weight:600;color:var(--brand);margin-left:11px">Reemplazar</span></div>
+          <div class="slot"><span class="nm">Primaria · Comida por taller</span><span class="fi">menu-oct-pri-taller.pdf · 1.0 MB</span><span class="cp" style="font-size:12px;font-weight:600;color:var(--brand);margin-left:11px">Reemplazar</span></div>
+            </div>
+          </div>
+          <div class="sync" style="background:var(--warn-soft);border-color:var(--warn)">
+            <span class="dot" style="background:var(--warn)"></span>
+            <span><b>Reemplazar un archivo avisa a los papás.</b> Ya vieron este menú y decidieron contratar con él a la vista, así que un cambio les llega por correo con la nota de qué se modificó.</span>
+          </div>
+          <div class="toolbar">
+            <span class="spacer"></span>
+            <button class="tbtn">Descargar los 7 archivos</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="caption">Vista de Healthy Tummies · escritorio</p>
+  <div class="note"><span><b>El corte y el recargo quedan bloqueados, y el motivo está escrito en pantalla:</b> ya se cobraron $4,110 de recargo a 14 papás bajo esas reglas. Cambiarlas volvería incorrectos cobros hechos. Los archivos sí se pueden reemplazar —un menú se corrige— pero avisando a los papás, que contrataron con ese menú a la vista.</span></div>
 </section>
 
 <!-- ======================= 6 · PANEL ======================= -->
