@@ -264,7 +264,12 @@ tratos.
   desarrollo. El Excel no se usa en Fase 1, pero se guarda desde el primer mes, de modo
   que cuando llegue la lectura automática ya haya historia acumulada en lugar de tener
   que pedirla de nuevo
-- **Un solo par de archivos al mes**, para todos los servicios y todas las escuelas
+- **El menú pertenece a servicios, aunque el archivo sea uno.** Al subir un par de
+  archivos se marca a qué servicios aplica. Si un calendario cubre los siete, se sube un
+  par y se marcan todos; si preescolar y primaria llevan menús distintos, se sube un par
+  por cada grupo. El modelo no obliga al cliente a partir su archivo ni a juntarlo: se
+  adapta a como ya lo arma. **Cada papá ve únicamente el menú de los servicios que
+  contrató**
 - **Leer el archivo es Fase 2.** Aunque venga en hoja de cálculo y por tanto sea
   interpretable, validarlo y saber qué platillo toca cada día queda fuera de la Fase 1.
   Es lo que habilita el menú del día en la app y la vista del calendario dentro del
