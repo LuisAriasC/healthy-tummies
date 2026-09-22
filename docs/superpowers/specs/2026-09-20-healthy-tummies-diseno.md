@@ -256,23 +256,27 @@ tratos.
   que deben conservarse por obligación fiscal. Al desactivarla deja de aparecer para
   papás nuevos, pero **las inscripciones del mes en curso siguen activas y se sirven
   hasta fin de mes**, porque ya están cobradas: sus listas y conteos se siguen generando
-- Carga del menú del mes como **un solo archivo de Excel o CSV** con el calendario del
-  mes —qué se sirve cada día en cada servicio—, con su penalización asociada (porcentaje
-  o monto fijo). Es el archivo que Healthy Tummies ya produce hoy. **En Fase 1 la
-  plataforma lo almacena y lo publica para descarga, sin abrirlo**; el papá lo descarga
+- Carga del menú del mes como **dos archivos del mismo calendario**: el **Excel o CSV**,
+  que es la fuente, y el **PDF exportado de esa misma hoja**, que es lo que ve el papá.
+  Con su penalización asociada (porcentaje o monto fijo)
+- **Por qué dos y no uno.** Un papá no puede leer un Excel en el teléfono, y el PDF se
+  exporta de la propia hoja en dos clics: resuelve la lectura hoy sin una línea de
+  desarrollo. El Excel no se usa en Fase 1, pero se guarda desde el primer mes, de modo
+  que cuando llegue la lectura automática ya haya historia acumulada en lugar de tener
+  que pedirla de nuevo
+- **Un solo par de archivos al mes**, para todos los servicios y todas las escuelas
 - **Leer el archivo es Fase 2.** Aunque venga en hoja de cálculo y por tanto sea
   interpretable, validarlo y saber qué platillo toca cada día queda fuera de la Fase 1.
   Es lo que habilita el menú del día en la app y la vista del calendario dentro del
   teléfono. Decisión consciente del cliente para acotar la primera versión
-- **Un mes se publica completo o no se publica.** El archivo, la fecha de corte y el
-  recargo son requisitos para publicar: sin ellos no hay nada que enseñarle al papá ni
-  con qué cobrarle a quien llegue tarde
+- **Un mes se publica completo o no se publica.** El PDF, la fecha de corte y el recargo
+  son requisitos: sin ellos no hay nada que enseñarle al papá ni con qué cobrarle a quien
+  llegue tarde. El Excel puede subirse después, porque todavía no se usa
 - **Un mes publicado congela su corte y su recargo.** Una vez que se le cobró recargo a
   alguien bajo esas reglas, cambiarlas volvería incorrectos cobros ya hechos. El archivo sí se puede reemplazar —un menú se corrige— pero el cambio se avisa a los
   papás, que contrataron con ese menú a la vista
-- **Un archivo al mes, el mismo para todas las escuelas.** Cubre los siete servicios y
-  los tres colegios. La carga de trabajo mensual de Healthy Tummies no crece al sumar
-  escuelas, y conviene señalarlo en la propuesta
+- La carga de trabajo mensual de Healthy Tummies **no crece al sumar escuelas**: es el
+  mismo par de archivos. Conviene señalarlo en la propuesta
 - Generación automática de la **lista de cafetería**, por escuela y día, con nombres
 - Generación automática de la **orden de producción diaria de la cocina central**, con
   **todas las escuelas juntas** en una sola hoja, desglosada por escuela, nivel y
