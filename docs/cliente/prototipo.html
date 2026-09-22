@@ -593,6 +593,22 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.04em}
 .filecard .fn{font-weight:600;font-size:14px}
 .filecard .fd{font-size:11px;color:var(--muted);font-family:var(--mono);margin-top:3px}
+
+.loginpane{display:grid;place-items:center;padding:46px 20px;background:var(--surface-2);min-height:430px}
+.logincard{width:100%;max-width:382px;background:var(--surface);border:1px solid var(--line);
+  border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow)}
+.logincard .hd{text-align:center}
+.logincard .glyph{width:44px;height:44px;border-radius:14px;background:var(--brand);color:var(--ground);
+  display:grid;place-items:center;margin:0 auto 13px}
+.logincard .glyph svg{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round}
+:root[data-theme="dark"] .logincard .glyph{color:#0F1512}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logincard .glyph{color:#0F1512}}
+.logincard h3{font-family:var(--display);font-size:17px;font-weight:600}
+.logincard .sb{font-size:12.5px;color:var(--muted);margin-top:4px}
+.guard{display:flex;gap:9px;align-items:flex-start;padding:10px 12px;border-radius:9px;
+  background:var(--surface-2);border:1px solid var(--line);font-size:11.5px;color:var(--muted);line-height:1.45}
+.guard b{color:var(--ink-2);font-weight:600}
 </style>
 
 <div class="wrap">
@@ -620,7 +636,7 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   </button>
   <button class="app" role="tab" aria-selected="false" data-app="ht">
     <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M9 20.5h6"/><path d="M12 16.5v4"/></svg></span>
-    <span><span class="an">Sistema de Healthy Tummies</span><span class="ac">17 pantallas · escritorio</span></span>
+    <span><span class="an">Sistema de Healthy Tummies</span><span class="ac">18 pantallas · escritorio</span></span>
   </button>
 </div>
 
@@ -680,6 +696,12 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
 </nav>
 
 <nav class="screens" data-app="ht" hidden>
+  <div class="navgroup">
+    <span>Entrada</span>
+    <div class="navrow" role="tablist" aria-label="Acceso al sistema">
+      <button class="tab" role="tab" aria-selected="false" data-s="s36">Login</button>
+    </div>
+  </div>
   <div class="navgroup">
     <span>Inscripciones</span>
     <div class="navrow" role="tablist" aria-label="Inscripciones">
@@ -2615,6 +2637,49 @@ footer.proto{border-top:1px solid var(--line);padding-block:20px 30px;font-size:
   </div>
   <p class="caption">Vista de Healthy Tummies · escritorio</p>
   <div class="note"><span><b>El corte y el recargo quedan bloqueados, y el motivo está escrito en pantalla:</b> ya se cobraron $4,110 de recargo a 14 papás bajo esas reglas. Cambiarlas volvería incorrectos cobros hechos. Los archivos sí se pueden reemplazar —un menú se corrige— pero avisando a los papás, que contrataron con ese menú a la vista. Cuando el sistema lea el Excel —Fase 2— podrá además decir exactamente qué días cambiaron.</span></div>
+</section>
+
+<!-- ======================= 36 · ACCESO AL SISTEMA ======================= -->
+<section class="screen" id="s36" hidden>
+  <div class="screen-head">
+    <h2>Entrar al sistema</h2>
+    <p>Distinto al de los papás en una cosa que importa: aquí no hay registro abierto. Las cuentas las crea Healthy Tummies, porque desde este panel se ven los datos de todos los niños y se mueve el dinero de todos los meses.</p>
+  </div>
+  <div class="frame-web">
+    <div class="chrome"><i></i><i></i><i></i><span class="url">panel.healthytummies.mx</span></div>
+    <div class="loginpane">
+      <div class="logincard">
+        <div class="hd">
+          <span class="glyph" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 21c4.5-2.2 7-5.6 7-9.4A5.6 5.6 0 0 0 12 7a5.6 5.6 0 0 0-7 4.6c0 3.8 2.5 7.2 7 9.4Z"/>
+              <path d="M12 21V9"/><path d="M12 11c1.8 0 3.2-1.3 3.2-3.1 0-2-1.5-4-3.2-4.9-1.7.9-3.2 2.9-3.2 4.9C8.8 9.7 10.2 11 12 11Z"/>
+            </svg>
+          </span>
+          <h3>Sistema de Healthy Tummies</h3>
+          <div class="sb">Panel de operación</div>
+        </div>
+        <button class="sso"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>Continuar con Google</button>
+        <button class="sso"><svg viewBox="0 0 23 23" aria-hidden="true"><rect fill="#F25022" x="1" y="1" width="10" height="10"/><rect fill="#7FBA00" x="12" y="1" width="10" height="10"/><rect fill="#00A4EF" x="1" y="12" width="10" height="10"/><rect fill="#FFB900" x="12" y="12" width="10" height="10"/></svg>Continuar con Microsoft</button>
+        <div class="divider">o con tu correo de trabajo</div>
+        <div class="field">
+          <label for="a-correo">Correo</label>
+          <input id="a-correo" type="email" placeholder="tunombre@healthytummies.mx" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="a-pass">Contraseña</label>
+          <input id="a-pass" type="password" placeholder="••••••••••" autocomplete="current-password">
+        </div>
+        <button class="cta">Entrar</button>
+        <p class="legal">¿Olvidaste tu contraseña? Te mandamos un enlace para cambiarla.</p>
+        <div class="guard">
+          <span><b>No hay registro abierto.</b> Las cuentas del panel las da de alta Healthy Tummies, una por persona. Aquí se ven nombres de menores y registros de pago, así que conviene que cada movimiento quede a nombre de alguien y no de una cuenta compartida.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="caption">Vista de Healthy Tummies · escritorio</p>
+  <div class="note"><span><b>Una cuenta por persona, no una cuenta para la empresa.</b> Es la diferencia entre poder decir "alguien bajó el precio del taller el martes" y poder decir quién lo hizo. Con dinero de por medio y datos de menores, el registro de quién hizo qué deja de ser un lujo — y empieza por no compartir la contraseña.</span></div>
 </section>
 
 <!-- ======================= 6 · PANEL ======================= -->

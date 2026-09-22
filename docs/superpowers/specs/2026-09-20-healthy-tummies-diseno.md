@@ -248,6 +248,10 @@ tratos.
 
 ### De cara a Healthy Tummies
 
+- **Acceso al panel sin registro abierto.** Las cuentas las da de alta Healthy Tummies,
+  una por persona, con correo y contraseña o con cuenta de Google o Microsoft. Cuentas
+  nominales y no compartidas: con dinero y datos de menores de por medio, importa poder
+  saber quién hizo cada movimiento, no solo que se hizo
 - Panel de administración: escuelas, precios, niños, inscripciones y estado de pago
 - **Alta y edición de escuelas**, con enlace propio generado a partir del nombre —el que
   la escuela circula entre sus papás—, contacto de cafetería para el envío de listas, y
