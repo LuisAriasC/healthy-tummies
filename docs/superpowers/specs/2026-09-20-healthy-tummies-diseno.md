@@ -256,21 +256,23 @@ tratos.
   que deben conservarse por obligación fiscal. Al desactivarla deja de aparecer para
   papás nuevos, pero **las inscripciones del mes en curso siguen activas y se sirven
   hasta fin de mes**, porque ya están cobradas: sus listas y conteos se siguen generando
-- Carga del menú del mes **como imagen o PDF**, con su penalización asociada (porcentaje
-  o monto fijo). El menú es un calendario mensual que Healthy Tummies ya produce hoy; la
-  plataforma lo almacena y lo publica segmentado por grado y por servicio, sin
-  interpretarlo
-- **Un mes se publica completo o no se publica.** Los siete archivos, la fecha de corte y
-  el recargo son requisitos para publicar: si un papá abriera el enlace y faltara el menú
-  de su servicio, no sabría qué está contratando
+- Carga del menú del mes como **un solo archivo de Excel o CSV** con el calendario del
+  mes —qué se sirve cada día en cada servicio—, con su penalización asociada (porcentaje
+  o monto fijo). Es el archivo que Healthy Tummies ya produce hoy. **En Fase 1 la
+  plataforma lo almacena y lo publica para descarga, sin abrirlo**; el papá lo descarga
+- **Leer el archivo es Fase 2.** Aunque venga en hoja de cálculo y por tanto sea
+  interpretable, validarlo y saber qué platillo toca cada día queda fuera de la Fase 1.
+  Es lo que habilita el menú del día en la app y la vista del calendario dentro del
+  teléfono. Decisión consciente del cliente para acotar la primera versión
+- **Un mes se publica completo o no se publica.** El archivo, la fecha de corte y el
+  recargo son requisitos para publicar: sin ellos no hay nada que enseñarle al papá ni
+  con qué cobrarle a quien llegue tarde
 - **Un mes publicado congela su corte y su recargo.** Una vez que se le cobró recargo a
-  alguien bajo esas reglas, cambiarlas volvería incorrectos cobros ya hechos. Los
-  archivos sí se pueden reemplazar —un menú se corrige— pero el cambio se avisa a los
+  alguien bajo esas reglas, cambiarlas volvería incorrectos cobros ya hechos. El archivo sí se puede reemplazar —un menú se corrige— pero el cambio se avisa a los
   papás, que contrataron con ese menú a la vista
-- **El menú es el mismo para todas las escuelas.** No se segmenta por colegio, sino por
-  grado y servicio: son **7 menús al mes en total** —tres de preescolar, cuatro de
-  primaria—, no siete por escuela. La carga de trabajo mensual de Healthy Tummies no
-  crece al sumar colegios, y conviene señalarlo en la propuesta
+- **Un archivo al mes, el mismo para todas las escuelas.** Cubre los siete servicios y
+  los tres colegios. La carga de trabajo mensual de Healthy Tummies no crece al sumar
+  escuelas, y conviene señalarlo en la propuesta
 - Generación automática de la **lista de cafetería**, por escuela y día, con nombres
 - Generación automática de la **orden de producción diaria de la cocina central**, con
   **todas las escuelas juntas** en una sola hoja, desglosada por escuela, nivel y
