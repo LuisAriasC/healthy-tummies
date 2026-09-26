@@ -1,0 +1,388 @@
+<title>Estimación Healthy Tummies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Karla:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#F5F8F2; --surface:#FFFFFF; --surface-2:#EFF3EA;
+  --ink:#16211B; --ink-2:#3D4B43; --muted:#6D7A71; --line:#DDE4D8; --line-2:#C9D3C2;
+  --brand:#1F4435; --brand-soft:#E4EDE4;
+  --accent:#D96A2B; --accent-soft:#FBEADF;
+  --warn:#9A6A08; --warn-soft:#F8EED6;
+  --shadow:0 1px 2px rgba(22,33,27,.06), 0 8px 24px -12px rgba(22,33,27,.18);
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Karla","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#0F1512; --surface:#18211D; --surface-2:#1F2A24;
+  --ink:#E9EEE7; --ink-2:#BCC7BD; --muted:#93A198; --line:#2A3730; --line-2:#3A4941;
+  --brand:#8CC3A5; --brand-soft:#1D2C25;
+  --accent:#F0864A; --accent-soft:#33211A;
+  --warn:#D6A63C; --warn-soft:#2A2314;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+}}
+:root[data-theme="dark"]{
+  --ground:#0F1512; --surface:#18211D; --surface-2:#1F2A24;
+  --ink:#E9EEE7; --ink-2:#BCC7BD; --muted:#93A198; --line:#2A3730; --line-2:#3A4941;
+  --brand:#8CC3A5; --brand-soft:#1D2C25;
+  --accent:#F0864A; --accent-soft:#33211A;
+  --warn:#D6A63C; --warn-soft:#2A2314;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -14px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--body);line-height:1.5;
+  padding-inline:20px;padding-block:0;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.015em}
+p{margin:0}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.wrap{max-width:900px;margin-inline:auto;padding-block:26px 44px}
+
+header.top{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:22px}
+.kicker{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+header.top h1{font-size:clamp(23px,4vw,31px);font-weight:700;margin-top:7px}
+header.top p{color:var(--muted);font-size:14.5px;margin-top:8px;max-width:64ch}
+
+.warnbox{display:flex;gap:11px;padding:13px 15px;border-radius:10px;background:var(--warn-soft);
+  border:1px solid var(--warn);font-size:13.5px;color:var(--ink-2);line-height:1.5;margin-bottom:22px}
+.warnbox b{color:var(--warn);font-weight:700}
+
+.panel{border:1px solid var(--line);border-radius:13px;background:var(--surface);
+  padding:17px 18px;box-shadow:var(--shadow)}
+.panel + .panel{margin-top:16px}
+.panel > h2{font-size:16px;font-weight:600;margin-bottom:3px}
+.panel > .sub{font-size:12.5px;color:var(--muted);margin-bottom:15px}
+
+.dials{display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:15px}
+.dial label{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);font-weight:700;margin-bottom:6px}
+.dial .row{display:flex;align-items:center;gap:9px}
+.dial input[type=number]{width:100%;font:inherit;font-family:var(--mono);font-size:15px;font-weight:600;
+  color:var(--ink);background:var(--surface-2);border:1px solid var(--line-2);border-radius:8px;padding:8px 10px}
+.dial input[type=range]{width:100%;accent-color:var(--brand)}
+.dial .hint{font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.4}
+.dial .val{font-family:var(--mono);font-size:14px;font-weight:600;white-space:nowrap;min-width:52px;text-align:right}
+
+.headline{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:16px}
+.cell{background:var(--surface);padding:15px 16px}
+.cell .k{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.cell .v{font-family:var(--display);font-size:27px;font-weight:700;margin-top:6px;line-height:1;
+  font-variant-numeric:tabular-nums}
+.cell .d{font-size:11.5px;color:var(--muted);margin-top:5px}
+.cell.money{background:var(--brand-soft)}
+.cell.money .v{color:var(--brand)}
+
+.epic{border-top:1px solid var(--line);padding-top:13px;margin-top:15px}
+.epic:first-of-type{border-top:none;padding-top:0;margin-top:0}
+.epic > .eh{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:9px}
+.epic > .eh .name{font-family:var(--display);font-weight:600;font-size:14.5px}
+.epic > .eh .meta{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-left:auto;white-space:nowrap}
+.story{display:flex;align-items:flex-start;gap:11px;padding:7px 0;font-size:13.5px}
+.story + .story{border-top:1px solid var(--line)}
+.story input{margin:3px 0 0;accent-color:var(--brand);width:16px;height:16px;flex:none}
+.story .t{flex:1;min-width:0;color:var(--ink-2)}
+.story.off .t{color:var(--muted);text-decoration:line-through}
+.story .pts{font-family:var(--mono);font-size:12.5px;font-weight:600;white-space:nowrap;
+  min-width:46px;text-align:right}
+.story .hrs{font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap;
+  min-width:52px;text-align:right}
+
+.breakdown{display:flex;flex-direction:column;gap:2px;margin-top:4px}
+.bline{display:flex;justify-content:space-between;gap:12px;font-size:13.5px;padding:6px 0}
+.bline + .bline{border-top:1px solid var(--line)}
+.bline .r{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.bline.total{border-top:1.5px solid var(--line-2);margin-top:5px;padding-top:10px;font-weight:700;font-size:15px}
+
+.method{counter-reset:paso;display:flex;flex-direction:column;gap:11px}
+.mstep{display:flex;gap:12px;font-size:13.5px;color:var(--ink-2);line-height:1.5}
+.mstep::before{counter-increment:paso;content:counter(paso);width:23px;height:23px;border-radius:50%;
+  background:var(--brand-soft);color:var(--brand);font-family:var(--mono);font-size:11.5px;font-weight:700;
+  display:grid;place-items:center;flex:none;margin-top:1px}
+.mstep b{color:var(--ink)}
+
+.scale{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
+.scale span{font-family:var(--mono);font-size:11.5px;padding:4px 10px;border-radius:7px;
+  background:var(--surface-2);border:1px solid var(--line);color:var(--ink-2)}
+
+.tip{font-size:12.5px;color:var(--muted);line-height:1.5;margin-top:13px;padding-left:13px;
+  border-left:2px solid var(--accent)}
+.tip b{color:var(--accent);font-weight:600}
+
+footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line);
+  font-size:12px;color:var(--muted);line-height:1.5}
+</style>
+
+<div class="wrap">
+
+<header class="top">
+  <div class="kicker">Documento interno · monclair</div>
+  <h1>Estimación Healthy Tummies</h1>
+  <p>Cuarenta historias derivadas de las 35 pantallas del prototipo, con puntos de esfuerzo. Mueve la calibración y la tarifa; el precio se recalcula. Desmarca historias para ver qué cuesta cada recorte.</p>
+</header>
+
+<div class="warnbox">
+  <span><b>Esto corrige el rango anterior.</b> Los $180,000 a $320,000 de la primera conversación se estimaron sobre 7 pantallas, antes del prototipo. El alcance de hoy es otro: dos aplicaciones, pasarela de pagos y conciliación. El número que sale abajo es el que se sostiene.</span>
+</div>
+
+<div class="headline" id="head"></div>
+
+<div class="panel">
+  <h2>Calibración</h2>
+  <div class="sub">Las dos primeras son tuyas y salen de tu propia historia, no de una tabla de mercado.</div>
+  <div class="dials">
+    <div class="dial">
+      <label for="hp">Horas por punto</label>
+      <div class="row">
+        <input type="range" id="hp" min="1.5" max="4" step="0.1" value="2.5">
+        <span class="val" id="hpv">2.5 h</span>
+      </div>
+      <div class="hint">Cuántas horas te toma de verdad un punto. Revisa un proyecto pasado: puntos que estimaste contra horas que registraste.</div>
+    </div>
+    <div class="dial">
+      <label for="rate">Tu tarifa por hora · MXN</label>
+      <div class="row"><input type="number" id="rate" min="0" step="50" value="500"></div>
+      <div class="hint">Costo cargado, no lo que te gustaría cobrar. Incluye el tiempo que no facturas.</div>
+    </div>
+    <div class="dial">
+      <label for="qa">QA y corrección</label>
+      <div class="row"><input type="range" id="qa" min="0" max="35" step="1" value="15"><span class="val" id="qav">15 %</span></div>
+      <div class="hint">Sobre las horas de desarrollo.</div>
+    </div>
+    <div class="dial">
+      <label for="pm">Gestión y juntas</label>
+      <div class="row"><input type="range" id="pm" min="0" max="35" step="1" value="12"><span class="val" id="pmv">12 %</span></div>
+      <div class="hint">Coordinación con el cliente durante el proyecto.</div>
+    </div>
+    <div class="dial">
+      <label for="go">Arranque y capacitación</label>
+      <div class="row"><input type="range" id="go" min="0" max="25" step="1" value="5"><span class="val" id="gov">5 %</span></div>
+      <div class="hint">Puesta en marcha y enseñarles a usarlo.</div>
+    </div>
+    <div class="dial">
+      <label for="wk">Horas por semana</label>
+      <div class="row"><input type="number" id="wk" min="1" max="60" step="1" value="35"></div>
+      <div class="hint">Lo que de verdad le dedicas, no 40 nominales.</div>
+    </div>
+  </div>
+</div>
+
+<div class="panel">
+  <h2>Desglose del costo</h2>
+  <div class="sub">De puntos a horas, y de horas a pesos.</div>
+  <div class="breakdown" id="bd"></div>
+  <div class="tip"><b>La palanca más grande no es la tarifa, son las horas por punto.</b> Mueve ese control de 2.0 a 3.0 y el precio sube 50% sin que cambie una sola historia. Por eso ese número tiene que salir de lo que ya te tomó un proyecto parecido, no de una corazonada.</div>
+</div>
+
+<div class="panel">
+  <h2>Historias de la Fase 1</h2>
+  <div class="sub">Desmarca las que quieras sacar del alcance y mira el efecto arriba.</div>
+  <div id="f1"></div>
+</div>
+
+<div class="panel">
+  <h2>Fase 2, para cotizarla aparte</h2>
+  <div class="sub">Lo que el prototipo marca en naranja. No entra en el precio de arriba.</div>
+  <div id="f2"></div>
+  <div class="breakdown" id="bd2" style="margin-top:14px"></div>
+</div>
+
+<div class="panel">
+  <h2>Cómo se calcula</h2>
+  <div class="sub">La explicación que le das al cliente si pregunta de dónde sale el número.</div>
+  <div class="method">
+    <div class="mstep"><span><b>Inventario de historias.</b> Cada pantalla y cada comportamiento del prototipo se convirtió en una historia de usuario. Cuarenta en total. Nada se estimó "a ojo de aplicación completa".</span></div>
+    <div class="mstep"><span><b>Puntos de esfuerzo, no horas.</b> Cada historia recibe puntos en escala Fibonacci. Los puntos miden tamaño relativo: una de 8 es cuatro veces una de 2. Estimar en relativo es más confiable que estimar en horas, porque no arrastra optimismo.</span></div>
+    <div class="mstep"><span><b>Conversión a horas.</b> Los puntos se multiplican por tu factor de calibración. Este es el único número que sale de tu experiencia y no del alcance — y es el que más mueve el resultado.</span></div>
+    <div class="mstep"><span><b>Trabajo que no es programar.</b> QA, gestión y arranque se suman como porcentaje de las horas de desarrollo. Sin esto, toda estimación se queda corta entre un 25% y un 35%.</span></div>
+    <div class="mstep"><span><b>Horas por tarifa.</b> El precio. Los puntos son lo defendible frente al cliente; la tarifa es tuya y no se justifica renglón por renglón.</span></div>
+  </div>
+  <div class="scale">
+    <span>1 · trivial</span><span>2 · un rato</span><span>3 · media jornada</span>
+    <span>5 · un día</span><span>8 · dos o tres días</span><span>13 · una semana, con riesgo</span>
+  </div>
+  <div class="tip"><b>Lo que el prototipo ya te ahorró:</b> las 40 historias se derivaron de pantallas que existen y que el cliente puede ver. Una estimación hecha sobre una conversación tiene un margen de error del doble; ésta, no. Ese es el argumento para cobrar la fase de diseño por separado.</div>
+</div>
+
+<footer>
+  Documento interno de monclair. No se comparte con el cliente: los puntos y la calibración son herramienta de cotización, no entregable. Lo que ve el cliente es el precio por fase.
+</footer>
+
+</div>
+
+<script>
+var FASE1 = [
+  ["Base técnica y accesos", [
+    ["Proyecto, entornos, despliegue continuo y monitoreo", 8],
+    ["Modelo de datos y migraciones iniciales", 8],
+    ["Acceso de tutores con enlace por correo", 5],
+    ["Acceso de tutores con Google", 3],
+    ["Acceso de tutores con Microsoft", 3],
+    ["Onboarding del tutor y consentimiento de privacidad", 3],
+    ["Acceso al panel con cuentas nominales", 5],
+    ["Recuperación de contraseña del panel", 2]]],
+  ["Catálogo", [
+    ["Alta y edición de escuelas, con su enlace propio", 5],
+    ["Carga y validación del padrón de alumnos", 8],
+    ["Desactivar escuela respetando lo ya cobrado", 3],
+    ["Alta y edición de servicios y precios por grado", 5],
+    ["Vigencia de precios: el cambio aplica al mes siguiente", 5],
+    ["Desactivar servicio respetando lo ya cobrado", 3],
+    ["Carga del menú del mes y asignación a servicios", 5],
+    ["Corte y recargo por mes, bloqueados al publicar", 5],
+    ["Publicar el mes y validar requisitos", 3]]],
+  ["Inscripción", [
+    ["Alta de hijo verificada contra el padrón", 8],
+    ["Edición y baja de hijo", 3],
+    ["Menú del mes por servicio y por hijo", 5],
+    ["Selección de servicios con precio según grado", 5],
+    ["Elección de los dos días del taller", 5],
+    ["Carrito acumulado en el inicio, guardar sin pagar", 5],
+    ["Los cuatro estados del inicio", 5]]],
+  ["Cobro", [
+    ["Stripe · SPEI con referencia única por inscripción", 13],
+    ["Stripe · tarjeta", 5],
+    ["Cálculo del cobro: comisión visible y recargo por alta tardía", 5],
+    ["Webhook de conciliación y cambio de estado", 8],
+    ["Confirmación y comprobante", 3],
+    ["Historial por ciclo y detalle de un pago", 5],
+    ["Panel de pagos con excepciones que no cuadran", 8]]],
+  ["Operación", [
+    ["Lista de cafetería por escuela y día", 8],
+    ["Orden de cocina por día, todas las escuelas", 8],
+    ["Exportación a PDF y hoja de cálculo", 5],
+    ["Envío automático programado por correo", 5],
+    ["Panel de inscripciones con filtros y estados", 5]]],
+  ["Transversales", [
+    ["Aplicar el diseño del prototipo a las 35 pantallas", 8],
+    ["Avisos por correo: corte, menú nuevo, pago acreditado", 5],
+    ["Aviso de privacidad y manejo de datos de menores", 3],
+    ["Estados vacíos y de error en toda la aplicación", 5]]]
+];
+var FASE2 = [
+  ["Fase 2", [
+    ["Portal de la escuela: su lista y marcado de entregas", 13],
+    ["Portal de cocina: sus conteos y confirmación de producción", 8],
+    ["Lectura y validación del calendario en Excel", 8],
+    ["Menú del día en la app del papá", 5],
+    ["Captura de datos fiscales del tutor", 3],
+    ["Emisión automática de CFDI a papás y escuelas", 13],
+    ["Cobro concentrado por escuela", 8]]]
+];
+
+var off = {};
+try { off = JSON.parse(localStorage.getItem("ht-off") || "{}") || {}; } catch (e) { off = {}; }
+
+function dial(id){ return parseFloat(document.getElementById(id).value) || 0; }
+function mxn(n){ return "$" + n.toLocaleString("es-MX", {maximumFractionDigits:0}); }
+function hrs(n){ return n.toLocaleString("es-MX", {maximumFractionDigits:0}) + " h"; }
+
+function pintarEpicas(cont, datos, interactivo){
+  var el = document.getElementById(cont);
+  el.innerHTML = "";
+  datos.forEach(function(ep, ei){
+    var wrap = document.createElement("div");
+    wrap.className = "epic";
+    var h = document.createElement("div");
+    h.className = "eh";
+    h.innerHTML = '<span class="name"></span><span class="meta"></span>';
+    h.querySelector(".name").textContent = ep[0];
+    wrap.appendChild(h);
+    ep[1].forEach(function(st, si){
+      var key = (interactivo ? "a" : "b") + ei + "-" + si;
+      var row = document.createElement("div");
+      row.className = "story";
+      var cb = document.createElement("input");
+      cb.type = "checkbox";
+      cb.id = "st-" + key;
+      cb.checked = !off[key];
+      cb.disabled = !interactivo;
+      cb.addEventListener("change", function(){
+        if (cb.checked) { delete off[key]; } else { off[key] = 1; }
+        try { localStorage.setItem("ht-off", JSON.stringify(off)); } catch (e) {}
+        recalcular();
+      });
+      var t = document.createElement("label");
+      t.className = "t";
+      t.setAttribute("for", cb.id);
+      t.textContent = st[0];
+      var p = document.createElement("span");
+      p.className = "pts";
+      p.textContent = st[1] + " pts";
+      var hh = document.createElement("span");
+      hh.className = "hrs";
+      hh.dataset.pts = st[1];
+      row.appendChild(cb); row.appendChild(t); row.appendChild(p); row.appendChild(hh);
+      row.dataset.key = key;
+      wrap.appendChild(row);
+    });
+    el.appendChild(wrap);
+  });
+}
+
+function sumar(datos, interactivo){
+  var total = 0;
+  datos.forEach(function(ep, ei){
+    ep[1].forEach(function(st, si){
+      var key = (interactivo ? "a" : "b") + ei + "-" + si;
+      if (!off[key]) total += st[1];
+    });
+  });
+  return total;
+}
+
+function recalcular(){
+  var hp = dial("hp"), rate = dial("rate"), wk = dial("wk") || 35;
+  var qa = dial("qa")/100, pm = dial("pm")/100, go = dial("go")/100;
+  document.getElementById("hpv").textContent = hp.toFixed(1) + " h";
+  document.getElementById("qav").textContent = dial("qa") + " %";
+  document.getElementById("pmv").textContent = dial("pm") + " %";
+  document.getElementById("gov").textContent = dial("go") + " %";
+
+  document.querySelectorAll(".story").forEach(function(row){
+    var cb = row.querySelector("input");
+    row.classList.toggle("off", !cb.checked);
+    var h = row.querySelector(".hrs");
+    h.textContent = hrs(parseFloat(h.dataset.pts) * hp);
+  });
+  document.querySelectorAll(".epic").forEach(function(ep){
+    var p = 0;
+    ep.querySelectorAll(".story").forEach(function(r){
+      if (r.querySelector("input").checked) p += parseFloat(r.querySelector(".hrs").dataset.pts);
+    });
+    ep.querySelector(".meta").textContent = p + " pts · " + hrs(p * hp);
+  });
+
+  var pts = sumar(FASE1, true);
+  var dev = pts * hp, hqa = dev*qa, hpm = dev*pm, hgo = dev*go;
+  var tot = dev + hqa + hpm + hgo, precio = tot * rate;
+
+  document.getElementById("head").innerHTML =
+    '<div class="cell"><div class="k">Puntos</div><div class="v">' + pts + '</div><div class="d">Fase 1</div></div>' +
+    '<div class="cell"><div class="k">Horas</div><div class="v">' + Math.round(tot) + '</div><div class="d">todo incluido</div></div>' +
+    '<div class="cell"><div class="k">Semanas</div><div class="v">' + (tot/wk).toFixed(1) + '</div><div class="d">a ' + wk + " h por semana" + '</div></div>' +
+    '<div class="cell money"><div class="k">Precio Fase 1</div><div class="v">' + mxn(precio) + '</div><div class="d">MXN, antes de IVA</div></div>';
+
+  document.getElementById("bd").innerHTML =
+    '<div class="bline"><span class="l">Desarrollo · ' + pts + ' pts × ' + hp.toFixed(1) + ' h</span><span class="r">' + hrs(dev) + '</span></div>' +
+    '<div class="bline"><span class="l">QA y corrección · ' + dial("qa") + '%</span><span class="r">' + hrs(hqa) + '</span></div>' +
+    '<div class="bline"><span class="l">Gestión y juntas · ' + dial("pm") + '%</span><span class="r">' + hrs(hpm) + '</span></div>' +
+    '<div class="bline"><span class="l">Arranque y capacitación · ' + dial("go") + '%</span><span class="r">' + hrs(hgo) + '</span></div>' +
+    '<div class="bline"><span class="l">Horas totales</span><span class="r">' + hrs(tot) + '</span></div>' +
+    '<div class="bline total"><span class="l">Precio · ' + Math.round(tot) + ' h × ' + mxn(rate) + '</span><span class="r">' + mxn(precio) + '</span></div>';
+
+  var p2 = sumar(FASE2, false), d2 = p2*hp, t2 = d2*(1+qa+pm+go);
+  document.getElementById("bd2").innerHTML =
+    '<div class="bline"><span class="l">' + p2 + ' puntos, con los mismos supuestos</span><span class="r">' + hrs(t2) + '</span></div>' +
+    '<div class="bline total"><span class="l">Precio Fase 2</span><span class="r">' + mxn(t2*rate) + '</span></div>';
+}
+
+pintarEpicas("f1", FASE1, true);
+pintarEpicas("f2", FASE2, false);
+["hp","rate","qa","pm","go","wk"].forEach(function(id){
+  document.getElementById(id).addEventListener("input", recalcular);
+});
+recalcular();
+</script>
