@@ -136,10 +136,10 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line);
     <div class="dial">
       <label for="hp">Horas por punto</label>
       <div class="row">
-        <input type="range" id="hp" min="1.5" max="4" step="0.1" value="2.5">
+        <input type="range" id="hp" min="1" max="4" step="0.1" value="2.5">
         <span class="val" id="hpv">2.5 h</span>
       </div>
-      <div class="hint">Cuántas horas te toma de verdad un punto. Revisa un proyecto pasado: puntos que estimaste contra horas que registraste.</div>
+      <div class="hint">Cuántas horas te toma de verdad un punto. Revisa un proyecto pasado: puntos que estimaste contra horas que registraste. Abajo de 1.5 el punto se acerca a la hora — alcanzable con stack conocido y asistencia de IA, pero sin margen para que algo salga mal.</div>
     </div>
     <div class="dial">
       <label for="rate">Tu tarifa por hora · MXN</label>
@@ -173,7 +173,7 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line);
   <h2>Desglose del costo</h2>
   <div class="sub">De puntos a horas, y de horas a pesos.</div>
   <div class="breakdown" id="bd"></div>
-  <div class="tip"><b>La palanca más grande no es la tarifa, son las horas por punto.</b> Mueve ese control de 2.0 a 3.0 y el precio sube 50% sin que cambie una sola historia. Por eso ese número tiene que salir de lo que ya te tomó un proyecto parecido, no de una corazonada.</div>
+  <div class="tip"><b>La palanca más grande no es la tarifa, son las horas por punto.</b> Mueve ese control de 2.0 a 3.0 y el precio sube 50% sin que cambie una sola historia. Por eso ese número tiene que salir de lo que ya te tomó un proyecto parecido, no de una corazonada. Y cuidado con el extremo bajo: los porcentajes de QA y gestión no se encogen con la velocidad, y la historia de 13 puntos del SPEI trae el mismo riesgo a cualquier calibración.</div>
 </div>
 
 <div class="panel">
