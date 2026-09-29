@@ -171,7 +171,7 @@ def deco(canvas, doc):
     canvas.setFillColor(BRAND)
     canvas.rect(0, letter[1]-6*mm, letter[0], 6*mm, stroke=0, fill=1)
     canvas.setFont(BODY, 7.4); canvas.setFillColor(MUTED)
-    canvas.drawString(20*mm, 12*mm, "monclair  ·  Propuesta para Healthy Tummies")
+    canvas.drawString(20*mm, 12*mm, "Propuesta  ·  Healthy Tummies")
     canvas.drawRightString(letter[0]-20*mm, 12*mm, "%d" % doc.page)
     canvas.setStrokeColor(LINE); canvas.setLineWidth(0.5)
     canvas.line(20*mm, 16*mm, letter[0]-20*mm, 16*mm)
@@ -180,7 +180,7 @@ def deco(canvas, doc):
 doc = BaseDocTemplate(OUT, pagesize=letter,
                       leftMargin=20*mm, rightMargin=20*mm, topMargin=20*mm, bottomMargin=22*mm,
                       title="Propuesta · Plataforma de inscripción y cobro · Healthy Tummies",
-                      author="monclair", subject="Propuesta comercial")
+                      author="Luis Carlos Arias Camacho", subject="Propuesta comercial")
 doc.addPageTemplates([PageTemplate(id="p", frames=[Frame(doc.leftMargin, doc.bottomMargin,
                       doc.width, doc.height, id="f")], onPage=deco)])
 doc.build(story)

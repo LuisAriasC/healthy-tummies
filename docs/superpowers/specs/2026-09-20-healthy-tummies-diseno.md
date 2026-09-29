@@ -1,7 +1,7 @@
 # Healthy Tummies — Diseño de la propuesta y de la Fase 1
 
 **Fecha:** 2026-09-20
-**Autor:** Luis Carlos Arias Camacho (monclair)
+**Autor:** Luis Carlos Arias Camacho
 **Estado:** Diseño aprobado en brainstorming; pendiente de revisión
 
 ---
@@ -194,8 +194,8 @@ quieren cobrar en efectivo, Conekta con OXXO Pay entra mejor que Stripe.
 
 **B se incluye en la propuesta como comparación explícita, aunque no se recomiende.**
 Mostrarle al cliente que se evaluó la opción barata, y explicar con honestidad por qué
-no le conviene a largo plazo, posiciona a monclair como alguien que cuida su dinero en
-lugar de alguien que quiere venderle un desarrollo. Con un cliente indeciso, eso cierra
+no le conviene a largo plazo, te posiciona como alguien que cuida su dinero en lugar de
+alguien que quiere venderle un desarrollo. Con un cliente indeciso, eso cierra
 tratos.
 
 ---
@@ -390,11 +390,10 @@ del tutor**, que en el diseño se recoge como casilla obligatoria en el onboardi
 esa casilla no se pueden guardar los datos del niño.
 
 Redactar el aviso de privacidad es trabajo legal, no de desarrollo, y debe quedar como
-entregable del cliente. Declararlo en la propuesta juega a favor de monclair: casi nadie
-lo hace, y demuestra que se entendió el riesgo de operar con datos de menores.
+entregable del cliente. Declararlo en la propuesta juega a favor: casi nadie lo hace, y demuestra que se entendió el riesgo de operar con datos de menores.
 
-**Alta con el PSP.** El contrato y la cuenta bancaria son trámite del cliente, no de
-monclair, y puede tardar más que el desarrollo mismo. Debe quedar como dependencia
+**Alta con el PSP.** El contrato y la cuenta bancaria son trámite del cliente, y puede
+tardar más que el desarrollo mismo. Debe quedar como dependencia
 explícita, con el riesgo de calendario a cargo del cliente.
 
 **La lista de alumnos de cada escuela.** Para verificar el alta, **cada escuela tiene que
@@ -446,7 +445,7 @@ navegables pero no funcionales:
 
 > **Cómo leer esto.** Los rangos de precio son una estimación razonada a partir del
 > tamaño del alcance y de tarifas típicas de desarrollo a la medida en México — **no son
-> investigación de mercado ni las tarifas de monclair.** Luis debe validarlos contra su
+> investigación de mercado ni tus tarifas.** Luis debe validarlos contra su
 > propio costo por semana antes de que entren a la propuesta. La estimación de esfuerzo
 > es la parte defendible; el precio sale de multiplicarla por su tarifa.
 

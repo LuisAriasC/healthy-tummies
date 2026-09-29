@@ -1,7 +1,6 @@
 # Healthy Tummies — Diagnóstico del proceso actual
 
 **Fecha:** septiembre 2026
-**Preparado por:** monclair
 **Unidad de análisis:** 100 alumnos inscritos en un servicio, en una escuela, durante un mes
 
 ---

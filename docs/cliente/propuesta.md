@@ -10,7 +10,7 @@
 
 ### Propuesta para Healthy Tummies
 
-**Preparada por monclair** · septiembre de 2026
+Septiembre de 2026
 **Vigencia de esta propuesta: 30 días naturales**
 
 ---
@@ -245,6 +245,5 @@ servicio son suyos.
 
 ---
 
-**monclair**
 Luis Carlos Arias Camacho
 luis.carlos.arias.camacho@gmail.com
