@@ -124,7 +124,7 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line);
 </header>
 
 <div class="warnbox">
-  <span><b>Esto corrige el rango anterior.</b> Los $180,000 a $320,000 de la primera conversación se estimaron sobre 7 pantallas, antes del prototipo. El alcance de hoy es otro: dos aplicaciones, pasarela de pagos y conciliación. El número que sale abajo es el que se sostiene.</span>
+  <span><b>Calibrado en 1 hora por punto.</b> Es el extremo bajo del rango: alcanzable con stack conocido y asistencia de IA, pero sin margen para imprevistos. La propuesta enviada al cliente usa esta calibración con tarifa de $550. Los $180,000 a $320,000 de la primera conversación quedaron obsoletos — se estimaron sobre 7 pantallas, antes del prototipo.</span>
 </div>
 
 <div class="headline" id="head"></div>
@@ -136,14 +136,14 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line);
     <div class="dial">
       <label for="hp">Horas por punto</label>
       <div class="row">
-        <input type="range" id="hp" min="1" max="4" step="0.1" value="2.5">
-        <span class="val" id="hpv">2.5 h</span>
+        <input type="range" id="hp" min="1" max="4" step="0.1" value="1">
+        <span class="val" id="hpv">1.0 h</span>
       </div>
       <div class="hint">Cuántas horas te toma de verdad un punto. Revisa un proyecto pasado: puntos que estimaste contra horas que registraste. Abajo de 1.5 el punto se acerca a la hora — alcanzable con stack conocido y asistencia de IA, pero sin margen para que algo salga mal.</div>
     </div>
     <div class="dial">
       <label for="rate">Tu tarifa por hora · MXN</label>
-      <div class="row"><input type="number" id="rate" min="0" step="50" value="500"></div>
+      <div class="row"><input type="number" id="rate" min="0" step="50" value="550"></div>
       <div class="hint">Costo cargado, no lo que te gustaría cobrar. Incluye el tiempo que no facturas.</div>
     </div>
     <div class="dial">

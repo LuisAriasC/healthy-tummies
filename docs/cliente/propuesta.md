@@ -1,8 +1,8 @@
-> **NOTA INTERNA — BORRAR ANTES DE ENVIAR.** La sección 8 usa una calibración de
-> **2.0 horas por punto** y una tarifa de **$550/hora**, que dan $310,000 para la Fase 1.
-> Son supuestos míos, no tus números. Ajústalos en la calculadora y sustituye los montos
-> de la sección 8 y del calendario de pagos. Todo lo demás del documento no depende del
-> precio.
+> **NOTA INTERNA — BORRAR ANTES DE ENVIAR.** Calibración de **1 hora por punto** y tarifa
+> de **$550/hora**: 214 puntos → 282 horas → $155,000 para la Fase 1, en 8 semanas. La
+> tarifa sigue siendo un supuesto mío; si la tuya es otra, cambia los montos de la sección
+> 8 y del calendario de pagos. A esta calibración no hay margen para imprevistos: la
+> integración con el procesador de pagos es la pieza que puede consumirlo.
 
 ---
 
@@ -31,9 +31,9 @@ y la orden de producción de la cocina, generadas solas.
 
 | | |
 |---|---|
-| **Inversión Fase 1** | $310,000 MXN + IVA |
-| **Plazo** | 16 semanas a partir del anticipo |
-| **Recuperación estimada** | 10 a 11 meses |
+| **Inversión Fase 1** | $155,000 MXN + IVA |
+| **Plazo** | 8 semanas a partir del anticipo |
+| **Recuperación estimada** | 5 a 6 meses |
 | **Prototipo navegable** | 35 pantallas, disponible para revisar hoy |
 
 Ya construimos el prototipo completo. No es una idea: es un producto diseñado pantalla por
@@ -181,9 +181,9 @@ inscripciones por escuela y servicio.
 
 | Concepto | Monto |
 |---|---:|
-| **Fase 1 — plataforma de inscripción, cobro y operación** | **$310,000 MXN** |
-| Fase 2 — portales, lectura de menús y facturación CFDI | $85,000 MXN |
-| Mantenimiento y soporte mensual, a partir de la entrega | $8,000 MXN / mes |
+| **Fase 1 — plataforma de inscripción, cobro y operación** | **$155,000 MXN** |
+| Fase 2 — portales, lectura de menús y facturación CFDI | $42,000 MXN |
+| Mantenimiento y soporte mensual, a partir de la entrega | $6,500 MXN / mes |
 
 Los montos no incluyen IVA.
 
@@ -191,9 +191,9 @@ Los montos no incluyen IVA.
 
 | Momento | % | Monto |
 |---|---:|---:|
-| A la firma | 40% | $124,000 |
-| A la mitad del plazo, con el cobro funcionando | 30% | $93,000 |
-| A la entrega y puesta en marcha | 30% | $93,000 |
+| A la firma | 40% | $62,000 |
+| A la mitad del plazo, con el cobro funcionando | 30% | $46,500 |
+| A la entrega y puesta en marcha | 30% | $46,500 |
 
 **Costos de terceros, a cargo de Healthy Tummies:** comisión del procesador (≈3.6% + IVA
 con tarjeta, $8.12 por transferencia SPEI — que en este modelo absorbe el papá), hosting
@@ -203,14 +203,18 @@ con tarjeta, $8.12 por transferencia SPEI — que en este modelo absorbe el pap�
 
 ## 9. Plazo y forma de trabajo
 
-**16 semanas** a partir del anticipo, con entregas parciales revisables:
+**8 semanas** a partir del anticipo, con entregas parciales revisables:
 
 | Semanas | Entregable revisable |
 |---|---|
-| 1 – 4 | Catálogo funcionando: escuelas, padrones, servicios y precios |
-| 5 – 9 | Los papás pueden inscribirse y pagar; conciliación SPEI operando |
-| 10 – 13 | Listas de cafetería y órdenes de cocina generándose y enviándose |
-| 14 – 16 | Pruebas con una escuela real, ajustes, capacitación y arranque |
+| 1 – 2 | Catálogo funcionando: escuelas, padrones, servicios y precios |
+| 3 – 5 | Los papás pueden inscribirse y pagar; conciliación SPEI operando |
+| 6 – 7 | Listas de cafetería y órdenes de cocina generándose y enviándose |
+| 8 | Pruebas con una escuela real, ajustes, capacitación y arranque |
+
+El plazo asume dedicación completa de nuestro lado y que las cuatro dependencias de la
+sección 7 estén resueltas al arrancar. La cuenta con el procesador de pagos es la que más
+suele demorarse y no depende de nosotros.
 
 Cada bloque termina con algo que se puede abrir y usar. No hay un único momento de entrega
 al final.
